@@ -1,3 +1,14 @@
+# Przydatne linki
+Jira: https://ztnbdteam.atlassian.net/jira/software/projects/VR/boards/3
+
+Mural z pomysłami: https://app.mural.co/t/vr4648/m/vr4648/1658606059282/fd1ddafb584f4604fc1b92a03aad44dce188f347?sender=uc8a8df7ad662aacfceb43398
+
+# Git
+## Branches
+- Każda zmiana musi być tworzona na osobnym branchu. Po stworzeniu na branchu wszystkiego co miało być zrobione pushujemy zmiany do bracha **main**.
+- Nowe branche nazywamy w następujący spoosób
+  -   **feat/co_robimy_w_zadaniu** albo **feat/VR-{numer_zadania}** - numer zadania można znależć na Jirze: https://ztnbdteam.atlassian.net/jira/software/projects/VR/boards/3
+
 # Dokumentacja
 
 ## Aplikacja
