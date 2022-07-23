@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: 217debcecf4c9864e89157e633f0a329
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - potionTemplate1: {fileID: 6964181503601042257, guid: 24d0edd729b861b43be4901ad55e028f, type: 3}
+  - potionTemplate2: {fileID: 3321002466395110979, guid: dee7ed1c476b5ad4798d11623c807b26, type: 3}
+  - PotionColRed: {fileID: 2100000, guid: e62725f9f89c68742996b9fc0648f418, type: 2}
+  - PotionColGreen: {fileID: 2100000, guid: 2faf22cf4d759b743803487097c821be, type: 2}
+  - PotionColBlue: {fileID: 2100000, guid: 5c768e98126b899438b01daa4b7c3c9d, type: 2}
+  - PotionColPurple: {fileID: 2100000, guid: 1d3fcef618b431c4687c03ca9a8d60d8, type: 2}
+  - PotionColYellow: {fileID: 2100000, guid: ed2a16b4cdfc5a7418e26bd4b7901a52, type: 2}
+  - PotionColBlack: {fileID: 2100000, guid: f30a723c1699b754b8362419a8972575, type: 2}
+  - PotionColNeutral: {fileID: 2100000, guid: fede53e90ced95940841ba8a548180e9, type: 2}
+  - clockTimer: {fileID: 6442016963037922066, guid: 1135e7087d8d0ca41a6635ae404ae8a2, type: 3}
+  - recipeScroll: {fileID: 1168557525208592595, guid: 6c00749e9b6d05741b93c2e66c1ad8d0, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

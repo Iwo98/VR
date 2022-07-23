@@ -1,0 +1,43 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1045 &1
+EditorBuildSettings:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Candles_Menu/Scenes/Menu.unity
+    guid: ebefae583b3bec34d870fccfa8fd38fd
+  - enabled: 1
+    path: Assets/Candles_Menu/Scenes/WyborGry.unity
+    guid: 7681a1d4ed39fdd46b7ce89d7769447b
+  - enabled: 1
+    path: Assets/Candles_Menu/Scenes/ModulTreningowy.unity
+    guid: 2f887d0f3b1d48c4d812cbc6206c0488
+  - enabled: 1
+    path: Assets/Candles_Menu/Scenes/Swieczniki.unity
+    guid: 7fcf932877ee25743b97b18d22b82a7f
+  - enabled: 1
+    path: Assets/AlchemistGame/Scenes/AlchemistGame.unity
+    guid: 1e5c739844525a546b8dc4ab298d2ee9
+  - enabled: 1
+    path: Assets/MagicDuelGame/Scenes/MagicDuelGame.unity
+    guid: abfbda58e4a630a49b050c753df57890
+  - enabled: 1
+    path: Assets/WhatsNew/WhatsNew.unity
+    guid: 8904da6adde6ef04c879b8a6772fec4f
+  - enabled: 1
+    path: Assets/PerfectShooter/PerfectShooter.unity
+    guid: 4ad973432b8181442a69a093b2da0911
+  - enabled: 1
+    path: Assets/VanishingThings/Scenes/VanishingThings.unity
+    guid: 57f7cfcedd3a12b4b99cac1fff36f90a
+  - enabled: 1
+    path: Assets/MazeRunner/Scenes/MazeRunner.unity
+    guid: f85bbb3ecee5a5947a5f5a90fa3402be
+  m_configObjects:
+    Unity.XR.Oculus.Settings: {fileID: 11400000, guid: 7fc0c2bc4e4fa6b43b21aa548f9cf743, type: 2}
+    Unity.XR.WindowsMR.Settings: {fileID: 11400000, guid: 046eee315aaaf7d4dae1664c33425eef, type: 2}
+    com.unity.xr.management.loader_settings: {fileID: 11400000, guid: ea15f1451f3a92b47b6095282a7c7432, type: 2}
+    com.unity.xr.openxr.settings4: {fileID: 11400000, guid: efbd5404a77ef404dbdbc4976266bfda, type: 2}
+    xr.sdk.mock-hmd.settings: {fileID: 11400000, guid: 74916aded381488488029a81fb35b02c, type: 2}

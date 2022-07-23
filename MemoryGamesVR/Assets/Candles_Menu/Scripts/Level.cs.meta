@@ -1,0 +1,13 @@
+fileFormatVersion: 2
+guid: 83023441580bdd3439ddcb96ddf39818
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - singleChandelier: {fileID: 8094976745379242555, guid: 6012a2472a9d76d49b63e6a7e1b83809, type: 3}
+  - tripleChandelier: {fileID: 3066480380668589338, guid: 8fa21359b1e2d1143854dc38315a2803, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

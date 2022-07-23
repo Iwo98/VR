@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 16d642b46e2c5dc40953bcc5e4d5fb2f
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - glassBreak: {fileID: 8300000, guid: 2bc3118a9e23b094483157ed8482fe95, type: 3}
+  - waterSplash: {fileID: 8300000, guid: 7db0db2eb3d1a384596c269f37fa2c72, type: 3}
+  - breakAnimation: {fileID: 5157724278460943270, guid: 0bf9579b31e52bb449bb2f25aac4850a, type: 3}
+  - splashAnimation: {fileID: 6508916059802521308, guid: e567371eb2a753142b2a4d680c4a64af, type: 3}
+  - potionNeutralTemplate: {fileID: 6964181503601042257, guid: fe4c9eb9c7e0fa349aaf9ef61da3f000, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

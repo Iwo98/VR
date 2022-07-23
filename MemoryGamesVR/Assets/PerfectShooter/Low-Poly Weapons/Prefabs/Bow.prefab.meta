@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 0b0e324afa544f744b45775d9db836b6
+labels:
+- Weapon
+- Ranged
+- Arrow
+- Crossbow
+- Bow
+timeCreated: 1460068321
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
