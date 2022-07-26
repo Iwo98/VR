@@ -12,6 +12,7 @@ public class MoveWithKeyboard : MonoBehaviour
     {
         float move = Input.GetAxis("Vertical") * Time.deltaTime * moveSpeed;
         xr_camera.transform.Translate(0f, 0f, move);
+        xr_camera.GetComponent<Transform>().Translate(0f, 0f, move);
     }
 }
 
