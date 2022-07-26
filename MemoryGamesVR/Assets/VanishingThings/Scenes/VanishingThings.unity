@@ -10556,6 +10556,8 @@ GameObject:
   - component: {fileID: 869000520}
   - component: {fileID: 869000518}
   - component: {fileID: 869000516}
+  - component: {fileID: 869000521}
+  - component: {fileID: 869000522}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -10639,6 +10641,35 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fadeOutUIImage: {fileID: 2014753138}
   fadeSpeed: 0.8
+--- !u!114 &869000521
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 869000515}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc80b796940be2f4b8b74939b7e7919e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  xr_camera: {fileID: 5628761764421299910}
+  moveSpeed: 25
+--- !u!114 &869000522
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 869000515}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2489447ebbf8e054db579519c2fb258b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  xr_camera: {fileID: 5628761764421299910}
+  speedH: 1
+  speedV: 1
 --- !u!1001 &870291718
 PrefabInstance:
   m_ObjectHideFlags: 0
