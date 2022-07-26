@@ -6,13 +6,8 @@ public class LookWithMouse : MonoBehaviour
 {
     public GameObject xr_camera;
 
-    public float speedH = 1;
-    public float speedV = 1;
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
+    public float speedH = 1.5f;
+    public float speedV = 1.5f;
 
     // Update is called once per frame
     void Update()

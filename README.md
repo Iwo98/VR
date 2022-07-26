@@ -13,7 +13,8 @@
 ### Skrypty globalne
 - ConstantGameValues.cs - skrypt przechowujący stałe informacje na temat gier, np. nazwy, ścieżki do scen i ikon
 - GameChoiceManager.cs - skrypt odpowiedzialny za wybór odpowiedniej sceny gry i przetwarzanie informacji zwrotnej na temat zdobytych punktów
-- LookWithMouse.cs - skrypt pozwalający na poruszanie kamerą za pomocą myszki
+- LookWithMouse.cs - skrypt pozwalający na rozglądanie się kamerą za pomocą myszki. Dodane obecnie w poziomie - VanishingThings.
+- MoveWithKeyboard.cs - skrypt pozwalający na poruszanie kamerą za pomocą klawiczy w i s. Dodane obecnie w poziomie - VanishingThings.
 - SceneFader.cs - skrypt pozwalający na bardziej naturalne przechodzenie między scenami(efekt fade zamiast bezpośredniego ładowania)
 - UserData.cs - skrypt odpowiedzialny za zapis i odczyt danych obecnego użytkownika do pliku .dat
 - VRHandInputManager.cs - skrypt pozwala na przeglądanie które przyciski są obecnie wciśnięte na obu kontrolerach
