@@ -82,12 +82,15 @@ Aplikacja MemoryGamesVR została stworzona w taki sposób, aby umożliwiała pro
     - Dodać angielską nazwę gry do funkcji _initIdNames()_
     - Dodać polską nazwę gry do funkcji _initNames()_
     - Stworzyć ikonę 2D gry, zamieścić ją w folderze _Assets/Resources/Sprites/GameIcons_ i podać ścieżkę do niej w funkcji _initGameIcons2D()_
-4. Na scenie gry należy umieścić:
+4.  W scenie _WyborGry_ należy:
+    - Sworzyć ikonę 3D i umieścić w: otwórz _Assets/CandlesMenu/Scenes_ -> otwórz scene _WyborGry_ -> w obiekcie _LevelIndicator/CrystalBall/ItemHolder_ pośród innych ikonek.
+    - Następnie tę samą ikonę 3D dodaj do skryptu znajdującego się w tej samej scenie: Otwórz obiekt _ChooseGameController_ i tam do skryptu o tej samej nazwie dodaj nową ikonę do listy _GameIcons_
+5. Na scenie gry należy umieścić:
     - Obiekt _XR Rig_ znajdujący się w folderze _GlobalPrefabs_
     - Obiekt ze skryptem _ConstantGameValues.cs_  - skrypt _ConstantGameValues.cs_ powinien na każdej scenie być w osobnym obiekcie zamieszonym "na samej górze" na scenie. - obiekty na scenie ładują się od góry do dołu, a skrypt _ConstantGameValues.cs_ wykorzystywany jest w funkcji _Start()_ wielu innych skryptów. Aby uniknąć niepotrzebnych błędów, powinien być on zawsze wczytywany jako pierwszy na scenie.
     - Obiekt ze skryptem _GameChoiceManager.cs_ - odpowiada za obsługę wyboru następnej gry po skończonej rozgrywce
     - Obiekt ze skryptem _SceneFader.cs_ - do zmiennej _FadeOutUIImage_ należy przypisać obraz  _XR Rig/CamerOffset/MainCamera/CanvasSceneTransition/Black_ znajdujący się w dodanym na scenę obiekcie _XR Rig_
-5. W głównym skrypcie gry należy zamieścić:
+6. W głównym skrypcie gry należy zamieścić:
     - W funkcji _Start()_ kod obsługujący przesyłanie poziomu trudności do gry:
         <blockquote>
             if (PlayerPrefs.HasKey("curr_game_difficulty")) { <br>
@@ -99,7 +102,10 @@ Aplikacja MemoryGamesVR została stworzona w taki sposób, aby umożliwiała pro
             GameChoiceManager game_manager = GameObject.FindObjectsOfType<GameChoiceManager>()[0]; <br>
             game_manager.endGameManagement(score);
         </blockquote>
-
+7. Dodaj grę do _Build Settings_, aby to zrobić należy:
+    - Otwórz scenę nowego poziomu w edytorze Unity
+    - Otwórz kontekstowe menu klikając na File w górnym menu Unity -> następnie z tego menu wybierz opcję _Build Settings_
+    - Dodaj nową scene do Buildu klikając na guzik _Add Open Scenes_
 
 Jeśli wszystkie czynności zostaną wykonane poprawnie, to nowa gra powinna zostać w pełni zintegrowana z aplikacją.
 
