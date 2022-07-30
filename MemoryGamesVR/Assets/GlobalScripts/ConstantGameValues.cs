@@ -32,7 +32,7 @@ public class ConstantGameValues : MonoBehaviour
 
     private void initVals()
     {
-        numberOfGames = 7;
+        numberOfGames = 8;
         trainingNumberOfGames = 8;
         maxDifficulty = 10;
     }
@@ -47,6 +47,7 @@ public class ConstantGameValues : MonoBehaviour
         gameIdNames.Add("WhatsNew");
         gameIdNames.Add("DungeonEscape");
         gameIdNames.Add("VanishingThings");
+        gameIdNames.Add("ExampleLevel");
 
     }
 
@@ -60,6 +61,7 @@ public class ConstantGameValues : MonoBehaviour
         gameNames.Add("Co doszło?");
         gameNames.Add("Ucieczka z lochu");
         gameNames.Add("Znikające przedmioty");
+        gameNames.Add("Przykładowy poziom");
 
     }
 
@@ -73,6 +75,7 @@ public class ConstantGameValues : MonoBehaviour
         gameScenes.Add("WhatsNew/WhatsNew");
         gameScenes.Add("MazeRunner/Scenes/MazeRunner");
         gameScenes.Add("VanishingThings/Scenes/VanishingThings");
+        gameScenes.Add("ExampleLevel/Scenes/ExampleLevel");
     }
 
     private void initGameIcons2D()
@@ -85,6 +88,7 @@ public class ConstantGameValues : MonoBehaviour
         gameIcons2DPaths.Add("Sprites/GameIcons/shelf");
         gameIcons2DPaths.Add("Sprites/GameIcons/door");
         gameIcons2DPaths.Add("Sprites/GameIcons/sword_and_axe");
+        gameIcons2DPaths.Add("Sprites/GameIcons/knight");
     }
 
     public void initAvatars()
