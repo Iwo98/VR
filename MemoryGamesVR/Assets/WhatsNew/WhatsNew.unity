@@ -1791,6 +1791,8 @@ GameObject:
   - component: {fileID: 260960465}
   - component: {fileID: 260960466}
   - component: {fileID: 260960467}
+  - component: {fileID: 260960469}
+  - component: {fileID: 260960468}
   m_Layer: 0
   m_Name: GameController
   m_TagString: Untagged
@@ -1839,6 +1841,35 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0447beac8197ba1488099b9e5879a8cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &260960468
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 260960464}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc80b796940be2f4b8b74939b7e7919e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  xr_camera: {fileID: 298064119}
+  moveSpeed: 25
+--- !u!114 &260960469
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 260960464}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2489447ebbf8e054db579519c2fb258b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  xr_camera: {fileID: 298064119}
+  speedH: 1.5
+  speedV: 1.5
 --- !u!1 &292327574
 GameObject:
   m_ObjectHideFlags: 0

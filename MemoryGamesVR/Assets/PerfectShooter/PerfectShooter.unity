@@ -6039,6 +6039,8 @@ GameObject:
   - component: {fileID: 898793389}
   - component: {fileID: 898793388}
   - component: {fileID: 898793386}
+  - component: {fileID: 898793391}
+  - component: {fileID: 898793390}
   m_Layer: 0
   m_Name: GameChoiceController
   m_TagString: Untagged
@@ -6106,6 +6108,35 @@ MonoBehaviour:
   gameScenes: []
   gameIcons2DPaths: []
   avatarSpritesPaths: []
+--- !u!114 &898793390
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 898793385}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc80b796940be2f4b8b74939b7e7919e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  xr_camera: {fileID: 789867273}
+  moveSpeed: 25
+--- !u!114 &898793391
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 898793385}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2489447ebbf8e054db579519c2fb258b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  xr_camera: {fileID: 789867273}
+  speedH: 1.5
+  speedV: 1.5
 --- !u!1 &900381650
 GameObject:
   m_ObjectHideFlags: 0

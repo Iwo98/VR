@@ -14815,6 +14815,8 @@ GameObject:
   - component: {fileID: 1891690449}
   - component: {fileID: 1891690448}
   - component: {fileID: 1891690447}
+  - component: {fileID: 1891690453}
+  - component: {fileID: 1891690452}
   m_Layer: 0
   m_Name: GameChoiceController
   m_TagString: Untagged
@@ -14894,6 +14896,35 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1891690452
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1891690446}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc80b796940be2f4b8b74939b7e7919e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  xr_camera: {fileID: 2857142252367661522}
+  moveSpeed: 25
+--- !u!114 &1891690453
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1891690446}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2489447ebbf8e054db579519c2fb258b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  xr_camera: {fileID: 2857142252367661522}
+  speedH: 1.5
+  speedV: 1.5
 --- !u!1001 &1946466598
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -16893,6 +16924,11 @@ MonoBehaviour:
   m_RequiresDepthTexture: 0
   m_RequiresColorTexture: 0
   m_Version: 2
+--- !u!1 &2857142252367661522 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6038534708033033709, guid: 22ec00c3c8814164d9caa8208c8dee8f, type: 3}
+  m_PrefabInstance: {fileID: 2857142252367661518}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &3374425183968255603
 PrefabInstance:
   m_ObjectHideFlags: 0
