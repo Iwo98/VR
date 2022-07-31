@@ -6,11 +6,23 @@ public class MainGameExampleLevel : MonoBehaviour
 {
     public int difficulty;
     public int score;
+    public List<string> gamesInOrder;
 
     // Start is called before the first frame update
     void Start()
     {
-        Debug.Log("Witaj");
+        gamesInOrder = new List<string>();
+        gamesInOrder.Add("");
+        gamesInOrder.Add("");
+        gamesInOrder.Add("");
+        gamesInOrder.Add("");
+        gamesInOrder.Add("");
+        gamesInOrder.Add("");
+        gamesInOrder.Add("");
+        gamesInOrder.Add("");
+
+        Debug.Log(gamesInOrder[0]);
+
         if (PlayerPrefs.HasKey("curr_game_difficulty"))
         {
             difficulty = PlayerPrefs.GetInt("curr_game_difficulty");
