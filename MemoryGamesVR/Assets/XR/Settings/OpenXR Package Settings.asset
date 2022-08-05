@@ -684,7 +684,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d6ccd3d0ef0f1d458e69421dccbdae1, type: 3}
   m_Name: ValveIndexControllerProfile Standalone
   m_EditorClassIdentifier: 
-  m_enabled: 0
+  m_enabled: 1
   nameUi: Valve Index Controller Profile
   version: 0.0.1
   featureIdInternal: com.unity.openxr.feature.input.valveindex
@@ -731,7 +731,6 @@ MonoBehaviour:
   - {fileID: 1266629968853879682}
   - {fileID: -2111604554173249393}
   - {fileID: 8128136333515908715}
-  - {fileID: 9217034746943493309}
   - {fileID: -901373823423751382}
   - {fileID: -7879905601102080230}
   - {fileID: 8485983476280603657}
@@ -903,7 +902,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c79c911b38743a649b1c1eddb5097202, type: 3}
   m_Name: HandTrackingFeaturePlugin Standalone
   m_EditorClassIdentifier: 
-  m_enabled: 0
+  m_enabled: 1
   nameUi: Hand Tracking plugin
   version: 0.9.0
   featureIdInternal: com.microsoft.openxr.feature.handtracking
@@ -1694,6 +1693,7 @@ MonoBehaviour:
   m_Name: MockDriver Standalone
   m_EditorClassIdentifier: 
   m_enabled: 0
+  <failedInitialization>k__BackingField: 0
   nameUi: Mock Driver
   version: 0.0.1
   featureIdInternal: com.unity.openxr.feature.mockdriver
