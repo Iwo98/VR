@@ -7,6 +7,7 @@ public class VRHandInputManager : MonoBehaviour
 {
     private InputDevice rightController;
     private InputDevice leftController;
+    private InputDevice headMounted;
     public bool rightTriggerPressed = false;
     public bool leftTriggerPressed = false;
     // Start is called before the first frame update
@@ -44,6 +45,7 @@ public class VRHandInputManager : MonoBehaviour
     {
         TryInitializeRight();
         TryInitializeLeft();
+        TryInitializeHead();
     }
 
     void TryInitializeRight()
@@ -78,6 +80,23 @@ public class VRHandInputManager : MonoBehaviour
         }
     }
 
+    void TryInitializeHead()
+    {
+        var inputDevices = new List<InputDevice>();
+        InputDeviceCharacteristics headControllerCharacteristics = InputDeviceCharacteristics.HeadMounted;
+        InputDevices.GetDevicesWithCharacteristics(headControllerCharacteristics, inputDevices);
+
+        if (inputDevices.Count == 0)
+        {
+            return;
+        }
+        else
+        {
+            headMounted = inputDevices[0];
+        }
+    }
+
+
     // Update is called once per frame
     void Update()
     {
@@ -99,6 +118,16 @@ public class VRHandInputManager : MonoBehaviour
         {
             leftController.TryGetFeatureValue(CommonUsages.triggerButton, out bool lTriggerValue);
             leftTriggerPressed = lTriggerValue;
+        }
+
+
+        if (!headMounted.isValid)
+        {
+            TryInitializeHead();
+        }
+        else
+        {
+            headMounted.TryGetFeatureValue(CommonUsages.devicePosition, out Vector3 position);
         }
     }
 }
