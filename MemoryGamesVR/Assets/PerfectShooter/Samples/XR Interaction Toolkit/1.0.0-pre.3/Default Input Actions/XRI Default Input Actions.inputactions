@@ -834,7 +834,7 @@
                 {
                     "name": "",
                     "id": "e99c4958-e281-4579-bb1c-4274c43c9569",
-                    "path": "<OculusTouchController>/primaryButton",
+                    "path": "<ValveIndexController>/primaryButton",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
