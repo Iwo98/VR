@@ -128,7 +128,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2477321169392890288, guid: d9d2bfa410febf94a8af05b6fc13de7f, type: 3}
       propertyPath: m_Name
-      value: XR Rig
+      value: XR Rig with Headset Collider
       objectReference: {fileID: 0}
     - target: {fileID: 2477321169392890293, guid: d9d2bfa410febf94a8af05b6fc13de7f, type: 3}
       propertyPath: m_RootOrder
