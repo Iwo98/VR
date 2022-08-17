@@ -8,6 +8,11 @@ TagManager:
   - Hand
   - EndGameCanvas
   - Colide
+  - LeftHand
+  - RightHand
+  - GamePlate
+  - BucketEnd
+  - BucketStart
   layers:
   - Default
   - TransparentFX
