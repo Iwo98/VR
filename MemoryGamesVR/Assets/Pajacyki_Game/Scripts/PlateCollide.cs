@@ -14,8 +14,8 @@ public class PlateCollide : MonoBehaviour
     {
         if (collider.gameObject.tag == "BucketEnd")
         {
-            Debug.Log("BUss");
             this.gameObject.SetActive(false);
+            Destroy(this.gameObject, 2);
         }
     }
 }

@@ -29,7 +29,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6841568487036875269}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -1.01}
+  m_LocalPosition: {x: 0, y: 0, z: 188.17377}
   m_LocalScale: {x: 0.20269461, y: 0.20269461, z: 0.20269461}
   m_Children: []
   m_Father: {fileID: 0}
@@ -109,8 +109,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96e230b62db4a1948b099d2fffa3e990, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BassSound: {fileID: 6567953884253955281}
-  speed: 1
+  speed: 3.5
 --- !u!82 &6567953884253955281
 AudioSource:
   m_ObjectHideFlags: 0

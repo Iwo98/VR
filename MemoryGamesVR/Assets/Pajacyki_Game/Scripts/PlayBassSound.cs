@@ -11,7 +11,6 @@ public class PlayBassSound : MonoBehaviour
         if (collider.gameObject.tag == "GamePlate")
         {
             BassSound.Play();
-            Debug.Log("BUss");
         }
     }
 }
