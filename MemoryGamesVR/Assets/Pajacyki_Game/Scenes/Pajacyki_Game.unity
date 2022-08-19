@@ -874,6 +874,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 240814198}
     m_Modifications:
+    - target: {fileID: 1329170295868382858, guid: b563db210b6e5d849b98d1fae37c4abc, type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1329170295868382858, guid: b563db210b6e5d849b98d1fae37c4abc, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1000
+      objectReference: {fileID: 0}
     - target: {fileID: 4520056587638418976, guid: b563db210b6e5d849b98d1fae37c4abc, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -893,6 +901,14 @@ PrefabInstance:
     - target: {fileID: 7932238192115081785, guid: b563db210b6e5d849b98d1fae37c4abc, type: 3}
       propertyPath: m_Name
       value: StartingCanvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 8188215610900720135, guid: b563db210b6e5d849b98d1fae37c4abc, type: 3}
+      propertyPath: m_BlockingMask.m_Bits
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8188215610900720135, guid: b563db210b6e5d849b98d1fae37c4abc, type: 3}
+      propertyPath: m_IgnoreReversedGraphics
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8408241823904678529, guid: b563db210b6e5d849b98d1fae37c4abc, type: 3}
       propertyPath: m_Pivot.x
@@ -3644,7 +3660,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2519805055613189119, guid: 549428381dadbc94eb6aa5ad95c53107, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8784242491063494112, guid: 549428381dadbc94eb6aa5ad95c53107, type: 3}
       propertyPath: m_IsTrigger
@@ -4397,7 +4413,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2519805055613189119, guid: 549428381dadbc94eb6aa5ad95c53107, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2519805055613189119, guid: 549428381dadbc94eb6aa5ad95c53107, type: 3}
       propertyPath: m_TagString
@@ -5246,6 +5262,7 @@ MonoBehaviour:
   Desk: {fileID: 50416722}
   Instrument: {fileID: 298189630}
   allPoints: {fileID: 1899382496}
+  StartingCanvas: {fileID: 1031456885}
   SpawnPointLeft: {fileID: 1420156092}
   SpawnPointRight: {fileID: 279681941}
   plateSpeed: 3.5
@@ -5253,6 +5270,7 @@ MonoBehaviour:
   numberOfSpawnedPlates: 0
   isLeft: 0
   isGameOn: 0
+  isFirstTime: 1
 --- !u!4 &953920028 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4036945459416220, guid: 652472ea6528f0d449e98084839f05dd, type: 3}
@@ -5609,6 +5627,11 @@ Transform:
 --- !u!224 &1031456882 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 8408241823904678529, guid: b563db210b6e5d849b98d1fae37c4abc, type: 3}
+  m_PrefabInstance: {fileID: 127605205}
+  m_PrefabAsset: {fileID: 0}
+--- !u!223 &1031456885 stripped
+Canvas:
+  m_CorrespondingSourceObject: {fileID: 1329170295868382858, guid: b563db210b6e5d849b98d1fae37c4abc, type: 3}
   m_PrefabInstance: {fileID: 127605205}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1044713796 stripped
