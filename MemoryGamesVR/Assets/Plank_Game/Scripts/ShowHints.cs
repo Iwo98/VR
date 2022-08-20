@@ -20,20 +20,20 @@ public class ShowHints : MonoBehaviour
     {
         if(collisionDetector.tooHigh)
         {
-            TooHighText.text = "Spróbuj ni¿ej";
+            TooHighText.text = "Jesteœ za wysoko";
         }
         else
         {
-            TooHighText.text = "Z góry ok";
+            TooHighText.text = "";
         }
 
         if (collisionDetector.tooLow)
         {
-            TooLowText.text = "Spróbuj wy¿ej";
+            TooLowText.text = "Jesteœ za nisko";
         }
         else
         {
-            TooLowText.text = "Z do³u ok";
+            TooLowText.text = "";
         }
 
     }

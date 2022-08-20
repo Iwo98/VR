@@ -75,6 +75,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tooHigh: 0
   tooLow: 0
+  pointsOn: 0
 --- !u!1001 &1928969512868464259
 PrefabInstance:
   m_ObjectHideFlags: 0
