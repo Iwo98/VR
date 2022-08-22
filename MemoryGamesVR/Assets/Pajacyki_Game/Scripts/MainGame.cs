@@ -30,7 +30,6 @@ public class MainGame : MonoBehaviour
         plateCollide = Plate.GetComponent<PlateCollide>();
         instrumentsCollide = Instrument.GetComponent<InstrumentsCollide>();
         plateCollide.speed = plateSpeed;
-
     }
 
     // Update is called once per frame
