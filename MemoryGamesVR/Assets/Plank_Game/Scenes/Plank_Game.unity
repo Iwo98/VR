@@ -1648,6 +1648,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1725243237729914840, guid: e71620cef5da3f545ada34b26520c9b9, type: 3}
   m_PrefabInstance: {fileID: 346767229}
   m_PrefabAsset: {fileID: 0}
+--- !u!223 &359000676 stripped
+Canvas:
+  m_CorrespondingSourceObject: {fileID: 462723567899990242, guid: 12cbb50ed129d2f478986331a57ef948, type: 3}
+  m_PrefabInstance: {fileID: 1102588238}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &379397912
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3841,12 +3846,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Spikes: {fileID: 634149246}
   Colider: {fileID: 968368014}
+  TextScore: {fileID: 1581627181}
   StartMenuCanvas: {fileID: 112883019}
+  EndMenuCanvas: {fileID: 359000676}
   score: 0
   isGameOn: 1
   isGameOff: 0
   timeSpikes: 3
-  maxTime: 10
+  maxTime: 3
 --- !u!1 &788472309
 GameObject:
   m_ObjectHideFlags: 0
@@ -4974,6 +4981,10 @@ PrefabInstance:
     - target: {fileID: 462723567899990246, guid: 12cbb50ed129d2f478986331a57ef948, type: 3}
       propertyPath: m_Name
       value: EndMenuCanvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 462723567899990246, guid: 12cbb50ed129d2f478986331a57ef948, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 462723567899990247, guid: 12cbb50ed129d2f478986331a57ef948, type: 3}
       propertyPath: m_Pivot.x
@@ -7523,6 +7534,11 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1573659842}
   m_Mesh: {fileID: 4300000, guid: b31c62c35ced11c4383176ecffe930c9, type: 3}
+--- !u!1 &1581627181 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 462723567900358442, guid: 12cbb50ed129d2f478986331a57ef948, type: 3}
+  m_PrefabInstance: {fileID: 1102588238}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1624378569
 GameObject:
   m_ObjectHideFlags: 0
@@ -9189,7 +9205,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Spikes: {fileID: 634149246}
   Colider: {fileID: 968368014}
+  TextScore: {fileID: 1581627181}
   StartMenuCanvas: {fileID: 112883019}
+  EndMenuCanvas: {fileID: 359000676}
   score: 0
   isGameOn: 0
   isGameOff: 0

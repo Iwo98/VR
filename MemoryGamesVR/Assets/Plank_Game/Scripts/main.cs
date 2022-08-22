@@ -17,7 +17,6 @@ public class main : MonoBehaviour
     public Canvas EndMenuCanvas;
     public float score = 0;
     public bool isGameOn = false;
-    public bool isGameOff = false;
     public float timeSpikes;
     public float maxTime;
 
@@ -34,7 +33,6 @@ public class main : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        isGameOff = false;
         ceiling = Spikes.GetComponent<Ceiling>();
         collisionDetector = Colider.GetComponent<CollisionDetector>();
         textMeshProUGUI = TextScore.GetComponent<TextMeshProUGUI>();

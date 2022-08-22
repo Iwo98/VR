@@ -18,7 +18,7 @@ public class SpawnItems : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    public void Spawn()
     {
         if(timer > beat)
         {
