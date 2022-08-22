@@ -12,6 +12,7 @@ public class Main : MonoBehaviour
     public int score = 0;
     public int phase = 0;
     public float maxTime;
+    public int spawnNumber = 0;
 
     private SpawnItems spawnItems;
     private CubeCollider cubeCollider;
@@ -33,21 +34,24 @@ public class Main : MonoBehaviour
         {
             spawnItems.Spawn();
             currTime += Time.deltaTime;
-            if (currTime > maxTime) phase = 2;
+            if (currTime > maxTime)
+            {
+                phase = 2;
+                currTime = 0;
+            }
         }
         else if (phase == 2)
         {
-            currTime = 0;
             currTime += Time.deltaTime;
-            if (currTime > 3)
-            {
-                phase = 3;
+            if (currTime > 7)
+            {                
                 score = cubeCollider.points;
                 Debug.Log(score);
+                Debug.Log(spawnNumber);
+                phase = 3;
             }
 
         }
     }
-
 
 }

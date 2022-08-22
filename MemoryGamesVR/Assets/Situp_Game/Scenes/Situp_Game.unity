@@ -5732,6 +5732,7 @@ MonoBehaviour:
   score: 0
   phase: 0
   maxTime: 0
+  spawnNumber: 0
 --- !u!114 &742311230
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10945,6 +10946,7 @@ MonoBehaviour:
   score: 0
   phase: 0
   maxTime: 10
+  spawnNumber: 0
 --- !u!1 &1537106714
 GameObject:
   m_ObjectHideFlags: 0
@@ -14434,6 +14436,7 @@ MonoBehaviour:
   UpPoint: {fileID: 1219720565}
   DownPoint: {fileID: 1614249412}
   beat: 2
+  myMain: {fileID: 1518944934}
 --- !u!1 &1959554093
 GameObject:
   m_ObjectHideFlags: 0

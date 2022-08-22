@@ -27,7 +27,7 @@ public class main : MonoBehaviour
 
     private float currTime = 0;
     private bool timeOn = false;
-    private int phase = 0;
+    public int phase = 0;
 
 
     // Start is called before the first frame update

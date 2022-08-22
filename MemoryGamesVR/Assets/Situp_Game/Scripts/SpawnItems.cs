@@ -11,6 +11,8 @@ public class SpawnItems : MonoBehaviour
     private float timer;
     private bool isUp = false;
 
+    public Main myMain;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -35,6 +37,7 @@ public class SpawnItems : MonoBehaviour
             cube.transform.Rotate(transform.forward);
             timer -= beat;
             isUp = !isUp;
+            myMain.spawnNumber += 1;
         }
 
         timer += Time.deltaTime;
