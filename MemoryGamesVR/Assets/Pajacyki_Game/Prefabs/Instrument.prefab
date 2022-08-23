@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 1359240598596701074}
   - component: {fileID: 7167328649082807447}
   m_Layer: 0
-  m_Name: Dish_01
+  m_Name: Instrument
   m_TagString: Colide
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

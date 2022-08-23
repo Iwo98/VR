@@ -5,68 +5,86 @@ using TMPro;
 
 public class MainGame : MonoBehaviour
 {
-    public GameObject Plate;
+    public GameObject Ball;
     public GameObject Desk;
-    public GameObject Instrument;
     public TextMeshProUGUI allPoints;
     public Canvas StartingCanvas;
 
     public Transform SpawnPointLeft;
     public Transform SpawnPointRight;
-    public float plateSpeed = 2f;
+    public float ballSpeed = 2f;
+    public float maxTime = 5f;
+    public int phase = 0;
     public int score = 0;
     public int numberOfSpawnedPlates = 0;
     public bool isLeft = false;
-    public bool isGameOn = false;
-    public bool isFirstTime = true;
 
     private GameObject SpawnedPlate;
-    private PlateCollide plateCollide;
-    private InstrumentsCollide instrumentsCollide;
+    private BallCollide ballCollide;
+    private float currTime = 0;
+    private bool spawnFirstTime = true;
+
 
     // Start is called before the first frame update
     void Awake()
     {
-        plateCollide = Plate.GetComponent<PlateCollide>();
-        instrumentsCollide = Instrument.GetComponent<InstrumentsCollide>();
-        plateCollide.speed = plateSpeed;
+        ballCollide = Ball.GetComponent<BallCollide>();
+        ballCollide.speed = ballSpeed;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (isFirstTime && isGameOn)
+        if (phase == 1)
         {
-            SpawnedPlate = Instantiate(Plate, SpawnPointLeft);
-            SpawnedPlate.transform.localPosition = Vector3.zero;
-            SpawnedPlate.transform.Rotate(-transform.forward);
-            isFirstTime = false;
+            StartingCanvas.gameObject.SetActive(true);
         }
-
-        if (isGameOn)
+        else if (phase == 2)
         {
-            if (SpawnedPlate.gameObject != null && !SpawnedPlate.gameObject.activeSelf)
+            currTime += Time.deltaTime;
+            if (spawnFirstTime)
             {
-                numberOfSpawnedPlates++;
-                allPoints.text = numberOfSpawnedPlates.ToString();
-                if (isLeft)
-                {
-                    SpawnedPlate = Instantiate(Plate, SpawnPointLeft);
-                }
-                else
-                {
-                    SpawnedPlate = Instantiate(Plate, SpawnPointRight);
-                }
+                SpawnedPlate = Instantiate(Ball, SpawnPointLeft);
                 SpawnedPlate.transform.localPosition = Vector3.zero;
                 SpawnedPlate.transform.Rotate(-transform.forward);
-                isLeft = !isLeft;
+                spawnFirstTime = false;
             }
+
+            if (currTime < maxTime)
+            {
+                if (SpawnedPlate.gameObject != null && !SpawnedPlate.gameObject.activeSelf)
+                {
+                    numberOfSpawnedPlates++;
+                    allPoints.text = numberOfSpawnedPlates.ToString();
+                    if (isLeft)
+                    {
+                        SpawnedPlate = Instantiate(Ball, SpawnPointLeft);
+                    }
+                    else
+                    {
+                        SpawnedPlate = Instantiate(Ball, SpawnPointRight);
+                    }
+                    SpawnedPlate.transform.localPosition = Vector3.zero;
+                    SpawnedPlate.transform.Rotate(-transform.forward);
+                    isLeft = !isLeft;
+                }
+            }
+            else
+            {
+                phase = 3;
+                currTime = maxTime;
+            }
+
+        }
+        else if (phase == 3)
+        {
+            Debug.Log("Koniec!");
         }
     }
 
     public void CLickStartButton()
     {
-        isGameOn = true;
+        phase = 2;
         StartingCanvas.gameObject.SetActive(false);
     }
 }

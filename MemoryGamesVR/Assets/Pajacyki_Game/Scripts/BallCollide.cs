@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlateCollide : MonoBehaviour
+public class BallCollide : MonoBehaviour
 {
     public float speed = 1f;
     public void Update()
