@@ -2,27 +2,31 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using System;
 
 public class MainGame : MonoBehaviour
 {
     public GameObject Ball;
     public GameObject Desk;
-    public TextMeshProUGUI allPoints;
+    public TextMeshProUGUI allPointsOnBook;
+    public TextMeshProUGUI resultText;
+    public TextMeshProUGUI timeText;
     public Canvas StartingCanvas;
+    public Canvas EndCanvas;
 
     public Transform SpawnPointLeft;
     public Transform SpawnPointRight;
     public float ballSpeed = 2f;
     public float maxTime = 5f;
-    public int phase = 0;
-    public int score = 0;
-    public int numberOfSpawnedPlates = 0;
-    public bool isLeft = false;
+    public int phase = 1;
+    public float score = 0;
+    public float numberOfBounces = 0;
+    public float currTime = 0;
 
-    private GameObject SpawnedPlate;
+    private GameObject SpawnedBall;
     private BallCollide ballCollide;
-    private float currTime = 0;
-    private bool spawnFirstTime = true;
+    private float result = 0;
+    private bool shouldSpawnBall = true;
 
 
     // Start is called before the first frame update
@@ -42,49 +46,43 @@ public class MainGame : MonoBehaviour
         else if (phase == 2)
         {
             currTime += Time.deltaTime;
-            if (spawnFirstTime)
+            timeText.text = Math.Round(currTime).ToString();
+
+            if (shouldSpawnBall)
             {
-                SpawnedPlate = Instantiate(Ball, SpawnPointLeft);
-                SpawnedPlate.transform.localPosition = Vector3.zero;
-                SpawnedPlate.transform.Rotate(-transform.forward);
-                spawnFirstTime = false;
+                SpawnedBall = Instantiate(Ball, SpawnPointLeft);
+                SpawnedBall.transform.localPosition = Vector3.zero;
+                SpawnedBall.transform.Rotate(transform.forward);
+                shouldSpawnBall = false;
             }
 
             if (currTime < maxTime)
             {
-                if (SpawnedPlate.gameObject != null && !SpawnedPlate.gameObject.activeSelf)
-                {
-                    numberOfSpawnedPlates++;
-                    allPoints.text = numberOfSpawnedPlates.ToString();
-                    if (isLeft)
-                    {
-                        SpawnedPlate = Instantiate(Ball, SpawnPointLeft);
-                    }
-                    else
-                    {
-                        SpawnedPlate = Instantiate(Ball, SpawnPointRight);
-                    }
-                    SpawnedPlate.transform.localPosition = Vector3.zero;
-                    SpawnedPlate.transform.Rotate(-transform.forward);
-                    isLeft = !isLeft;
-                }
+                allPointsOnBook.text = numberOfBounces.ToString();
             }
             else
             {
+                Destroy(SpawnedBall);
                 phase = 3;
                 currTime = maxTime;
+                result = (float)Math.Ceiling((score / numberOfBounces) * 100);
             }
-
         }
         else if (phase == 3)
         {
-            Debug.Log("Koniec!");
+            resultText.text = result.ToString();
+            EndCanvas.gameObject.SetActive(true);
         }
     }
 
-    public void CLickStartButton()
+    public void ClickStartButton()
     {
         phase = 2;
         StartingCanvas.gameObject.SetActive(false);
+    }
+
+    public void ClickEndButton()
+    {
+        Debug.Log("Koniec");
     }
 }

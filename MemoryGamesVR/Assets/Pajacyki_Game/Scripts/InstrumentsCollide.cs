@@ -11,6 +11,7 @@ public class InstrumentsCollide : MonoBehaviour
 
     private MainGame mainGame;
     private DeskColide deskColide;
+    private bool canScore = true;
 
     public AudioSource InstrumentSound;
 
@@ -20,15 +21,27 @@ public class InstrumentsCollide : MonoBehaviour
         deskColide = Desk.GetComponent<DeskColide>();
 
     }
+
+    private void Update()
+    {
+        if (!deskColide.isPlateInDeskArea)
+        {
+            canScore = true;
+        }
+    }
     private void OnTriggerEnter(Collider collider)
     {
         if (collider.gameObject.tag == "Colide")
         {
             if (deskColide.isPlateInDeskArea)
             {
-                mainGame.score++;
-                scoreText.text = mainGame.score.ToString();
-            }
+                if(canScore)
+                {
+                    mainGame.score++;
+                    scoreText.text = mainGame.score.ToString();
+                    canScore = false;
+                }
+            } 
             InstrumentSound.Play();
         }
     }
