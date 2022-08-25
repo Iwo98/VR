@@ -1,11 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class CubeCollider : MonoBehaviour
 {
     public AudioSource ScoreSound;
     public int points = 0;
+    public Main myMain;
 
     void Start()
     {
@@ -23,6 +25,7 @@ public class CubeCollider : MonoBehaviour
             //AddPoint();
 
             this.points += 1;
+            myMain.gainedText.text = (points).ToString();
             //Debug.Log(points);
         }
 

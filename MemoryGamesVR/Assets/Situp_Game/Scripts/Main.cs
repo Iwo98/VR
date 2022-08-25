@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class Main : MonoBehaviour
 {
@@ -13,6 +14,8 @@ public class Main : MonoBehaviour
     public int phase = 0;
     public float maxTime;
     public int spawnNumber = 0;
+    public TextMeshProUGUI allText;
+    public TextMeshProUGUI gainedText;
 
     private SpawnItems spawnItems;
     private CubeCollider cubeCollider;
