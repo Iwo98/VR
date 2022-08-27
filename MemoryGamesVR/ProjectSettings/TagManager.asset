@@ -13,6 +13,7 @@ TagManager:
   - GamePlate
   - BucketEnd
   - BucketStart
+  - HandPoint
   layers:
   - Default
   - TransparentFX
