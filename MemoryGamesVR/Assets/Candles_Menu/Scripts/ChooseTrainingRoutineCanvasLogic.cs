@@ -119,7 +119,7 @@ public class ChooseTrainingRoutineCanvasLogic : MonoBehaviour
         if (gamesController.checkIfOrderIsUnique())
         {
             gamesController.prepareGamesList(game_values.gameNames);
-            gamesController.printGames("prepared");
+            //gamesController.printGames("prepared");
             ChooseGamesCanvas.gameObject.SetActive(false);
             StartTraining();
         }
@@ -136,8 +136,6 @@ public class ChooseTrainingRoutineCanvasLogic : MonoBehaviour
         int index = 0;
         foreach (PreparedGame game in gamesController.preparedGamesList)
         {
-            Debug.Log("List game values id" + game.id);
-            Debug.Log("List game values diff" + game.difficulty);
             PlayerPrefs.SetInt("game_id_" + index.ToString(), game.id);
             PlayerPrefs.SetInt("game_difficulty_" + index.ToString(), game.difficulty);
             index++;

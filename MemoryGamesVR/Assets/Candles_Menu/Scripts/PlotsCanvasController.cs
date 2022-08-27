@@ -63,7 +63,7 @@ public class PlotsCanvasController : MonoBehaviour
         if (currChartId > 0)
         {
             game_name = game_values.gameNames[currChartId - 1];
-            game_difficulty = user_data.data.getGameDifficulty(currChartId - 1).ToString();
+            //game_difficulty = user_data.data.getGameDifficulty(currChartId - 1).ToString();
 
         }
         int games_num = scores.Count;
