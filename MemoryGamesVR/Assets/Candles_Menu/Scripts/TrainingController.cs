@@ -28,31 +28,6 @@ public class TrainingController : MonoBehaviour
         clearPrefs();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
-
-    public void StartTraining()
-    {
-        clearPrefs();
-        GameChoiceManager game_manager = GameObject.FindObjectsOfType<GameChoiceManager>()[0];
-        UserData user_data = GameObject.FindObjectsOfType<UserData>()[0];
-        user_data.LoadFile();
-        PlayerPrefs.SetInt("is_training", 1);
-        for (int i = 0; i < game_values.trainingNumberOfGames; i++)
-        {
-            List<int> game_vals = user_data.data.chooseTrainingGame();
-            PlayerPrefs.SetInt("game_id_" + i.ToString(), game_vals[0]);
-            PlayerPrefs.SetInt("game_difficulty_" + i.ToString(), game_vals[1]);
-            Debug.Log(game_vals[1]);
-        }
-        user_data.SaveFile();
-        game_manager.chooseNextGame();
-    }
-
     // Results canvas
     private void displayResultsCanvas()
     {
@@ -106,19 +81,18 @@ public class TrainingController : MonoBehaviour
         trainingPlotsCanvas.SetActive(false);
     }
 
-
-
-    // Misc
-    public void ExitToMenu()
-    {
-        SceneManager.LoadScene("Menu");
-    }
-
     private void clearPrefs()
     {
         string username = PlayerPrefs.GetString("username");
         PlayerPrefs.DeleteAll();
         PlayerPrefs.SetString("username", username);
         PlayerPrefs.SetInt("curr_game_num", 0);
+    }
+
+
+    // Misc
+    public void ExitToMenu()
+    {
+        SceneManager.LoadScene("Menu");
     }
 }

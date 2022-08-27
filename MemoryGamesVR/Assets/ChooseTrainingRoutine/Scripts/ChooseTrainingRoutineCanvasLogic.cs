@@ -5,12 +5,11 @@ using TMPro;
 
 public class ChooseTrainingRoutineCanvasLogic : MonoBehaviour
 {
-
     public Canvas ChooseGamesCanvas;
     public GameObject gameTemplate;
     public GameObject ErrorText;
     public List<GameObject> cognitiveGames = new List<GameObject>();
-    public GameController gameController = new GameController();
+    public GamesController gamesController = new GamesController();
     public int numberOfCognitiveGames = 8;
     public bool isOrderUnique = true;
 
@@ -19,12 +18,21 @@ public class ChooseTrainingRoutineCanvasLogic : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        int isAfterTraining = PlayerPrefs.GetInt("after_training");
 
-        game_values = GameObject.FindObjectsOfType<ConstantGameValues>()[0];
-        game_values.initAllValues();
+        if (isAfterTraining == 1) {
+            ChooseGamesCanvas.gameObject.SetActive(false);
+        }
+        else
+        {
+            ChooseGamesCanvas.gameObject.SetActive(true);
+            game_values = GameObject.FindObjectsOfType<ConstantGameValues>()[0];
+            game_values.initAllValues();
 
-        setSelect();
-        populateCognitiveGames();
+            setSelect();
+            populateCognitiveGames();
+        }
+
     }
 
     private void setSelect()
@@ -73,16 +81,10 @@ public class ChooseTrainingRoutineCanvasLogic : MonoBehaviour
         Destroy(gameTemplate);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     public void handleButton()
     {
-        validateGamesOrder();
-        isOrderUnique = gameController.areGamesUnique;
+        validateGames();
+        isOrderUnique = gamesController.isGamesOrderUnique;
         if (isOrderUnique)
         {
             ErrorText.SetActive(false);
@@ -92,30 +94,56 @@ public class ChooseTrainingRoutineCanvasLogic : MonoBehaviour
         }
     }
 
-    private void validateGamesOrder()
+    private void validateGames()
     {
-        List<GameValues> gamesWithValues = new List<GameValues>();
+        List<RawGame> rawGames = new List<RawGame>();
         foreach (GameObject game in cognitiveGames)
         {
-            GameValues gameValues = new GameValues();
+            RawGame rawGame = new RawGame();
             TMP_Dropdown select = findSelect(game);
             TMP_Text gameNameText = findText(game);
 
-            gameValues.id = "id";
-            gameValues.order = select.value;
-            gameValues.name = gameNameText.text;
-            gameValues.difficulty = 2;
+            rawGame.order = select.value;
+            rawGame.name = gameNameText.text;
+            rawGame.difficulty = 2;
 
-            if(gameValues.order != select.options.Count - 1)
+            if(rawGame.order != select.options.Count - 1)
             {
-                gamesWithValues.Add(gameValues);
+                rawGames.Add(rawGame);
             }
         }
 
-        gameController.setGames(gamesWithValues);
-        gameController.sortGames();
-        gameController.printGames();
-        gameController.checkIfOrdersAreUnique();
+        gamesController.setRawGames(rawGames);
+        gamesController.sortRawGames();
+        gamesController.checkIfOrderIsUnique();
+        if (gamesController.checkIfOrderIsUnique())
+        {
+            gamesController.prepareGamesList(game_values.gameNames);
+            gamesController.printGames("prepared");
+            ChooseGamesCanvas.gameObject.SetActive(false);
+            StartTraining();
+        }
+    }
+
+    public void StartTraining()
+    {
+        clearPrefs();
+        GameChoiceManager game_manager = GameObject.FindObjectsOfType<GameChoiceManager>()[0];
+        UserData user_data = GameObject.FindObjectsOfType<UserData>()[0];
+        user_data.LoadFile();
+        PlayerPrefs.SetInt("is_training", 1);
+        PlayerPrefs.SetInt("number_of_games_in_training", gamesController.preparedGamesList.Count);
+        int index = 0;
+        foreach (PreparedGame game in gamesController.preparedGamesList)
+        {
+            Debug.Log("List game values id" + game.id);
+            Debug.Log("List game values diff" + game.difficulty);
+            PlayerPrefs.SetInt("game_id_" + index.ToString(), game.id);
+            PlayerPrefs.SetInt("game_difficulty_" + index.ToString(), game.difficulty);
+            index++;
+        }
+        user_data.SaveFile();
+        game_manager.chooseNextGame();
     }
 
     public void handleSelectChange(TMP_Dropdown select)
@@ -140,59 +168,95 @@ public class ChooseTrainingRoutineCanvasLogic : MonoBehaviour
 
         return gameNameText;
     }
+
+    private void clearPrefs()
+    {
+        string username = PlayerPrefs.GetString("username");
+        PlayerPrefs.DeleteAll();
+        PlayerPrefs.SetString("username", username);
+        PlayerPrefs.SetInt("curr_game_num", 0);
+    }
 }
 
-public class GameValues
+public class RawGame
 {
     public string name;
-    public string id;
     public int difficulty;
     public int order;
 }
 
-public class GameController
+public class PreparedGame
 {
-    public List<GameValues> games = new List<GameValues>();
-    public bool areGamesUnique = true;
+    public int id;
+    public int difficulty;
+}
 
-    public void sortGames()
+public class GamesController
+{
+    public List<RawGame> rawGamesList = new List<RawGame>();
+    public List<PreparedGame> preparedGamesList = new List<PreparedGame>();
+    public bool isGamesOrderUnique = true;
+
+    public void prepareGamesList (List<string> allGames)
     {
-        games.Sort((x, y) => x.order.CompareTo(y.order));
+        foreach (RawGame game in rawGamesList)
+        {
+            PreparedGame preparedGame = new PreparedGame();
+            preparedGame.id = allGames.FindIndex(a => a.Contains(game.name));
+            preparedGame.difficulty = game.difficulty;
+            preparedGamesList.Add(preparedGame);
+        }
+    }
+    public void sortRawGames()
+    {
+        rawGamesList.Sort((x, y) => x.order.CompareTo(y.order));
     }
 
-    public void setGames(List<GameValues> newGames)
+    public void setRawGames(List<RawGame> newGames)
     {
-        games = newGames;
+        rawGamesList = newGames;
     }
 
-    public bool checkIfOrdersAreUnique()
+    public bool checkIfOrderIsUnique()
     {
-        foreach (GameValues game in games)
+        foreach (RawGame game in rawGamesList)
         {
             int currentOrder = game.order;
-            foreach (GameValues gameToCheck in games)
+            foreach (RawGame gameToCheck in rawGamesList)
             {
                 if(gameToCheck.name != game.name)
                 {
                     if(currentOrder == gameToCheck.order)
                     {
-                        areGamesUnique = false;
+                        isGamesOrderUnique = false;
                         return false;
                     }
                 }
             }
         }
 
-        areGamesUnique = true;
+        isGamesOrderUnique = true;
         return true;
     }
 
-    public void printGames()
+    public void printGames(string type)
     {
-        foreach (GameValues game in games)
+        if (type == "notPrepared")
         {
-            Debug.Log("Gra: " + game.name + " o id: " + game.id +  " jest w kolejnoœci: " + game.order + " i ma poziom trudnoœci: " + game.difficulty);
+            foreach (RawGame game in rawGamesList)
+            {
+                Debug.Log("Gra: " + game.name + " jest w kolejnoœci: " + game.order + " i ma poziom trudnoœci: " + game.difficulty);
+            }
         }
+
+        if (type == "prepared")
+        {
+            foreach (PreparedGame game in preparedGamesList)
+            {
+                Debug.Log("Gra: " + game.id + " ma poziom trudnoœci: " + game.difficulty);
+            }
+        }
+
     }
 }
 

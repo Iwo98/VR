@@ -100,7 +100,7 @@ GameObject:
   - component: {fileID: 1764314052581615198}
   - component: {fileID: 2178922510547491179}
   m_Layer: 0
-  m_Name: StartingCanvas
+  m_Name: CanvasTrainingRoutine
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -173,7 +173,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 0
+  m_PresetInfoIsWorld: 1
 --- !u!114 &2178922510547491179
 MonoBehaviour:
   m_ObjectHideFlags: 0

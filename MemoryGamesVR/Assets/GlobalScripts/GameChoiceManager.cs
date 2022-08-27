@@ -23,12 +23,13 @@ public class GameChoiceManager : MonoBehaviour
     public void chooseNextGame()
     {
         int currGameNum = PlayerPrefs.GetInt("curr_game_num");
+        int numberOfGamesInTraining = PlayerPrefs.GetInt("number_of_games_in_training");
         if (PlayerPrefs.GetInt("is_training") == 0 && currGameNum >= 1)
         {
             //SceneManager.LoadScene("Candles_Menu/Scenes/WyborGry");
             StartCoroutine(GameObject.FindObjectOfType<SceneFader>().FadeAndLoadScene(SceneFader.FadeDirection.In, "Candles_Menu/Scenes/WyborGry"));
         }
-        else if (PlayerPrefs.GetInt("is_training") == 1 && currGameNum >= game_values.trainingNumberOfGames)
+        else if (PlayerPrefs.GetInt("is_training") == 1 && currGameNum >= numberOfGamesInTraining)
         {
             PlayerPrefs.SetInt("after_training", 1);
             //SceneManager.LoadScene("Candles_Menu/Scenes/ModulTreningowy");

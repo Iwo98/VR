@@ -61,75 +61,9 @@ public class UserData : MonoBehaviour
             }
         }
 
-        public List<int> chooseTrainingGame()
-        {
-            int game_id = 0;
-            int difficulty = 1;
-            bool game_chosen = false;
-            // Game choice
-            if (trainingAvailableGames.Count == 0)
-            {
-                initTrainingGameList();
-            }
-
-            while (game_chosen == false)
-            {
-                int rand_id = Random.Range(0, trainingAvailableGames.Count);
-                game_id = trainingAvailableGames[rand_id];
-                if (game_id != lastChosenGame)
-                {
-                    trainingAvailableGames.RemoveAt(rand_id);
-                    game_chosen = true;
-                }
-            }
-
-            lastChosenGame = game_id;
-
-            //Difficulty choice
-            difficulty = getGameDifficulty(game_id);
-
-            List<int> game_vals = new List<int>();
-            game_vals.Add(game_id);
-            game_vals.Add(difficulty);
-            return game_vals;
-        }
-
         public void AddScore(int id, float score)
         {
             gameScores[id].currGameScores.Add(score);
-        }
-
-        public int getGameDifficulty(int id)  // Choose game difficulty based on results from last 5 games
-        {
-            List<float> game_scores = gameScores[id + 1].currGameScores;
-            int max_scores = game_scores.Count;
-            int num_scores = max_scores;
-            if (max_scores > 5)
-                max_scores = 5;
-            List<float> diff_scores = new List<float>() { 0.0f, 725.0f, 825.0f, 925.0f, 1025.0f };
-            for(int i = 0; i < max_scores; i++)
-            {
-                diff_scores[i] = game_scores[num_scores - i - 1];
-            }
-
-            List<float> diff_weights = new List<float>() { 1.0f, 0.8f, 0.6f, 0.4f, 0.2f };
-            float weights_sum = 3.0f;
-            float weighted_scores_sum = 0.0f;
-            for(int i = 0; i < diff_scores.Count; i++)
-            {
-                weighted_scores_sum += diff_scores[i] * diff_weights[i];
-            }
-            weighted_scores_sum /= weights_sum;
-
-            float first_diff_score = 750.0f;
-            float diff_score_change = 0.3f;
-
-            weighted_scores_sum -= first_diff_score;
-            weighted_scores_sum /= first_diff_score * diff_score_change;
-            weighted_scores_sum = Mathf.Clamp(weighted_scores_sum, -0.9f, 8.9f);
-            int difficulty = (int)Mathf.Ceil(weighted_scores_sum) + 1;
-
-            return difficulty;
         }
     }
 
