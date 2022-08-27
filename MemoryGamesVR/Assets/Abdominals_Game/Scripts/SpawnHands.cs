@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class SpawnHands : MonoBehaviour
 {
@@ -12,7 +13,7 @@ public class SpawnHands : MonoBehaviour
     private float timer;
    // private bool isUp = false;
 
-    //public Main myMain;
+    public MainAbdominals myMain;
 
     // Start is called before the first frame update
     void Start()
@@ -31,15 +32,13 @@ public class SpawnHands : MonoBehaviour
             rHand = Instantiate(rightHand, RPoint);
             lHand = Instantiate(leftHand, LPoint);
             rHand.transform.localPosition = Vector3.zero;
-            //rHand.transform.Rotate(transform.forward);
             lHand.transform.localPosition = Vector3.zero;
-            //lHand.transform.Rotate(transform.forward);
             timer -= beat;
+            myMain.spawnNumber += 2;
+            myMain.allText.text = (myMain.spawnNumber).ToString();
+
 
           
-
-            //myMain.spawnNumber += 1;
-            //myMain.allText.text = (myMain.spawnNumber).ToString();
         }
 
         timer += Time.deltaTime;
