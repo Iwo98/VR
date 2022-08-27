@@ -2,16 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 
 public class ChooseTrainingRoutineCanvasLogic : MonoBehaviour
 {
     public Canvas ChooseGamesCanvas;
-    public GameObject gameTemplate;
+    public GameObject gameTemplate, selectDifficulty;
     public GameObject ErrorText;
     public List<GameObject> cognitiveGames = new List<GameObject>();
     public GamesController gamesController = new GamesController();
     public int numberOfCognitiveGames = 8;
     public bool isOrderUnique = true;
+    public int difficulty;
 
     private ConstantGameValues game_values;
 
@@ -25,17 +27,19 @@ public class ChooseTrainingRoutineCanvasLogic : MonoBehaviour
         }
         else
         {
+       
             ChooseGamesCanvas.gameObject.SetActive(true);
             game_values = GameObject.FindObjectsOfType<ConstantGameValues>()[0];
             game_values.initAllValues();
 
-            setSelect();
+            setOrderSelect();
+            setDifficultySelect();
             populateCognitiveGames();
         }
 
     }
 
-    private void setSelect()
+    private void setOrderSelect()
     {
         TMP_Dropdown select = findSelect(gameTemplate);
 
@@ -56,6 +60,42 @@ public class ChooseTrainingRoutineCanvasLogic : MonoBehaviour
         }
     }
 
+    private void setDifficultySelect()
+    {
+        TMP_Dropdown select = findSelect(selectDifficulty);
+
+        select.options.Clear();
+
+        List<string> selectOptions = new List<string>();
+
+        for (int i = 1; i <= 10; i++)
+        {
+            selectOptions.Add((i).ToString());
+        }
+
+        foreach (var option in selectOptions)
+        {
+            select.options.Add(new TMP_Dropdown.OptionData() { text = option });
+        }
+
+
+        // Load difficulty from users settings if possibles
+        UserData user_data = GameObject.FindObjectsOfType<UserData>()[0];
+        int load_result = user_data.LoadFile();
+        if (load_result == 0) // Load succeced
+        {
+            select.value = user_data.data.lastChosenDifficulty - 1;
+        }
+
+        else
+        {
+            handleDifficultySelectChange(select);
+        }
+        
+
+        select.onValueChanged.AddListener(delegate { handleDifficultySelectChange(select); });
+    }
+
 
 
     public void populateCognitiveGames()
@@ -70,8 +110,10 @@ public class ChooseTrainingRoutineCanvasLogic : MonoBehaviour
 
             TMP_Dropdown select = findSelect(game);
             TMP_Text gameNameText = findText(game);
+            Image gameImage = findImage(game);
 
             gameNameText.text = gameName;
+            gameImage.sprite = Resources.Load<Sprite>(game_values.gameIcons2DPaths[index]);
             select.onValueChanged.AddListener(delegate { handleSelectChange(select); });
             select.value = select.options.Count - 1;
 
@@ -88,6 +130,8 @@ public class ChooseTrainingRoutineCanvasLogic : MonoBehaviour
         if (isOrderUnique)
         {
             ErrorText.SetActive(false);
+            saveUserDifficultyData();
+            StartTraining();
         } else
         {
             ErrorText.SetActive(true);
@@ -105,7 +149,7 @@ public class ChooseTrainingRoutineCanvasLogic : MonoBehaviour
 
             rawGame.order = select.value;
             rawGame.name = gameNameText.text;
-            rawGame.difficulty = 2;
+            rawGame.difficulty = difficulty;
 
             if(rawGame.order != select.options.Count - 1)
             {
@@ -119,9 +163,7 @@ public class ChooseTrainingRoutineCanvasLogic : MonoBehaviour
         if (gamesController.checkIfOrderIsUnique())
         {
             gamesController.prepareGamesList(game_values.gameNames);
-            //gamesController.printGames("prepared");
             ChooseGamesCanvas.gameObject.SetActive(false);
-            StartTraining();
         }
     }
 
@@ -131,6 +173,7 @@ public class ChooseTrainingRoutineCanvasLogic : MonoBehaviour
         GameChoiceManager game_manager = GameObject.FindObjectsOfType<GameChoiceManager>()[0];
         UserData user_data = GameObject.FindObjectsOfType<UserData>()[0];
         user_data.LoadFile();
+
         PlayerPrefs.SetInt("is_training", 1);
         PlayerPrefs.SetInt("number_of_games_in_training", gamesController.preparedGamesList.Count);
         int index = 0;
@@ -140,13 +183,27 @@ public class ChooseTrainingRoutineCanvasLogic : MonoBehaviour
             PlayerPrefs.SetInt("game_difficulty_" + index.ToString(), game.difficulty);
             index++;
         }
+
         user_data.SaveFile();
         game_manager.chooseNextGame();
+    }
+
+    public void saveUserDifficultyData()
+    {
+        UserData user_data = GameObject.FindObjectsOfType<UserData>()[0];
+        user_data.LoadFile();
+        user_data.data.lastChosenDifficulty = difficulty;
+        user_data.SaveFile();
     }
 
     public void handleSelectChange(TMP_Dropdown select)
     {
         int index = select.value;
+    }
+
+    public void handleDifficultySelectChange(TMP_Dropdown select)
+    {
+        difficulty = select.value + 1;
     }
 
     private TMP_Dropdown findSelect(GameObject gameObject)
@@ -165,6 +222,15 @@ public class ChooseTrainingRoutineCanvasLogic : MonoBehaviour
         TMP_Text gameNameText = gameNameComponent.GetComponent<TMP_Text>();
 
         return gameNameText;
+    }
+
+    private Image findImage(GameObject gameObject)
+    {
+        Transform gameTransform = gameObject.GetComponent<Transform>();
+        Transform gameImageComponent = gameTransform.Find("GameImage");
+        Image gameImage = gameImageComponent.GetComponent<Image>();
+
+        return gameImage;
     }
 
     private void clearPrefs()

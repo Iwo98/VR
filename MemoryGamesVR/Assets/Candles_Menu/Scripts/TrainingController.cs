@@ -9,11 +9,10 @@ public class TrainingController : MonoBehaviour
 {
     private ConstantGameValues game_values;
     public GameObject trainingResultsCanvas;
-    public GameObject[] trainingResultsGameId;
-    public GameObject[] trainingResultsGameText;
-    public GameObject[] trainingResultsGameImg;
+    public GameObject gameResultTemplate;
     public GameObject trainingResultsSumText;
     public GameObject trainingPlotsCanvas;
+    public TextMeshProUGUI difficultyText;
 
     // Start is called before the first frame update
     void Start()
@@ -34,31 +33,37 @@ public class TrainingController : MonoBehaviour
         GameChoiceManager game_manager = GameObject.FindObjectsOfType<GameChoiceManager>()[0];
         UserData user_data = GameObject.FindObjectsOfType<UserData>()[0];
         user_data.LoadFile();
-        user_data.data.lastChosenGame = -1;
+        int numberOfGamesInTraining = PlayerPrefs.GetInt("number_of_games_in_training");
         float total_score = 0.0f;
-        for (int i = 0; i < 8; i++)
+        int difficulty = 0;
+
+        int index = 0;
+        for (int i = 0; i < numberOfGamesInTraining; i++)
         {
-            if (i < game_values.trainingNumberOfGames)
-            {
-                int game_id = PlayerPrefs.GetInt("game_id_" + i.ToString());
-                string game_name = game_values.gameNames[game_id];
-                int game_diff = PlayerPrefs.GetInt("game_difficulty_" + i.ToString());
-                float game_score = PlayerPrefs.GetFloat("game_score_" + i.ToString());
-                total_score += game_score;
-                trainingResultsGameText[i].GetComponent<TextMeshProUGUI>().text = game_name + "(" + game_diff.ToString() + "): " + game_score.ToString();
-                trainingResultsGameImg[i].GetComponent<Image>().sprite = Resources.Load<Sprite>(game_values.gameIcons2DPaths[game_id]);
-                trainingResultsGameId[i].SetActive(true);
-                trainingResultsGameText[i].SetActive(true);
-                trainingResultsGameImg[i].SetActive(true);
-                user_data.data.AddScore(game_id + 1, game_score);
-            }
-            else
-            {
-                trainingResultsGameId[i].SetActive(false);
-                trainingResultsGameText[i].SetActive(false);
-                trainingResultsGameImg[i].SetActive(false);
-            }
+            int game_id = PlayerPrefs.GetInt("game_id_" + i.ToString());
+            string game_name = game_values.gameNames[game_id];
+            difficulty = PlayerPrefs.GetInt("game_difficulty_" + i.ToString());
+            float game_score = PlayerPrefs.GetFloat("game_score_" + i.ToString());
+            total_score += game_score;
+
+            GameObject game;
+            game = Instantiate(gameResultTemplate, trainingResultsCanvas.transform, true);
+            game.transform.SetParent(trainingResultsCanvas.transform);
+            game.transform.Translate(0, -0.17f * index, 0);
+
+            TMP_Text gameName = findText(game, "TextName");
+            TMP_Text gameId = findText(game, "TextId");
+            Image gameImage = findImage(game);
+
+            gameName.text = game_name + ": " + game_score.ToString();
+            gameId.text = (index + 1).ToString() + ".";
+            gameImage.sprite = Resources.Load<Sprite>(game_values.gameIcons2DPaths[game_id]);
+
+            index++;
         }
+        Destroy(gameResultTemplate);
+
+        difficultyText.text = "Poziom Trudności: " + difficulty.ToString();
         trainingResultsSumText.GetComponent<TextMeshProUGUI>().text = "Wynik treningu:\n" + total_score.ToString();
         trainingResultsCanvas.SetActive(true);
         user_data.data.AddScore(0, total_score);  // Total score
@@ -94,5 +99,23 @@ public class TrainingController : MonoBehaviour
     public void ExitToMenu()
     {
         SceneManager.LoadScene("Menu");
+    }
+
+    private TMP_Text findText(GameObject gameObject, string gameObjectName)
+    {
+        Transform gameTransform = gameObject.GetComponent<Transform>();
+        Transform gameNameComponent = gameTransform.Find(gameObjectName);
+        TMP_Text gameNameText = gameNameComponent.GetComponent<TMP_Text>();
+
+        return gameNameText;
+    }
+
+    private Image findImage(GameObject gameObject)
+    {
+        Transform gameTransform = gameObject.GetComponent<Transform>();
+        Transform gameImageComponent = gameTransform.Find("ImageGame");
+        Image gameImage = gameImageComponent.GetComponent<Image>();
+
+        return gameImage;
     }
 }

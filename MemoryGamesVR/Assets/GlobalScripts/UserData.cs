@@ -13,8 +13,7 @@ public class UserData : MonoBehaviour
         public string name = "";
         public int avatar_id = 0;
         public List<Scores> gameScores;
-        public List<int> trainingAvailableGames;
-        public int lastChosenGame;
+        public int lastChosenDifficulty;
 
         [System.Serializable]
         public class Scores
@@ -33,9 +32,7 @@ public class UserData : MonoBehaviour
         public GameData(string userName)
         {
             name = userName;
-            lastChosenGame = -1;
             avatar_id = 0;
-            trainingAvailableGames = new List<int>();
             initScoreLists();
         }
 
@@ -48,16 +45,6 @@ public class UserData : MonoBehaviour
             for(int i = 0; i < game_values.numberOfGames; i++)
             {
                 gameScores.Add(new Scores(game_values.gameIdNames[i]));
-            }
-        }
-
-        private void initTrainingGameList()
-        {
-            ConstantGameValues game_values = GameObject.FindObjectsOfType<ConstantGameValues>()[0];
-            trainingAvailableGames = new List<int>();
-            for(int i = 0; i < game_values.numberOfGames; i++)
-            {
-                trainingAvailableGames.Add(i);
             }
         }
 

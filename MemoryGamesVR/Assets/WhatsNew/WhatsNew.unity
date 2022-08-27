@@ -934,6 +934,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5163226852264726353, guid: ac570ef78cc23ae4a86d9a116fbde213, type: 3}
+      propertyPath: m_text
+      value: Zamknij
+      objectReference: {fileID: 0}
     - target: {fileID: 5163226852834855890, guid: ac570ef78cc23ae4a86d9a116fbde213, type: 3}
       propertyPath: m_text
       value: x/y
@@ -10795,8 +10799,6 @@ MonoBehaviour:
     name: 
     avatar_id: 0
     gameScores: []
-    trainingAvailableGames: 
-    lastChosenGame: 0
 --- !u!114 &1596493814
 MonoBehaviour:
   m_ObjectHideFlags: 0
