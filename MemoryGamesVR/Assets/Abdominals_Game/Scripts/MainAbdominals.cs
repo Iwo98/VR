@@ -1,4 +1,4 @@
-using System.Collections;
+          using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
@@ -29,10 +29,11 @@ public class MainAbdominals : MonoBehaviour
 
     // Start is called before the first frame update
     void Start()
-    { 
+    {   
         spawnHands = Spawner.GetComponent<SpawnHands>();
         handColliderR = new HandCollider();
         handColliderL = HandL.GetComponent<HandCollider>();
+        handColliderL.ResetPoints();
     }
 
     // Update is called once per frame

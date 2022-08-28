@@ -13,7 +13,7 @@ public class HandCollider : MonoBehaviour
         if (collider.gameObject.tag == "HandPoint")
         {
             points += 1;
-            Debug.Log(points);
+            //Debug.Log(points);
             myMain.gainedText.text = (points).ToString();
             myMain.score = points;
         }
@@ -25,5 +25,8 @@ public class HandCollider : MonoBehaviour
         }
             
     }
-
+    public void ResetPoints()
+    {
+        points = 0;
+    }
 }

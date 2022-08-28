@@ -1986,8 +1986,8 @@ MonoBehaviour:
   areNewItemsShown: 0
   gameState: 1
   score: 0
-  timeToFinishGame: 5
-  timeToSpawnItems: 5
+  timeToFinishGame: 20
+  timeToSpawnItems: 10
   gameLevel: 1
   canvasScore: {fileID: 175427272}
   rememberTimeBars: {fileID: 1116807543}
@@ -10799,6 +10799,7 @@ MonoBehaviour:
     name: 
     avatar_id: 0
     gameScores: []
+    lastChosenDifficulty: 0
 --- !u!114 &1596493814
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11605,6 +11606,10 @@ PrefabInstance:
       propertyPath: m_TrackingOriginMode
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 755698745125788301, guid: 02f725da32a8ec94da1dd599095f3ec1, type: 3}
+      propertyPath: m_RequestedTrackingOriginMode
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 755698745125788302, guid: 02f725da32a8ec94da1dd599095f3ec1, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -11615,7 +11620,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 755698745125788302, guid: 02f725da32a8ec94da1dd599095f3ec1, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.099
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 755698745125788302, guid: 02f725da32a8ec94da1dd599095f3ec1, type: 3}
       propertyPath: m_LocalPosition.z

@@ -5,7 +5,7 @@ using UnityEngine;
 public class BallCollide : MonoBehaviour
 {
     public float speed = 1f;
-    public float isLeft = -1f;
+    public float isLeft = 1f;
     public GameObject gameController;
 
     private MainGame mainGame;
