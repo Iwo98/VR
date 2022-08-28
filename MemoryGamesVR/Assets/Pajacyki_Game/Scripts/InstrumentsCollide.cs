@@ -15,7 +15,7 @@ public class InstrumentsCollide : MonoBehaviour
 
     public AudioSource InstrumentSound;
 
-    private void Awake()
+    private void Start()
     {
         mainGame = MainGameObject.GetComponent<MainGame>();
         deskColide = Desk.GetComponent<DeskColide>();

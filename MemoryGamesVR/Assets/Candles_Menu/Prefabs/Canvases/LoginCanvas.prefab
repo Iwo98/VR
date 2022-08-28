@@ -10810,7 +10810,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 0
+  m_PresetInfoIsWorld: 1
 --- !u!114 &7481331121673277794
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10841,6 +10841,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   loginCanvas: {fileID: 7481331121673277820}
+  doorButtonsCanvas: {fileID: 0}
   loginWindow: {fileID: 8569768512783808736}
   newAccountWindow: {fileID: 4207325124889961947}
   accountWindow: {fileID: 6552978682234200756}
