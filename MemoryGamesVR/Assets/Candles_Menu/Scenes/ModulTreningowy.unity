@@ -1387,6 +1387,8 @@ GameObject:
   - component: {fileID: 390975262}
   - component: {fileID: 390975264}
   - component: {fileID: 390975267}
+  - component: {fileID: 390975269}
+  - component: {fileID: 390975268}
   m_Layer: 0
   m_Name: TrainingController
   m_TagString: Untagged
@@ -1488,6 +1490,35 @@ MonoBehaviour:
   numberOfCognitiveGames: 8
   isOrderUnique: 1
   difficulty: 0
+--- !u!114 &390975268
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 390975261}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc80b796940be2f4b8b74939b7e7919e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  xr_camera: {fileID: 1220367803}
+  moveSpeed: 25
+--- !u!114 &390975269
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 390975261}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2489447ebbf8e054db579519c2fb258b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  xr_camera: {fileID: 1220367803}
+  speedH: 1.5
+  speedV: 1.5
 --- !u!1001 &411013829
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10047,6 +10078,11 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 2317576605586290934, guid: 5adaedd4c0081614da171fecdf6bbd37, type: 3}
   m_PrefabInstance: {fileID: 1198671729}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1220367803 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2477321169392890288, guid: d9d2bfa410febf94a8af05b6fc13de7f, type: 3}
+  m_PrefabInstance: {fileID: 2844501692589849492}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1252002012
 GameObject:
@@ -23148,12 +23184,40 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6758405415500595403, guid: 51c49063bb2ff1848a16070827d7456c, type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 367189939422206180}
     - target: {fileID: 8143338505919737953, guid: 51c49063bb2ff1848a16070827d7456c, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 390975267}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 51c49063bb2ff1848a16070827d7456c, type: 3}
+--- !u!1 &1363724181225646699 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2426450804430830712, guid: 51c49063bb2ff1848a16070827d7456c, type: 3}
+  m_PrefabInstance: {fileID: 1363724181225646698}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1363724181225646700
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1363724181225646699}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7951c64acb0fa62458bf30a60089fe2d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IgnoreReversedGraphics: 0
+  m_CheckFor2DOcclusion: 0
+  m_CheckFor3DOcclusion: 0
+  m_BlockingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RaycastTriggerInteraction: 1
 --- !u!4 &2483708669474806960
 Transform:
   m_ObjectHideFlags: 0

@@ -68,7 +68,7 @@ public class ChooseTrainingRoutineCanvasLogic : MonoBehaviour
 
         List<string> selectOptions = new List<string>();
 
-        for (int i = 1; i <= 10; i++)
+        for (int i = 1; i <= game_values.maxDifficulty; i++)
         {
             selectOptions.Add((i).ToString());
         }

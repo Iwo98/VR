@@ -13,6 +13,7 @@ public class MainGame : MonoBehaviour
     public TextMeshProUGUI timeText;
     public Canvas StartingCanvas;
     public Canvas EndCanvas;
+    public GameObject rHand, lHand, rInstrument, lInstrument;
 
     public Transform SpawnPointLeft;
     public Transform SpawnPointRight;
@@ -42,9 +43,15 @@ public class MainGame : MonoBehaviour
         if (phase == 1)
         {
             StartingCanvas.gameObject.SetActive(true);
+            rHand.SetActive(true);
+            lHand.SetActive(true);
         }
         else if (phase == 2)
         {
+            rHand.SetActive(false);
+            lHand.SetActive(false);
+            rInstrument.SetActive(true);
+            lInstrument.SetActive(true);
             currTime += Time.deltaTime;
             timeText.text = Math.Round(currTime).ToString();
 
@@ -70,6 +77,10 @@ public class MainGame : MonoBehaviour
         }
         else if (phase == 3)
         {
+            rInstrument.SetActive(false);
+            lInstrument.SetActive(false);
+            rHand.SetActive(true);
+            lHand.SetActive(true);
             resultText.text = result.ToString();
             EndCanvas.gameObject.SetActive(true);
         }
@@ -83,6 +94,8 @@ public class MainGame : MonoBehaviour
 
     public void ClickEndButton()
     {
+        GameChoiceManager game_manager = GameObject.FindObjectsOfType<GameChoiceManager>()[0];
+        game_manager.endGameManagement(result);
         Debug.Log("Koniec");
     }
 }
