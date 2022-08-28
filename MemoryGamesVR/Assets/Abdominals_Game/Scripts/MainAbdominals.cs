@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using System;
 
 public class MainAbdominals : MonoBehaviour
 {
@@ -10,13 +11,14 @@ public class MainAbdominals : MonoBehaviour
     public GameObject HandL;
 
     public Canvas StartMenuCanvas;
-    //public Canvas EndMenuCanvas;
+    public Canvas EndMenuCanvas;
     public int score = 0;
     public int phase = 0;
     public float maxTime;
     public int spawnNumber = 0;
     public TextMeshProUGUI allText;
     public TextMeshProUGUI gainedText;
+    public TextMeshProUGUI finalText;
 
     private SpawnHands spawnHands;
     private HandCollider handColliderR;
@@ -29,7 +31,7 @@ public class MainAbdominals : MonoBehaviour
     void Start()
     { 
         spawnHands = Spawner.GetComponent<SpawnHands>();
-        handColliderR = HandR.GetComponent<HandCollider>();
+        handColliderR = new HandCollider();
         handColliderL = HandL.GetComponent<HandCollider>();
     }
 
@@ -40,7 +42,7 @@ public class MainAbdominals : MonoBehaviour
         { 
             spawnHands.Spawn();
             currTime += Time.deltaTime;
-            gainedText.text = (score).ToString();
+
             if (currTime > maxTime)
             {
                 phase = 2;
@@ -52,12 +54,14 @@ public class MainAbdominals : MonoBehaviour
             currTime += Time.deltaTime;
             if (currTime > 15)
             {                
-                //score = handColliderR.points + handColliderL.points;
-                //Debug.Log(score);
-                Debug.Log(spawnNumber);
                 phase = 3;
             }
 
+        }else if (phase == 3)
+        {   
+            EndMenuCanvas.gameObject.SetActive(true);
+            finalText.text = (Math.Round((score * 100.0 / spawnNumber))).ToString() + "%";
+            phase = 4;
         }
     }
     

@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using System;
+
 
 public class Main : MonoBehaviour
 {
@@ -9,13 +11,14 @@ public class Main : MonoBehaviour
     public GameObject Head;
 
     public Canvas StartMenuCanvas;
-    //public Canvas EndMenuCanvas;
+    public Canvas EndMenuCanvas;
     public int score = 0;
     public int phase = 0;
     public float maxTime;
     public int spawnNumber = 0;
     public TextMeshProUGUI allText;
     public TextMeshProUGUI gainedText;
+    public TextMeshProUGUI finalText;
 
     private SpawnItems spawnItems;
     private CubeCollider cubeCollider;
@@ -54,6 +57,12 @@ public class Main : MonoBehaviour
                 phase = 3;
             }
 
+        }
+        else if (phase == 3)
+        {
+            EndMenuCanvas.gameObject.SetActive(true);
+            finalText.text = (Math.Round((score * 100.0 / spawnNumber))).ToString() + "%";
+            phase = 4;
         }
     }
 

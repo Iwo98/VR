@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class HandCollider : MonoBehaviour
 {
-    public int points = 0;
+    public static int points = 0;
     public int allPoints = 0;
     public MainAbdominals myMain;
 
@@ -12,17 +12,10 @@ public class HandCollider : MonoBehaviour
     {
         if (collider.gameObject.tag == "HandPoint")
         {
-           
-            //ScoreSound.Play();
-            //Destroy(this.gameObject, 1.0f);
-            //AddPoint();
-
-            Debug.Log("Buyyyyyya");
-            myMain.score += 1;
+            points += 1;
             Debug.Log(points);
-            //allPoints += this.points;
-            //Debug.Log(points);
-            //myMain.gainedText.text = (allPoints).ToString();
+            myMain.gainedText.text = (points).ToString();
+            myMain.score = points;
         }
 
         if (collider.gameObject.tag == "Hand" && this.tag == "HandPoint" )
@@ -32,4 +25,5 @@ public class HandCollider : MonoBehaviour
         }
             
     }
+
 }
