@@ -69,7 +69,7 @@ public class HandPresenceMichal : MonoBehaviour
                 spawnedController = Instantiate(controllersPrefabs[0], transform);
                 Debug.Log("Did not found corresponding controller");
             }
-            spawnedController.GetComponentInChildren<MeshCollider>().convex = true;
+            //spawnedController.GetComponentInChildren<MeshCollider>().convex = true;
             Destroy(spawnedController.GetComponentInChildren<MeshCollider>());
             if (handPrefab)
             {
