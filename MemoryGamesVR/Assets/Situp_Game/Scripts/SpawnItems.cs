@@ -38,6 +38,7 @@ public class SpawnItems : MonoBehaviour
             timer -= beat;
             isUp = !isUp;
             myMain.spawnNumber += 1;
+            myMain.allText.text = (myMain.spawnNumber).ToString();
         }
 
         timer += Time.deltaTime;
