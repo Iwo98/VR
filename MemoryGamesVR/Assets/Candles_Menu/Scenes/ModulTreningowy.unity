@@ -1520,8 +1520,6 @@ MonoBehaviour:
   exerciseOrderOptionsTemplate: {fileID: 1734774222}
   cognitiveGamesOrder: []
   exerciseGamesOrder: []
-  numberOfCognitiveGames: 8
-  isOrderUnique: 1
   difficulty: 0
 --- !u!1001 &411013829
 PrefabInstance:
@@ -8222,7 +8220,7 @@ PrefabInstance:
       objectReference: {fileID: 390975270}
     - target: {fileID: 2202167866381597602, guid: 301f5e7e16c467b409bb42ab063c7a57, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: handleButton
+      value: handlePlayButton
       objectReference: {fileID: 0}
     - target: {fileID: 2202167866381597602, guid: 301f5e7e16c467b409bb42ab063c7a57, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
@@ -22518,7 +22516,7 @@ PrefabInstance:
       objectReference: {fileID: 390975270}
     - target: {fileID: 2202167866381597602, guid: 301f5e7e16c467b409bb42ab063c7a57, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: handleButton
+      value: handleNextButton
       objectReference: {fileID: 0}
     - target: {fileID: 2202167866381597602, guid: 301f5e7e16c467b409bb42ab063c7a57, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
