@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using TMPro;
+using static System.Math;
 
 namespace Chests
 {
@@ -14,11 +16,19 @@ namespace Chests
         public Chest[] chests;
         public int difficulty = 0;
         public Vector3 heightOffset;
+        public int phase = 0;
+        public Canvas StartMenuCanvas;
+        public Canvas EndMenuCanvas;
+        public TextMeshProUGUI finalText;
+        public int score = 0;
+
+        private float dif2;
         private LevelDifficulty[] difficulties;
         private List<Object> spawnedFindings;
         private List<int> spawnedFindingsIds;
         private int correctAnswer;
         private float timePassed = 0.0f;
+
 
         // Start is called before the first frame update
         void Start()
@@ -49,32 +59,57 @@ namespace Chests
                     upperFindingsRange = 6
                 },
             };
-
+            
+            if (PlayerPrefs.HasKey("curr_game_difficulty"))
+            {
+                difficulty = PlayerPrefs.GetInt("curr_game_difficulty");
+                if (difficulty == 0)
+                {
+                    difficulty = 1;
+                }
+                dif2 = difficulty / 2;
+                difficulty = (int)Ceiling(dif2);
+            }
             Time.timeScale = 0.0f;
             
         }
 
         // Update is called once per frame
         void Update()
-        {
-            if (Time.timeScale == 0.0f)
+        {   if (phase == 1)
             {
-                return;
+                SetLevelDifficulty(difficulty);
+                phase = 2;
             }
-            
-            if (chests[0].IsClosed())
-            {
-                GenerateFindings();
-            }
+            else if (phase == 2) { 
+                if (Time.timeScale == 0.0f)
+                {
+                    return;
+                }
+                
+                if (chests[0].IsClosed())
+                {
+                    GenerateFindings();
+                }
 
-            timePassed += Time.deltaTime;
-            string seconds = (int)(30 - timePassed) >= 10 ? ((int)(30 - timePassed)).ToString() : "0" + ((int)(30 - timePassed)).ToString();
-            timeSign.SetTime("00:" + seconds);
-            if (timePassed >= 30)
+                timePassed += Time.deltaTime;
+                string seconds = (int)(30 - timePassed) >= 10 ? ((int)(30 - timePassed)).ToString() : "0" + ((int)(30 - timePassed)).ToString();
+                timeSign.SetTime("00:" + seconds);
+                if (timePassed >= 30)
+                {
+                    // GAME OVER
+                    //Debug.Log("GAME OVER");
+                    phase = 3;
+                }
+            } else if (phase == 3)
             {
-                // GAME OVER
-                Debug.Log("GAME OVER");
+                EndMenuCanvas.gameObject.SetActive(true);
+                score = (int)Round(scoreSign.correct * 100.0 / scoreSign.total);
+                finalText.text = (score).ToString() + "%";
+                phase = 4;
             }
+                
+
         }
 
         public void SelectChest(char chestId)

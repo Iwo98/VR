@@ -38,7 +38,7 @@ public class ConstantGameValues : MonoBehaviour
 
     private void initVals()
     {
-        numberOfGames = 10;
+        numberOfGames = 11;
         cognitiveTrainingNumberOfGames = 8;
         exerciseTrainingNumberOfGames = 8;
         trainingNumberOfGames = 16;
@@ -58,6 +58,8 @@ public class ConstantGameValues : MonoBehaviour
         gameIdNames.Add("JumpingJackGame");
         gameIdNames.Add("AbdominalsGame");
         gameIdNames.Add("SitUpGame");
+        gameIdNames.Add("Chests");
+
     }
 
     private void initNames()
@@ -73,6 +75,7 @@ public class ConstantGameValues : MonoBehaviour
         gameNames.Add("Pajacyki");
         gameNames.Add("Brzuszki");
         gameNames.Add("Przysiady");
+        gameNames.Add("Skrzynie");
     }
 
     private void initCognitiveGameNames()
@@ -85,6 +88,7 @@ public class ConstantGameValues : MonoBehaviour
         cognitiveGameNames.Add("Co doszło?");
         cognitiveGameNames.Add("Ucieczka z lochu");
         cognitiveGameNames.Add("Znikające przedmioty");
+        cognitiveGameNames.Add("Skrzynie");
     }
 
     private void initExerciseGameNames()
@@ -108,6 +112,7 @@ public class ConstantGameValues : MonoBehaviour
         gameScenes.Add("Pajacyki_Game/Scenes/Pajacyki_Game");
         gameScenes.Add("Abdominals_Game/Scenes/Abdominals_Game");
         gameScenes.Add("Situp_Game/Scenes/Situp_Game");
+        gameScenes.Add("BalonySejfSkrzynieSiatkaTerenu/Michal/Scenes/Chests");
     }
 
     private void initGameIcons2D()
@@ -123,6 +128,7 @@ public class ConstantGameValues : MonoBehaviour
         gameIcons2DPaths.Add("Sprites/GameIcons/cymbals");
         gameIcons2DPaths.Add("Sprites/GameIcons/sh");
         gameIcons2DPaths.Add("Sprites/GameIcons/crown");
+        gameIcons2DPaths.Add("Sprites/GameIcons/chest");
     }
 
     public void initAvatars()
@@ -138,5 +144,6 @@ public class ConstantGameValues : MonoBehaviour
         avatarSpritesPaths.Add("Sprites/Avatars/avatar8");
         avatarSpritesPaths.Add("Sprites/Avatars/avatar9");
         avatarSpritesPaths.Add("Sprites/Avatars/avatar10");
+        avatarSpritesPaths.Add("Sprites/Avatars/avatar11");
     }
 }

@@ -23,7 +23,7 @@ RenderSettings:
   m_AmbientSkyColor: {r: 0.212, g: 0.227, b: 0.259, a: 1}
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
-  m_AmbientIntensity: 1
+  m_AmbientIntensity: 0
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
   m_SkyboxMaterial: {fileID: 2100000, guid: d9dca9ae1786c394f9e79c637aa9a7bf, type: 2}
@@ -3693,12 +3693,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   numberOfGames: 0
   trainingNumberOfGames: 0
+  cognitiveTrainingNumberOfGames: 0
+  exerciseTrainingNumberOfGames: 0
   maxDifficulty: 0
   gameIdNames: []
   gameNames: []
   gameScenes: []
   gameIcons2DPaths: []
   avatarSpritesPaths: []
+  cognitiveGameNames: []
+  exerciseGameNames: []
 --- !u!4 &449080759
 Transform:
   m_ObjectHideFlags: 0
@@ -11569,13 +11573,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1484905277}
-  m_LocalRotation: {x: 0.30313346, y: -0, z: -0, w: 0.95294815}
+  m_LocalRotation: {x: 0.5220026, y: -0.06587209, z: -0.13751975, w: 0.8392035}
   m_LocalPosition: {x: 0, y: 10.84, z: -2.54}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1518944933}
   m_RootOrder: 7
-  m_LocalEulerAnglesHint: {x: 35.292, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 59.094, y: -29.655, z: -35.681}
 --- !u!108 &1484905279
 Light:
   m_ObjectHideFlags: 0
@@ -11588,13 +11592,13 @@ Light:
   m_Type: 1
   m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 1
+  m_Intensity: 3
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 0
+    m_Type: 2
     m_Resolution: -1
     m_CustomResolution: -1
     m_Strength: 1
@@ -11630,7 +11634,7 @@ Light:
   m_Lightmapping: 4
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
-  m_BounceIntensity: 1
+  m_BounceIntensity: 2
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
