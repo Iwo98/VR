@@ -8,6 +8,7 @@ public class ConstantGameValues : MonoBehaviour
     public int trainingNumberOfGames;
     public int cognitiveTrainingNumberOfGames;
     public int exerciseTrainingNumberOfGames;
+    public int warmUpNumberOfGames;
     public int maxDifficulty;
     public List<string> gameIdNames;
     public List<string> gameNames;
@@ -41,7 +42,8 @@ public class ConstantGameValues : MonoBehaviour
         numberOfGames = 10;
         cognitiveTrainingNumberOfGames = 8;
         exerciseTrainingNumberOfGames = 8;
-        trainingNumberOfGames = 16;
+        warmUpNumberOfGames = 2;
+        trainingNumberOfGames = 1;
         maxDifficulty = 10;
     }
 

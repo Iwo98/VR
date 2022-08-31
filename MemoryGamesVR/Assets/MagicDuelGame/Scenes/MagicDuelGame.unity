@@ -2661,6 +2661,8 @@ GameObject:
   - component: {fileID: 190811678}
   - component: {fileID: 190811675}
   - component: {fileID: 190811679}
+  - component: {fileID: 190811681}
+  - component: {fileID: 190811680}
   m_Layer: 0
   m_Name: GameChoiceController
   m_TagString: Untagged
@@ -2708,12 +2710,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   numberOfGames: 3
   trainingNumberOfGames: 3
+  cognitiveTrainingNumberOfGames: 0
+  exerciseTrainingNumberOfGames: 0
+  warmUpNumberOfGames: 0
   maxDifficulty: 10
   gameIdNames: []
   gameNames: []
   gameScenes: []
   gameIcons2DPaths: []
   avatarSpritesPaths: []
+  cognitiveGameNames: []
+  exerciseGameNames: []
 --- !u!114 &190811678
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2740,6 +2747,35 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9556e686e9b946244ac9e99ce73211d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &190811680
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 190811674}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc80b796940be2f4b8b74939b7e7919e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  xr_camera: {fileID: 595613211}
+  moveSpeed: 25
+--- !u!114 &190811681
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 190811674}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2489447ebbf8e054db579519c2fb258b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  xr_camera: {fileID: 595613211}
+  speedH: 1.5
+  speedV: 1.5
 --- !u!1001 &191612815
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5179,7 +5215,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   difficulty: 1
-  actionPhaseTime: 30
+  actionPhaseTime: 5
   isRightHand: 1
   magicSphereTemplate: {fileID: 373031428071018519, guid: 7d242759c50289c46ab008d6218713cb, type: 3}
   sphereConnectorTemplate: {fileID: 1663292253683395556, guid: beb404e13bdb5134db68beb0cbb6fc6f, type: 3}
@@ -8349,6 +8385,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &595613211 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2477321169392890288, guid: d9d2bfa410febf94a8af05b6fc13de7f, type: 3}
+  m_PrefabInstance: {fileID: 595613205}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &599320128
 PrefabInstance:
   m_ObjectHideFlags: 0

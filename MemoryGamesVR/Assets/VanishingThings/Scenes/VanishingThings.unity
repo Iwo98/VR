@@ -10577,7 +10577,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69913166b2772b84f859346bbd3f594d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  time_remaining: 70
+  time_remaining: 5
   canvasScore: {fileID: 532992198}
   timers: {fileID: 1379048170}
   scoreText: {fileID: 639367713}
@@ -10621,12 +10621,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   numberOfGames: 0
   trainingNumberOfGames: 0
+  cognitiveTrainingNumberOfGames: 0
+  exerciseTrainingNumberOfGames: 0
+  warmUpNumberOfGames: 0
   maxDifficulty: 0
   gameIdNames: []
   gameNames: []
   gameScenes: []
   gameIcons2DPaths: []
   avatarSpritesPaths: []
+  cognitiveGameNames: []
+  exerciseGameNames: []
 --- !u!114 &869000520
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24894,6 +24899,7 @@ MonoBehaviour:
   m_AttachTransform: {fileID: 0}
   m_KeepSelectedTargetValid: 1
   m_StartingSelectedInteractable: {fileID: 0}
+  m_StartingTargetFilter: {fileID: 0}
   m_HoverEntered:
     m_PersistentCalls:
       m_Calls: []
@@ -25798,6 +25804,7 @@ MonoBehaviour:
   m_AttachTransform: {fileID: 0}
   m_KeepSelectedTargetValid: 1
   m_StartingSelectedInteractable: {fileID: 0}
+  m_StartingTargetFilter: {fileID: 0}
   m_HoverEntered:
     m_PersistentCalls:
       m_Calls: []
@@ -26346,6 +26353,7 @@ MonoBehaviour:
   m_DebounceTime: 0.5
   m_EnableTurnLeftRight: 1
   m_EnableTurnAround: 1
+  m_DelayTime: 0
   m_LeftHandSnapTurnAction:
     m_UseReference: 0
     m_Action:

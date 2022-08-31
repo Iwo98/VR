@@ -9380,6 +9380,8 @@ GameObject:
   - component: {fileID: 854135807}
   - component: {fileID: 854135806}
   - component: {fileID: 854135808}
+  - component: {fileID: 854135810}
+  - component: {fileID: 854135809}
   m_Layer: 0
   m_Name: Scene
   m_TagString: Untagged
@@ -9658,12 +9660,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   numberOfGames: 3
   trainingNumberOfGames: 3
+  cognitiveTrainingNumberOfGames: 0
+  exerciseTrainingNumberOfGames: 0
+  warmUpNumberOfGames: 0
   maxDifficulty: 10
   gameIdNames: []
   gameNames: []
   gameScenes: []
   gameIcons2DPaths: []
   avatarSpritesPaths: []
+  cognitiveGameNames: []
+  exerciseGameNames: []
 --- !u!114 &854135807
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9690,6 +9697,35 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fadeOutUIImage: {fileID: 1867264169}
   fadeSpeed: 0.8
+--- !u!114 &854135809
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 854135803}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc80b796940be2f4b8b74939b7e7919e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  xr_camera: {fileID: 1867264170}
+  moveSpeed: 25
+--- !u!114 &854135810
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 854135803}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2489447ebbf8e054db579519c2fb258b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  xr_camera: {fileID: 1867264170}
+  speedH: 1.5
+  speedV: 1.5
 --- !u!1 &857805818
 GameObject:
   m_ObjectHideFlags: 0
@@ -21391,6 +21427,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1867264170 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2477321169392890288, guid: d9d2bfa410febf94a8af05b6fc13de7f, type: 3}
+  m_PrefabInstance: {fileID: 1867264168}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1867354952
 PrefabInstance:
   m_ObjectHideFlags: 0

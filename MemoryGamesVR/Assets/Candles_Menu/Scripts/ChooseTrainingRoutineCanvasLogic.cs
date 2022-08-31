@@ -16,28 +16,35 @@ public class ChooseTrainingRoutineCanvasLogic : MonoBehaviour
     public int difficulty;
 
     private ConstantGameValues game_values;
+    private GameChoiceManager game_manager;
 
     // Start is called before the first frame update
     void Start()
     {
+        game_manager = GameObject.FindObjectsOfType<GameChoiceManager>()[0];
         int isAfterTraining = PlayerPrefs.GetInt("after_training");
 
         if (isAfterTraining == 1) {
             ChooseCognitiveGamesCanvas.gameObject.SetActive(false);
+            ChooseExerciseGamesCanvas.gameObject.SetActive(false);
         }
         else
         {
-            ChooseCognitiveGamesCanvas.gameObject.SetActive(true);
-            game_values = GameObject.FindObjectsOfType<ConstantGameValues>()[0];
-            game_values.initAllValues();
-
-            setDifficultySelect();
-            populateGameNames(game_values.cognitiveGameNames, cognitiveGameNameTemplate, ChooseCognitiveGamesCanvas);
-            populateOrderOptions(cognitiveOrderOptionsTemplate, game_values.cognitiveGameNames, game_values.cognitiveTrainingNumberOfGames, ChooseCognitiveGamesCanvas, "cognitive");
-            populateGameNames(game_values.exerciseGameNames, exerciseGameNameTemplate, ChooseExerciseGamesCanvas);
-            populateOrderOptions(exerciseOrderOptionsTemplate, game_values.exerciseGameNames, game_values.exerciseTrainingNumberOfGames, ChooseExerciseGamesCanvas, "exercise");
+            initCanvases();
         }
+    }
 
+    private void initCanvases()
+    {
+        ChooseCognitiveGamesCanvas.gameObject.SetActive(true);
+        game_values = GameObject.FindObjectsOfType<ConstantGameValues>()[0];
+        game_values.initAllValues();
+
+        setDifficultySelect();
+        populateGameNames(game_values.cognitiveGameNames, cognitiveGameNameTemplate, ChooseCognitiveGamesCanvas);
+        populateOrderOptions(cognitiveOrderOptionsTemplate, game_values.cognitiveGameNames, game_values.cognitiveTrainingNumberOfGames, ChooseCognitiveGamesCanvas, "cognitive");
+        populateGameNames(game_values.exerciseGameNames, exerciseGameNameTemplate, ChooseExerciseGamesCanvas);
+        populateOrderOptions(exerciseOrderOptionsTemplate, game_values.exerciseGameNames, game_values.exerciseTrainingNumberOfGames, ChooseExerciseGamesCanvas, "exercise");
     }
     public void populateOrderOptions(GameObject orderOptionsTemplate, List<string> gameNames, int numberOfGames, Canvas ChooseGamesCanvas, string typeOfGames )
     {
@@ -131,7 +138,25 @@ public class ChooseTrainingRoutineCanvasLogic : MonoBehaviour
         ChooseExerciseGamesCanvas.gameObject.SetActive(false);
         gamesController.mergeGames(game_values.trainingNumberOfGames);
         gamesController.printMergedGames();
-        StartTraining();
+        List<PreparedGame> list = new List<PreparedGame>();
+        PreparedGame game1 = new PreparedGame();
+        PreparedGame game2 = new PreparedGame();
+
+        game1.id = 7;
+        game1.difficulty = 1;
+        list.Add(game1);
+        game2.id = 9;
+        game2.difficulty = 4;
+        list.Add(game2);
+
+        game_manager.prepareWarmUp(list);
+        game_manager.startTraining(gamesController.mergedGamesList);
+    }
+
+    public void handlePlayAgainButton()
+    {
+        initCanvases();
+        ChooseCognitiveGamesCanvas.gameObject.SetActive(true);
     }
 
     private void chooseGames(List<GameObject> gamesOrder, string gamesType)
@@ -164,27 +189,6 @@ public class ChooseTrainingRoutineCanvasLogic : MonoBehaviour
 
     }
 
-    public void StartTraining()
-    {
-        clearPrefs();
-        GameChoiceManager game_manager = GameObject.FindObjectsOfType<GameChoiceManager>()[0];
-        UserData user_data = GameObject.FindObjectsOfType<UserData>()[0];
-        user_data.LoadFile();
-
-        PlayerPrefs.SetInt("is_training", 1);
-        PlayerPrefs.SetInt("number_of_games_in_training", game_values.trainingNumberOfGames);
-        int index = 0;
-        foreach (PreparedGame game in gamesController.mergedGamesList)
-        {
-            PlayerPrefs.SetInt("game_id_" + index.ToString(), game.id);
-            PlayerPrefs.SetInt("game_difficulty_" + index.ToString(), game.difficulty);
-            index++;
-        }
-
-        user_data.SaveFile();
-        game_manager.chooseNextGame();
-    }
-
     private T findNestedComponent<T>(GameObject gameObject, string ComponentGameObjectName)
     {
         Transform gameObjectTransform = gameObject.GetComponent<Transform>();
@@ -202,15 +206,6 @@ public class ChooseTrainingRoutineCanvasLogic : MonoBehaviour
         Toggle toggle = toggleComponent.GetComponent<Toggle>();
 
         return toggle;
-    }
-
-    private ToggleGroup findToggleGroup(GameObject gameObject)
-    {
-        Transform templateTransform = gameObject.GetComponent<Transform>();
-        Transform toggleGroupComponent = templateTransform.Find("OrderOptions");
-        ToggleGroup toggleGroup = toggleGroupComponent.GetComponent<ToggleGroup>();
-
-        return toggleGroup;
     }
 
     public void handleDifficultySelectChange(TMP_Dropdown select)

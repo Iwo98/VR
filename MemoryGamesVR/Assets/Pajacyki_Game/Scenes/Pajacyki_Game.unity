@@ -5559,9 +5559,9 @@ GameObject:
   - component: {fileID: 942253890}
   - component: {fileID: 942253889}
   - component: {fileID: 942253887}
+  - component: {fileID: 942253888}
   - component: {fileID: 942253885}
   - component: {fileID: 942253884}
-  - component: {fileID: 942253888}
   m_Layer: 0
   m_Name: GameController
   m_TagString: Untagged
@@ -5652,7 +5652,7 @@ MonoBehaviour:
   SpawnPointLeft: {fileID: 1420156092}
   SpawnPointRight: {fileID: 279681941}
   ballSpeed: 2
-  maxTime: 30
+  maxTime: 5
   phase: 1
   score: 0
   numberOfBounces: 1
@@ -5683,12 +5683,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   numberOfGames: 0
   trainingNumberOfGames: 0
+  cognitiveTrainingNumberOfGames: 0
+  exerciseTrainingNumberOfGames: 0
+  warmUpNumberOfGames: 0
   maxDifficulty: 0
   gameIdNames: []
   gameNames: []
   gameScenes: []
   gameIcons2DPaths: []
   avatarSpritesPaths: []
+  cognitiveGameNames: []
+  exerciseGameNames: []
 --- !u!4 &953920028 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4036945459416220, guid: 652472ea6528f0d449e98084839f05dd, type: 3}

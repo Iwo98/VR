@@ -3693,12 +3693,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   numberOfGames: 0
   trainingNumberOfGames: 0
+  cognitiveTrainingNumberOfGames: 0
+  exerciseTrainingNumberOfGames: 0
+  warmUpNumberOfGames: 0
   maxDifficulty: 0
   gameIdNames: []
   gameNames: []
   gameScenes: []
   gameIcons2DPaths: []
   avatarSpritesPaths: []
+  cognitiveGameNames: []
+  exerciseGameNames: []
 --- !u!4 &449080759
 Transform:
   m_ObjectHideFlags: 0
@@ -11851,7 +11856,7 @@ MonoBehaviour:
   EndMenuCanvas: {fileID: 518222524}
   score: 0
   phase: 0
-  maxTime: 10
+  maxTime: 5
   spawnNumber: 0
   allText: {fileID: 986921723}
   gainedText: {fileID: 1153482538}
