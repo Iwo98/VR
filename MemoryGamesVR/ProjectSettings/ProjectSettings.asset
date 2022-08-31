@@ -141,6 +141,10 @@ PlayerSettings:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  - {fileID: -1144390246141072412, guid: efbd5404a77ef404dbdbc4976266bfda, type: 2}
+  - {fileID: 11400000, guid: 74916aded381488488029a81fb35b02c, type: 2}
+  - {fileID: 4159233363901172463, guid: ea15f1451f3a92b47b6095282a7c7432, type: 2}
+  - {fileID: 0}
   metroInputSource: 0
   wsaTransparentSwapchain: 0
   m_HolographicPauseOnTrackingLoss: 1
@@ -158,7 +162,7 @@ PlayerSettings:
   androidSupportedAspectRatio: 1
   androidMaxAspectRatio: 2.1
   applicationIdentifier:
-    Standalone: com.DefaultCompany.Candles
+    Standalone: com.ClickAndGo.MemoryGamesVR
   buildNumber:
     Standalone: 0
     iPhone: 0

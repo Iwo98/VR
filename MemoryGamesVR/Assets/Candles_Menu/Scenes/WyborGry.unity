@@ -765,6 +765,84 @@ Transform:
   m_Father: {fileID: 586691392}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &213720075
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 586691392}
+    m_Modifications:
+    - target: {fileID: 5316026633174561684, guid: 9106eab02ed75634889eeddddafdcb86, type: 3}
+      propertyPath: m_Name
+      value: Crown
+      objectReference: {fileID: 0}
+    - target: {fileID: 5316026633174561684, guid: 9106eab02ed75634889eeddddafdcb86, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5316026633174724532, guid: 9106eab02ed75634889eeddddafdcb86, type: 3}
+      propertyPath: m_RootOrder
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 5316026633174724532, guid: 9106eab02ed75634889eeddddafdcb86, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.005
+      objectReference: {fileID: 0}
+    - target: {fileID: 5316026633174724532, guid: 9106eab02ed75634889eeddddafdcb86, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.005
+      objectReference: {fileID: 0}
+    - target: {fileID: 5316026633174724532, guid: 9106eab02ed75634889eeddddafdcb86, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.005
+      objectReference: {fileID: 0}
+    - target: {fileID: 5316026633174724532, guid: 9106eab02ed75634889eeddddafdcb86, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5316026633174724532, guid: 9106eab02ed75634889eeddddafdcb86, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5316026633174724532, guid: 9106eab02ed75634889eeddddafdcb86, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.00076
+      objectReference: {fileID: 0}
+    - target: {fileID: 5316026633174724532, guid: 9106eab02ed75634889eeddddafdcb86, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 5316026633174724532, guid: 9106eab02ed75634889eeddddafdcb86, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 5316026633174724532, guid: 9106eab02ed75634889eeddddafdcb86, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5316026633174724532, guid: 9106eab02ed75634889eeddddafdcb86, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5316026633174724532, guid: 9106eab02ed75634889eeddddafdcb86, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 5316026633174724532, guid: 9106eab02ed75634889eeddddafdcb86, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5316026633174724532, guid: 9106eab02ed75634889eeddddafdcb86, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 9106eab02ed75634889eeddddafdcb86, type: 3}
+--- !u!4 &213720076 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5316026633174724532, guid: 9106eab02ed75634889eeddddafdcb86, type: 3}
+  m_PrefabInstance: {fileID: 213720075}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &228860954
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2416,6 +2494,7 @@ Transform:
   - {fileID: 1125342383}
   - {fileID: 200758420}
   - {fileID: 1313629246}
+  - {fileID: 213720076}
   m_Father: {fileID: 3454277778495601274}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2622,6 +2701,7 @@ MonoBehaviour:
   - {fileID: 1125342382}
   - {fileID: 200758419}
   - {fileID: 1313629245}
+  - {fileID: 5316026633174561684, guid: 9106eab02ed75634889eeddddafdcb86, type: 3}
 --- !u!4 &609246553
 Transform:
   m_ObjectHideFlags: 0
