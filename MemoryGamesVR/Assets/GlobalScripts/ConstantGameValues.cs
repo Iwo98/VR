@@ -38,7 +38,7 @@ public class ConstantGameValues : MonoBehaviour
 
     private void initVals()
     {
-        numberOfGames = 9;
+        numberOfGames = 10;
         cognitiveTrainingNumberOfGames = 8;
         exerciseTrainingNumberOfGames = 8;
         trainingNumberOfGames = 16;
@@ -57,6 +57,7 @@ public class ConstantGameValues : MonoBehaviour
         gameIdNames.Add("VanishingThings");
         gameIdNames.Add("JumpingJackGame");
         gameIdNames.Add("AbdominalsGame");
+        gameIdNames.Add("SitUpGame");
     }
 
     private void initNames()
@@ -71,6 +72,7 @@ public class ConstantGameValues : MonoBehaviour
         gameNames.Add("Znikające przedmioty");
         gameNames.Add("Pajacyki");
         gameNames.Add("Brzuszki");
+        gameNames.Add("Przysiady");
     }
 
     private void initCognitiveGameNames()
@@ -90,6 +92,7 @@ public class ConstantGameValues : MonoBehaviour
         exerciseGameNames = new List<string>();
         exerciseGameNames.Add("Pajacyki");
         exerciseGameNames.Add("Brzuszki");
+        exerciseGameNames.Add("Przysiady");
     }
 
     private void initScenes()
@@ -104,6 +107,7 @@ public class ConstantGameValues : MonoBehaviour
         gameScenes.Add("VanishingThings/Scenes/VanishingThings");
         gameScenes.Add("Pajacyki_Game/Scenes/Pajacyki_Game");
         gameScenes.Add("Abdominals_Game/Scenes/Abdominals_Game");
+        gameScenes.Add("Situp_Game/Scenes/Situp_Game");
     }
 
     private void initGameIcons2D()
@@ -118,6 +122,7 @@ public class ConstantGameValues : MonoBehaviour
         gameIcons2DPaths.Add("Sprites/GameIcons/sword_and_axe");
         gameIcons2DPaths.Add("Sprites/GameIcons/cymbals");
         gameIcons2DPaths.Add("Sprites/GameIcons/sh");
+        gameIcons2DPaths.Add("Sprites/GameIcons/crown");
     }
 
     public void initAvatars()

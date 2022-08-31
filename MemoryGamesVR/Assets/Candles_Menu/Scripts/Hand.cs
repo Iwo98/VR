@@ -3,59 +3,62 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(Animator))]
-public class Hand : MonoBehaviour
+namespace Assets.Candles_Menu.Scripts
 {
-    public float speed;
-    
-    Animator animator;
-    SkinnedMeshRenderer mesh;
-    private float triggerTarget;
-    private float gripTarget;
-    private float gripCurrent;
-    private float triggerCurrent;
-    private string animatorGripParam = "Grip";
-    private string animatorTriggerParam = "Trigger";
-
-    // Start is called before the first frame update
-    void Start()
+    [RequireComponent(typeof(Animator))]
+    public class Hand : MonoBehaviour
     {
-        animator = GetComponent<Animator>();
-        mesh = GetComponentInChildren<SkinnedMeshRenderer>();
-    }
+        public float speed;
 
-    // Update is called once per frame
-    void Update()
-    {
-        AnimateHand();
-    }
+        Animator animator;
+        SkinnedMeshRenderer mesh;
+        private float triggerTarget;
+        private float gripTarget;
+        private float gripCurrent;
+        private float triggerCurrent;
+        private string animatorGripParam = "Grip";
+        private string animatorTriggerParam = "Trigger";
 
-    internal void SetGrip(float v)
-    {
-        gripTarget = v;
-    }
-
-    internal void SetTrigger(float v)
-    {
-        triggerTarget = v;
-    }
-
-    void AnimateHand()
-    {
-        if (gripCurrent != gripTarget)
+        // Start is called before the first frame update
+        void Start()
         {
-            gripCurrent = Mathf.MoveTowards(gripCurrent, gripTarget, Time.deltaTime * speed);
-            animator.SetFloat(animatorGripParam, gripCurrent);
-        }        
-        if (triggerCurrent != triggerTarget)
-        {
-            triggerCurrent = Mathf.MoveTowards(triggerCurrent, triggerTarget, Time.deltaTime * speed);
-            animator.SetFloat(animatorTriggerParam, triggerCurrent);
+            animator = GetComponent<Animator>();
+            mesh = GetComponentInChildren<SkinnedMeshRenderer>();
         }
-    }
 
-    public void ToggleVisibility()
-    {
-        mesh.enabled = !mesh.enabled;
+        // Update is called once per frame
+        void Update()
+        {
+            AnimateHand();
+        }
+
+        internal void SetGrip(float v)
+        {
+            gripTarget = v;
+        }
+
+        internal void SetTrigger(float v)
+        {
+            triggerTarget = v;
+        }
+
+        void AnimateHand()
+        {
+            if (gripCurrent != gripTarget)
+            {
+                gripCurrent = Mathf.MoveTowards(gripCurrent, gripTarget, Time.deltaTime * speed);
+                animator.SetFloat(animatorGripParam, gripCurrent);
+            }
+            if (triggerCurrent != triggerTarget)
+            {
+                triggerCurrent = Mathf.MoveTowards(triggerCurrent, triggerTarget, Time.deltaTime * speed);
+                animator.SetFloat(animatorTriggerParam, triggerCurrent);
+            }
+        }
+
+        public void ToggleVisibility()
+        {
+            mesh.enabled = !mesh.enabled;
+        }
     }
 }
