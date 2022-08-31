@@ -32,7 +32,7 @@ public class ConstantGameValues : MonoBehaviour
 
     private void initVals()
     {
-        numberOfGames = 9;
+        numberOfGames = 10;
         trainingNumberOfGames = 8;
         maxDifficulty = 10;
     }
@@ -49,6 +49,7 @@ public class ConstantGameValues : MonoBehaviour
         gameIdNames.Add("VanishingThings");
         gameIdNames.Add("JumpingJackGame");
         gameIdNames.Add("AbdominalsGame");
+        gameIdNames.Add("SitUpGame");
 
 
     }
@@ -65,6 +66,7 @@ public class ConstantGameValues : MonoBehaviour
         gameNames.Add("Znikające przedmioty");
         gameNames.Add("Pajacyki");
         gameNames.Add("Brzuszki");
+        gameNames.Add("Przysiady");
 
     }
 
@@ -80,6 +82,7 @@ public class ConstantGameValues : MonoBehaviour
         gameScenes.Add("VanishingThings/Scenes/VanishingThings");
         gameScenes.Add("Pajacyki_Game/Scenes/Pajacyki_Game");
         gameScenes.Add("Abdominals_Game/Scenes/Abdominals_Game");
+        gameScenes.Add("Situp_Game/Scenes/Situp_Game");
     }
 
     private void initGameIcons2D()
@@ -94,6 +97,7 @@ public class ConstantGameValues : MonoBehaviour
         gameIcons2DPaths.Add("Sprites/GameIcons/sword_and_axe");
         gameIcons2DPaths.Add("Sprites/GameIcons/cymbals");
         gameIcons2DPaths.Add("Sprites/GameIcons/sh");
+        gameIcons2DPaths.Add("Sprites/GameIcons/crown");
     }
 
     public void initAvatars()

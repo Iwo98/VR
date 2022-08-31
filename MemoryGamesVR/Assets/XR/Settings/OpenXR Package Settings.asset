@@ -130,6 +130,26 @@ MonoBehaviour:
   company: Unity
   priority: 0
   required: 0
+--- !u!114 &-7861015297368596672
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3482401f887b8864183e401715462f46, type: 3}
+  m_Name: HPMixedRealityControllerProfile WSA
+  m_EditorClassIdentifier: 
+  m_enabled: 0
+  nameUi: HP Reverb G2 Controller Profile
+  version: 0.9.0
+  featureIdInternal: com.microsoft.openxr.feature.interaction.hpmixedrealitycontroller
+  openxrExtensionStrings: XR_EXT_hp_mixed_reality_controller
+  company: Microsoft
+  priority: 0
+  required: 0
 --- !u!114 &-7790219285421867609
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -369,6 +389,28 @@ MonoBehaviour:
   features: []
   m_renderMode: 1
   m_depthSubmissionMode: 0
+--- !u!114 &-5140349328925452764
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f8ec2975f18d5e479159feb34b4dc86, type: 3}
+  m_Name: HoloLensFeaturePlugin WSA
+  m_EditorClassIdentifier: 
+  m_enabled: 0
+  nameUi: HoloLens OpenXR plugin
+  version: 0.9.0
+  featureIdInternal: com.microsoft.openxr.feature.hololens
+  openxrExtensionStrings: ' XR_MSFT_holographic_window_attachment XR_MSFT_unbounded_reference_space
+    XR_MSFT_spatial_anchor XR_MSFT_secondary_view_configuration XR_MSFT_first_person_observer
+    XR_MSFT_spatial_graph_bridge XR_MSFT_perception_anchor_interop XR_MSFT_scene_understanding_preview2'
+  company: Microsoft
+  priority: 0
+  required: 1
 --- !u!114 &-5091230672258040857
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -692,6 +734,26 @@ MonoBehaviour:
   company: Unity
   priority: 0
   required: 0
+--- !u!114 &-1354522554940575715
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3482401f887b8864183e401715462f46, type: 3}
+  m_Name: HPMixedRealityControllerProfile Standalone
+  m_EditorClassIdentifier: 
+  m_enabled: 0
+  nameUi: HP Reverb G2 Controller Profile
+  version: 0.9.0
+  featureIdInternal: com.microsoft.openxr.feature.interaction.hpmixedrealitycontroller
+  openxrExtensionStrings: XR_EXT_hp_mixed_reality_controller
+  company: Microsoft
+  priority: 0
+  required: 0
 --- !u!114 &-1225326780620837305
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -720,13 +782,13 @@ MonoBehaviour:
   m_Name: Standalone
   m_EditorClassIdentifier: 
   features:
-  - {fileID: -509059422323410553}
+  - {fileID: 426777073711197905}
   - {fileID: -4430137478666401624}
-  - {fileID: -3736446204849113871}
+  - {fileID: 1120379437623656041}
   - {fileID: -7790219285421867609}
-  - {fileID: 766481943720177873}
-  - {fileID: 1803247829467200974}
-  - {fileID: 2595892045894838014}
+  - {fileID: 7725893137919991772}
+  - {fileID: 9132293393004175234}
+  - {fileID: -1354522554940575715}
   - {fileID: 6936301341948349042}
   - {fileID: 1266629968853879682}
   - {fileID: -2111604554173249393}
@@ -737,6 +799,26 @@ MonoBehaviour:
   - {fileID: -1806853594122136471}
   m_renderMode: 1
   m_depthSubmissionMode: 0
+--- !u!114 &-1128644593668684457
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c79c911b38743a649b1c1eddb5097202, type: 3}
+  m_Name: HandTrackingFeaturePlugin WSA
+  m_EditorClassIdentifier: 
+  m_enabled: 0
+  nameUi: Hand Tracking plugin
+  version: 0.9.0
+  featureIdInternal: com.microsoft.openxr.feature.handtracking
+  openxrExtensionStrings: XR_EXT_hand_tracking XR_MSFT_hand_tracking_mesh
+  company: Microsoft
+  priority: 0
+  required: 0
 --- !u!114 &-901373823423751382
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -890,6 +972,26 @@ MonoBehaviour:
   company: Unity
   priority: 0
   required: 0
+--- !u!114 &426777073711197905
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d2e2731103cdda44af77955a0b4814c, type: 3}
+  m_Name: AppRemotingPlugin Standalone
+  m_EditorClassIdentifier: 
+  m_enabled: 0
+  nameUi: Holographic App Remoting
+  version: 0.9.0
+  featureIdInternal: com.microsoft.openxr.feature.appremoting
+  openxrExtensionStrings: XR_MSFT_holographic_remoting
+  company: Microsoft
+  priority: -100
+  required: 0
 --- !u!114 &766481943720177873
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -950,6 +1052,31 @@ MonoBehaviour:
   company: Unity
   priority: 0
   required: 0
+--- !u!114 &1120379437623656041
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f34c86d1a130cc45a438373e1e8a4fc, type: 3}
+  m_Name: EditorRemotingPlugin Standalone
+  m_EditorClassIdentifier: 
+  m_enabled: 0
+  nameUi: Holographic Editor Remoting
+  version: 0.9.0
+  featureIdInternal: com.microsoft.openxr.feature.editorremoting
+  openxrExtensionStrings: XR_MSFT_holographic_remoting
+  company: Microsoft
+  priority: -100
+  required: 0
+  m_remoteHostName: 
+  m_remoteHostPort: 8265
+  m_maxBitrate: 20000
+  m_videoCodec: 0
+  m_enableAudio: 0
 --- !u!114 &1266629968853879682
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1504,6 +1631,26 @@ MonoBehaviour:
   company: Microsoft
   priority: 0
   required: 0
+--- !u!114 &7725893137919991772
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c79c911b38743a649b1c1eddb5097202, type: 3}
+  m_Name: HandTrackingFeaturePlugin Standalone
+  m_EditorClassIdentifier: 
+  m_enabled: 0
+  nameUi: Hand Tracking plugin
+  version: 0.9.0
+  featureIdInternal: com.microsoft.openxr.feature.handtracking
+  openxrExtensionStrings: XR_EXT_hand_tracking XR_MSFT_hand_tracking_mesh
+  company: Microsoft
+  priority: 0
+  required: 0
 --- !u!114 &7739706096831418287
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1631,9 +1778,9 @@ MonoBehaviour:
   features:
   - {fileID: -8326624021640299496}
   - {fileID: 3686674730341614743}
-  - {fileID: 5044739871122567014}
-  - {fileID: -3040466388760155690}
-  - {fileID: 7639995214987904300}
+  - {fileID: -1128644593668684457}
+  - {fileID: -5140349328925452764}
+  - {fileID: -7861015297368596672}
   - {fileID: 2364579615780263088}
   - {fileID: 5199206346206081864}
   - {fileID: -550962823185646566}
@@ -1680,6 +1827,28 @@ MonoBehaviour:
   - {fileID: -3965681082964772548}
   m_renderMode: 1
   m_depthSubmissionMode: 0
+--- !u!114 &9132293393004175234
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f8ec2975f18d5e479159feb34b4dc86, type: 3}
+  m_Name: HoloLensFeaturePlugin Standalone
+  m_EditorClassIdentifier: 
+  m_enabled: 0
+  nameUi: HoloLens OpenXR plugin
+  version: 0.9.0
+  featureIdInternal: com.microsoft.openxr.feature.hololens
+  openxrExtensionStrings: ' XR_MSFT_holographic_window_attachment XR_MSFT_unbounded_reference_space
+    XR_MSFT_spatial_anchor XR_MSFT_secondary_view_configuration XR_MSFT_first_person_observer
+    XR_MSFT_spatial_graph_bridge XR_MSFT_perception_anchor_interop XR_MSFT_scene_understanding_preview2'
+  company: Microsoft
+  priority: 0
+  required: 1
 --- !u!114 &9217034746943493309
 MonoBehaviour:
   m_ObjectHideFlags: 0
