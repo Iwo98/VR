@@ -6,12 +6,16 @@ public class ConstantGameValues : MonoBehaviour
 {
     public int numberOfGames;
     public int trainingNumberOfGames;
+    public int cognitiveTrainingNumberOfGames;
+    public int exerciseTrainingNumberOfGames;
     public int maxDifficulty;
     public List<string> gameIdNames;
     public List<string> gameNames;
     public List<string> gameScenes;
     public List<string> gameIcons2DPaths;
     public List<string> avatarSpritesPaths;
+    public List<string> cognitiveGameNames;
+    public List<string> exerciseGameNames;
 
 
     // Start is called before the first frame update
@@ -28,12 +32,16 @@ public class ConstantGameValues : MonoBehaviour
         initScenes();
         initGameIcons2D();
         initAvatars();
+        initCognitiveGameNames();
+        initExerciseGameNames();
     }
 
     private void initVals()
     {
         numberOfGames = 10;
-        trainingNumberOfGames = 8;
+        cognitiveTrainingNumberOfGames = 8;
+        exerciseTrainingNumberOfGames = 8;
+        trainingNumberOfGames = 16;
         maxDifficulty = 10;
     }
 
@@ -50,8 +58,6 @@ public class ConstantGameValues : MonoBehaviour
         gameIdNames.Add("JumpingJackGame");
         gameIdNames.Add("AbdominalsGame");
         gameIdNames.Add("SitUpGame");
-
-
     }
 
     private void initNames()
@@ -67,7 +73,26 @@ public class ConstantGameValues : MonoBehaviour
         gameNames.Add("Pajacyki");
         gameNames.Add("Brzuszki");
         gameNames.Add("Przysiady");
+    }
 
+    private void initCognitiveGameNames()
+    {
+        cognitiveGameNames = new List<string>();
+        cognitiveGameNames.Add("Świeczniki");
+        cognitiveGameNames.Add("Uczeń alchemika");
+        cognitiveGameNames.Add("Magiczny pojedynek");
+        cognitiveGameNames.Add("Strzelec wyborowy");
+        cognitiveGameNames.Add("Co doszło?");
+        cognitiveGameNames.Add("Ucieczka z lochu");
+        cognitiveGameNames.Add("Znikające przedmioty");
+    }
+
+    private void initExerciseGameNames()
+    {
+        exerciseGameNames = new List<string>();
+        exerciseGameNames.Add("Pajacyki");
+        exerciseGameNames.Add("Brzuszki");
+        exerciseGameNames.Add("Przysiady");
     }
 
     private void initScenes()
