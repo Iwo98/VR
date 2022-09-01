@@ -63,14 +63,10 @@ namespace Chests
             if (PlayerPrefs.HasKey("curr_game_difficulty"))
             {
                 difficulty = PlayerPrefs.GetInt("curr_game_difficulty");
-                if (difficulty == 0)
-                {
-                    difficulty = 1;
-                }
-                dif2 = difficulty / 2;
-                difficulty = (int)Ceiling(dif2);
+                dif2 = (difficulty + 1) / 2;
+                difficulty = (int)Ceiling(dif2) - 1;
             }
-            Time.timeScale = 0.0f;
+            //Time.timeScale = 0.0f;
             
         }
 
@@ -82,10 +78,6 @@ namespace Chests
                 phase = 2;
             }
             else if (phase == 2) { 
-                if (Time.timeScale == 0.0f)
-                {
-                    return;
-                }
                 
                 if (chests[0].IsClosed())
                 {

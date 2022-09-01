@@ -38,7 +38,7 @@ public class ConstantGameValues : MonoBehaviour
 
     private void initVals()
     {
-        numberOfGames = 13;
+        numberOfGames = 14;
         cognitiveTrainingNumberOfGames = 8;
         exerciseTrainingNumberOfGames = 8;
         trainingNumberOfGames = 16;
@@ -61,6 +61,7 @@ public class ConstantGameValues : MonoBehaviour
         gameIdNames.Add("Chests");
         gameIdNames.Add("Balloons");
         gameIdNames.Add("Plank");
+        gameIdNames.Add("Terrain");
 
     }
 
@@ -80,6 +81,7 @@ public class ConstantGameValues : MonoBehaviour
         gameNames.Add("Skrzynie");
         gameNames.Add("Balony");
         gameNames.Add("Plank");
+        gameNames.Add("Teren");
     }
 
     private void initCognitiveGameNames()
@@ -94,6 +96,7 @@ public class ConstantGameValues : MonoBehaviour
         cognitiveGameNames.Add("Znikające przedmioty");
         cognitiveGameNames.Add("Skrzynie");
         cognitiveGameNames.Add("Balony");
+        cognitiveGameNames.Add("Teren");
     }
 
     private void initExerciseGameNames()
@@ -121,6 +124,7 @@ public class ConstantGameValues : MonoBehaviour
         gameScenes.Add("BalonySejfSkrzynieSiatkaTerenu/Michal/Scenes/Chests");
         gameScenes.Add("BalonySejfSkrzynieSiatkaTerenu/Michal/Scenes/Balloons");
         gameScenes.Add("Plank_Game/Scenes/Plank_Game");
+        gameScenes.Add("BalonySejfSkrzynieSiatkaTerenu/Hubert/Scenes/World");
     }
 
     private void initGameIcons2D()
@@ -139,6 +143,7 @@ public class ConstantGameValues : MonoBehaviour
         gameIcons2DPaths.Add("Sprites/GameIcons/chest");
         gameIcons2DPaths.Add("Sprites/GameIcons/balloons");
         gameIcons2DPaths.Add("Sprites/GameIcons/spikes");
+        gameIcons2DPaths.Add("Sprites/GameIcons/terrain");
     }
 
     public void initAvatars()

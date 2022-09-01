@@ -63,17 +63,13 @@ namespace Balloons
                 }
             };
 
-            Time.timeScale = 0.0f;
+            //Time.timeScale = 0.0f;
 
             if (PlayerPrefs.HasKey("curr_game_difficulty"))
             {
                 difficulty = PlayerPrefs.GetInt("curr_game_difficulty");
-                if (difficulty == 0)
-                {
-                    difficulty = 1;
-                }
-                dif2 = difficulty / 2;
-                difficulty = (int)Ceiling(dif2);
+                dif2 = (difficulty + 1) / 2;
+                difficulty = (int)Ceiling(dif2) - 1;
             }
         }
 
@@ -81,6 +77,7 @@ namespace Balloons
         void Update()
         {   if (phase == 1)
             {
+                timePassed += Time.deltaTime;
                 SetLevelDifficulty(difficulty);
                 phase = 2;
             }
