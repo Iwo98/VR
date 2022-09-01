@@ -47,7 +47,7 @@ public class TrainingController : MonoBehaviour
             GameObject game;
             game = Instantiate(gameResultTemplate, trainingResultsCanvas.transform, true);
             game.transform.SetParent(trainingResultsCanvas.transform);
-            game.transform.Translate(0, -0.17f * index, 0);
+            game.transform.Translate(0, -0.16f * index, 0);
 
             TMP_Text gameName = findText(game, "TextName");
             TMP_Text gameId = findText(game, "TextId");

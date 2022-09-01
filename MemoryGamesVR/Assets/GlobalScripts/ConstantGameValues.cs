@@ -43,7 +43,7 @@ public class ConstantGameValues : MonoBehaviour
         cognitiveTrainingNumberOfGames = 8;
         exerciseTrainingNumberOfGames = 8;
         warmUpNumberOfGames = 8;
-        trainingNumberOfGames = 1;
+        trainingNumberOfGames = 16;
         maxDifficulty = 10;
     }
 
