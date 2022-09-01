@@ -124,39 +124,13 @@ public class ChooseTrainingRoutineCanvasLogic : MonoBehaviour
         Destroy(gameNameTemplate);
     }
 
-    public void handleNextButton()
+    public void prepareAndStartTraining()
     {
-        chooseGames(cognitiveGamesOrder, "cognitive");
-        ChooseCognitiveGamesCanvas.gameObject.SetActive(false);
-        ChooseExerciseGamesCanvas.gameObject.SetActive(true);
-        saveUserDifficultyData();
-    }
-
-    public void handlePlayButton()
-    {
-        chooseGames(exerciseGamesOrder, "exercise");
-        ChooseExerciseGamesCanvas.gameObject.SetActive(false);
         gamesController.mergeGames(game_values.trainingNumberOfGames);
         gamesController.printMergedGames();
-        List<PreparedGame> list = new List<PreparedGame>();
-        PreparedGame game1 = new PreparedGame();
-        PreparedGame game2 = new PreparedGame();
-
-        game1.id = 7;
-        game1.difficulty = 1;
-        list.Add(game1);
-        game2.id = 9;
-        game2.difficulty = 4;
-        list.Add(game2);
-
-        game_manager.prepareWarmUp(list);
+        gamesController.prepareWarmUpGames(game_values.gameNames, game_values.exerciseGameNames, game_values.warmUpNumberOfGames);
+        game_manager.prepareWarmUp(gamesController.preparedWarmUpGamesList);
         game_manager.startTraining(gamesController.mergedGamesList);
-    }
-
-    public void handlePlayAgainButton()
-    {
-        initCanvases();
-        ChooseCognitiveGamesCanvas.gameObject.SetActive(true);
     }
 
     private void chooseGames(List<GameObject> gamesOrder, string gamesType)
@@ -186,7 +160,6 @@ public class ChooseTrainingRoutineCanvasLogic : MonoBehaviour
             gamesController.setExerciseRawGames(rawGames);
             gamesController.prepareExerciseGamesList(game_values.gameNames);
         }
-
     }
 
     private T findNestedComponent<T>(GameObject gameObject, string ComponentGameObjectName)
@@ -256,12 +229,25 @@ public class ChooseTrainingRoutineCanvasLogic : MonoBehaviour
         select.onValueChanged.AddListener(delegate { handleDifficultySelectChange(select); });
     }
 
-    private void clearPrefs()
+    public void handleNextButton()
     {
-        string username = PlayerPrefs.GetString("username");
-        PlayerPrefs.DeleteAll();
-        PlayerPrefs.SetString("username", username);
-        PlayerPrefs.SetInt("curr_game_num", 0);
+        chooseGames(cognitiveGamesOrder, "cognitive");
+        ChooseCognitiveGamesCanvas.gameObject.SetActive(false);
+        ChooseExerciseGamesCanvas.gameObject.SetActive(true);
+        saveUserDifficultyData();
+    }
+
+    public void handlePlayButton()
+    {
+        chooseGames(exerciseGamesOrder, "exercise");
+        ChooseExerciseGamesCanvas.gameObject.SetActive(false);
+        prepareAndStartTraining();
+    }
+
+    public void handlePlayAgainButton()
+    {
+        initCanvases();
+        ChooseCognitiveGamesCanvas.gameObject.SetActive(true);
     }
 }
 
@@ -284,6 +270,8 @@ public class GamesController
 
     public List<RawGame> rawExerciseGamesGamesList = new List<RawGame>();
     public List<PreparedGame> preparedExerciseGamesList = new List<PreparedGame>();
+
+    public List<PreparedGame> preparedWarmUpGamesList = new List<PreparedGame>();
 
     public List<PreparedGame> mergedGamesList = new List<PreparedGame>();
 
@@ -338,7 +326,24 @@ public class GamesController
         }
     }
 
-    public void printGames(string type)
+    public void prepareWarmUpGames (List<string> allGames, List<string> warmUpListGames, int numberOfGamesInWarmUp)
+    {
+        int warmUpListindex = 0;
+        for(int i = 0; i < numberOfGamesInWarmUp; i ++)
+        {
+            if (warmUpListindex >= warmUpListGames.Count)
+            {
+                warmUpListindex = 0;
+            }
+            PreparedGame preparedGame = new PreparedGame();
+            preparedGame.id = allGames.FindIndex(a => a.Contains(warmUpListGames[warmUpListindex]));
+            preparedGame.difficulty = 1;
+            preparedWarmUpGamesList.Add(preparedGame);
+            warmUpListindex++;
+        }   
+    }
+
+    public void printCognitiveGames(string type)
     {
         if (type == "notPrepared")
         {
