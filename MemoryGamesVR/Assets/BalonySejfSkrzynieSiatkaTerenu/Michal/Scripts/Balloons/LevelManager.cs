@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
+using static System.Math;
 
 namespace Balloons
 {
@@ -13,15 +15,21 @@ namespace Balloons
         public PinController rightPin;
         public Sign sign;
         public int difficulty = 0;
+        public int phase = 0;
+        public Canvas StartMenuCanvas;
+        public Canvas EndMenuCanvas;
+        public TextMeshProUGUI finalText;
+        public int score = 0;
 
+        private float dif2;
         private float balloonSpawnInterval = 5.0f;
         private float timePassed = 0.0f;
         private float balloonSpawnCd = 0.0f;
         private int leftPinColor;
         private int rightPinColor;
-        private int totalBalloonsToBeHit = 0;
-        private int correctBalloonsHit = 0;
-        private int incorrectBalloonsHit = 0;
+        public int totalBalloonsToBeHit = 0;
+        public int correctBalloonsHit = 0;
+        public int incorrectBalloonsHit = 0;
         private LevelDifficulty[] difficulties;
 
         // Start is called before the first frame update
@@ -56,28 +64,53 @@ namespace Balloons
             };
 
             Time.timeScale = 0.0f;
+
+            if (PlayerPrefs.HasKey("curr_game_difficulty"))
+            {
+                difficulty = PlayerPrefs.GetInt("curr_game_difficulty");
+                if (difficulty == 0)
+                {
+                    difficulty = 1;
+                }
+                dif2 = difficulty / 2;
+                difficulty = (int)Ceiling(dif2);
+            }
         }
 
         // Update is called once per frame
         void Update()
-        {
-            timePassed += Time.deltaTime;
-            balloonSpawnCd += Time.deltaTime;
-            if (timePassed >= 30)
+        {   if (phase == 1)
             {
-                // pass the score, compute difficulty level, exit scene
-                Time.timeScale = 0f;
+                SetLevelDifficulty(difficulty);
+                phase = 2;
             }
-            if (balloonSpawnCd >= balloonSpawnInterval)
-            {
-                SpawnBalloon();
-                balloonSpawnCd = 0.0f;
-            }
+            else if (phase == 2) { 
+                timePassed += Time.deltaTime;
+                balloonSpawnCd += Time.deltaTime;
+                if (timePassed >= 30)
+                {
+                    // pass the score, compute difficulty level, exit scene
+                    phase = 3;
 
-            string seconds = (int)(30 - timePassed) >= 10 ? ((int)(30 - timePassed)).ToString() : "0" + ((int)(30 - timePassed)).ToString();
-            sign.AssignTimeText("00:" + seconds);
-            sign.AssignPointsText(correctBalloonsHit + "/" + totalBalloonsToBeHit);
-            sign.AssignWrongText("(" + incorrectBalloonsHit + ")");
+                }
+                if (balloonSpawnCd >= balloonSpawnInterval)
+                {
+                    SpawnBalloon();
+                    balloonSpawnCd = 0.0f;
+                }
+
+                string seconds = (int)(30 - timePassed) >= 10 ? ((int)(30 - timePassed)).ToString() : "0" + ((int)(30 - timePassed)).ToString();
+                sign.AssignTimeText("00:" + seconds);
+                sign.AssignPointsText(correctBalloonsHit + "/" + totalBalloonsToBeHit);
+                sign.AssignWrongText("(" + incorrectBalloonsHit + ")");
+            }
+            else if (phase == 3)
+            {
+                EndMenuCanvas.gameObject.SetActive(true);
+                score = (int)Round((correctBalloonsHit - incorrectBalloonsHit) * 100.0 / totalBalloonsToBeHit);
+                finalText.text = (score).ToString() + "%";
+                phase = 4;
+            }
         }
 
         public void SpawnBalloon()

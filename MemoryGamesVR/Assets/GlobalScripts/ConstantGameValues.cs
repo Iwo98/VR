@@ -38,7 +38,7 @@ public class ConstantGameValues : MonoBehaviour
 
     private void initVals()
     {
-        numberOfGames = 11;
+        numberOfGames = 13;
         cognitiveTrainingNumberOfGames = 8;
         exerciseTrainingNumberOfGames = 8;
         trainingNumberOfGames = 16;
@@ -59,6 +59,8 @@ public class ConstantGameValues : MonoBehaviour
         gameIdNames.Add("AbdominalsGame");
         gameIdNames.Add("SitUpGame");
         gameIdNames.Add("Chests");
+        gameIdNames.Add("Balloons");
+        gameIdNames.Add("Plank");
 
     }
 
@@ -76,6 +78,8 @@ public class ConstantGameValues : MonoBehaviour
         gameNames.Add("Brzuszki");
         gameNames.Add("Przysiady");
         gameNames.Add("Skrzynie");
+        gameNames.Add("Balony");
+        gameNames.Add("Plank");
     }
 
     private void initCognitiveGameNames()
@@ -89,6 +93,7 @@ public class ConstantGameValues : MonoBehaviour
         cognitiveGameNames.Add("Ucieczka z lochu");
         cognitiveGameNames.Add("Znikające przedmioty");
         cognitiveGameNames.Add("Skrzynie");
+        cognitiveGameNames.Add("Balony");
     }
 
     private void initExerciseGameNames()
@@ -97,6 +102,7 @@ public class ConstantGameValues : MonoBehaviour
         exerciseGameNames.Add("Pajacyki");
         exerciseGameNames.Add("Brzuszki");
         exerciseGameNames.Add("Przysiady");
+        exerciseGameNames.Add("Plank");
     }
 
     private void initScenes()
@@ -113,6 +119,8 @@ public class ConstantGameValues : MonoBehaviour
         gameScenes.Add("Abdominals_Game/Scenes/Abdominals_Game");
         gameScenes.Add("Situp_Game/Scenes/Situp_Game");
         gameScenes.Add("BalonySejfSkrzynieSiatkaTerenu/Michal/Scenes/Chests");
+        gameScenes.Add("BalonySejfSkrzynieSiatkaTerenu/Michal/Scenes/Balloons");
+        gameScenes.Add("Plank_Game/Scenes/Plank_Game");
     }
 
     private void initGameIcons2D()
@@ -129,6 +137,8 @@ public class ConstantGameValues : MonoBehaviour
         gameIcons2DPaths.Add("Sprites/GameIcons/sh");
         gameIcons2DPaths.Add("Sprites/GameIcons/crown");
         gameIcons2DPaths.Add("Sprites/GameIcons/chest");
+        gameIcons2DPaths.Add("Sprites/GameIcons/balloons");
+        gameIcons2DPaths.Add("Sprites/GameIcons/spikes");
     }
 
     public void initAvatars()

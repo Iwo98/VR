@@ -47,6 +47,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/BalonySejfSkrzynieSiatkaTerenu/Michal/Scenes/Chests.unity
     guid: 6632f9968b3207e4e8f3c6889730491d
+  - enabled: 1
+    path: Assets/BalonySejfSkrzynieSiatkaTerenu/Michal/Scenes/Balloons.unity
+    guid: 89e56a3e01a5e284889268df1e5d77b5
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: 7fc0c2bc4e4fa6b43b21aa548f9cf743, type: 2}
     Unity.XR.WindowsMR.Settings: {fileID: 11400000, guid: 046eee315aaaf7d4dae1664c33425eef, type: 2}
