@@ -8,6 +8,7 @@ namespace Assets.BalonySejfSkrzynieSiatkaTerenu.Hubert.Scripts
     {
         float timeLeft = 30;
         const float secondsToDegrees = -6f;
+        public GameLogic myMain;
         [SerializeField]
         Transform secondsPivot = default;
 
@@ -19,17 +20,21 @@ namespace Assets.BalonySejfSkrzynieSiatkaTerenu.Hubert.Scripts
 
         void Update()
         {
-            audioSource.clip = clip;
-            if (active)
+            if (myMain.phase == 1)
             {
-                timeLeft -= Time.deltaTime;
-                secondsPivot.localRotation = Quaternion.Euler(secondsToDegrees * timeLeft, 0f, 0f);
-                if (timeLeft < 0)
+                audioSource.clip = clip;
+                if (active)
                 {
-                    if (!played)
+                    timeLeft -= Time.deltaTime;
+                    secondsPivot.localRotation = Quaternion.Euler(secondsToDegrees * timeLeft, 0f, 0f);
+                    if (timeLeft < 0)
                     {
-                        audioSource.PlayOneShot(audioSource.clip, volume);
-                        played = true;
+                        if (!played)
+                        {
+                            audioSource.PlayOneShot(audioSource.clip, volume);
+                            played = true;
+                            myMain.phase = 2;
+                        }
                     }
                 }
             }
