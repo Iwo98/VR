@@ -904,6 +904,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d9d2bfa410febf94a8af05b6fc13de7f, type: 3}
+--- !u!1 &85108388 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2477321169392890288, guid: d9d2bfa410febf94a8af05b6fc13de7f, type: 3}
+  m_PrefabInstance: {fileID: 85108387}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &91773168
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5863,7 +5868,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   difficulty: 1
   rememberPhaseTime: 8
-  actionPhaseTime: 24
+  actionPhaseTime: 5
   potionTemplate1: {fileID: 6964181503601042257, guid: 24d0edd729b861b43be4901ad55e028f, type: 3}
   potionTemplate2: {fileID: 3321002466395110979, guid: dee7ed1c476b5ad4798d11623c807b26, type: 3}
   PotionColors:
@@ -6352,6 +6357,8 @@ GameObject:
   - component: {fileID: 1477897913}
   - component: {fileID: 1477897910}
   - component: {fileID: 1477897914}
+  - component: {fileID: 1477897916}
+  - component: {fileID: 1477897915}
   m_Layer: 0
   m_Name: GameChoiceController
   m_TagString: Untagged
@@ -6399,12 +6406,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   numberOfGames: 3
   trainingNumberOfGames: 3
+  cognitiveTrainingNumberOfGames: 0
+  exerciseTrainingNumberOfGames: 0
+  warmUpNumberOfGames: 0
   maxDifficulty: 10
   gameIdNames: []
   gameNames: []
   gameScenes: []
   gameIcons2DPaths: []
   avatarSpritesPaths: []
+  cognitiveGameNames: []
+  exerciseGameNames: []
 --- !u!114 &1477897913
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6431,6 +6443,35 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9556e686e9b946244ac9e99ce73211d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1477897915
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1477897909}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc80b796940be2f4b8b74939b7e7919e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  xr_camera: {fileID: 384834410}
+  moveSpeed: 25
+--- !u!114 &1477897916
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1477897909}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2489447ebbf8e054db579519c2fb258b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  xr_camera: {fileID: 85108388}
+  speedH: 1.5
+  speedV: 1.5
 --- !u!1 &1510118311
 GameObject:
   m_ObjectHideFlags: 0
@@ -6562,10 +6603,26 @@ MonoBehaviour:
   m_RepeatDelay: 0.5
   m_RepeatRate: 0.1
   m_TrackedDeviceDragThresholdMultiplier: 2
+  m_ActiveInputMode: 0
   m_MaxTrackedDeviceRaycastDistance: 1000
   m_EnableXRInput: 1
   m_EnableMouseInput: 1
   m_EnableTouchInput: 1
+  m_PointAction: {fileID: 0}
+  m_LeftClickAction: {fileID: 0}
+  m_MiddleClickAction: {fileID: 0}
+  m_RightClickAction: {fileID: 0}
+  m_ScrollWheelAction: {fileID: 0}
+  m_NavigateAction: {fileID: 0}
+  m_SubmitAction: {fileID: 0}
+  m_CancelAction: {fileID: 0}
+  m_EnableBuiltinActionsAsFallback: 1
+  m_EnableGamepadInput: 1
+  m_EnableJoystickInput: 1
+  m_HorizontalAxis: Horizontal
+  m_VerticalAxis: Vertical
+  m_SubmitButton: Submit
+  m_CancelButton: Cancel
 --- !u!114 &1511246044
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6734,7 +6791,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2477321169392890294, guid: d9d2bfa410febf94a8af05b6fc13de7f, type: 3}
   m_PrefabInstance: {fileID: 85108387}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 85108388}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7448815bd5148434682b3d931066cd10, type: 3}

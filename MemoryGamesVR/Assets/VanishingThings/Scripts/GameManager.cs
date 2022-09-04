@@ -18,7 +18,6 @@ public class GameManager : MonoBehaviour
         if (PlayerPrefs.HasKey("curr_game_difficulty"))
             game_mode = PlayerPrefs.GetInt("curr_game_difficulty");
         timer_running = true;
-        time_remaining = 30;
         game_state = 0;
     }
 
@@ -75,11 +74,13 @@ public class GameManager : MonoBehaviour
     public void ExitToMenu()
     {
         float score = 0;
+        Debug.Log(ScoreScript.maxScore);
+        Debug.Log(ScoreScript.score);
         if (ScoreScript.maxScore > 0)
         {
-            score = ScoreScript.score / ScoreScript.maxScore * 1300.0f;
+            score = ScoreScript.score / ScoreScript.maxScore * 100;
         }
-        score *= (1.0f + (game_mode - 1) * 0.3f);  //  Change for difficulty
+        Debug.Log(score);
         GameChoiceManager gameManager = GameObject.FindObjectsOfType<GameChoiceManager>()[0];
         gameManager.endGameManagement(score);
     }

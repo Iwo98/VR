@@ -9,6 +9,8 @@ public class ConstantGameValues : MonoBehaviour
     public int cognitiveTrainingNumberOfGames;
     public int exerciseTrainingNumberOfGames;
     public int maxDifficulty;
+    public int warmUpNumberOfGames;
+    public string relaxScene;
     public List<string> gameIdNames;
     public List<string> gameNames;
     public List<string> gameScenes;
@@ -41,6 +43,7 @@ public class ConstantGameValues : MonoBehaviour
         numberOfGames = 14;
         cognitiveTrainingNumberOfGames = 8;
         exerciseTrainingNumberOfGames = 8;
+        warmUpNumberOfGames = 8;
         trainingNumberOfGames = 16;
         maxDifficulty = 10;
     }
@@ -125,6 +128,8 @@ public class ConstantGameValues : MonoBehaviour
         gameScenes.Add("BalonySejfSkrzynieSiatkaTerenu/Michal/Scenes/Balloons");
         gameScenes.Add("Plank_Game/Scenes/Plank_Game");
         gameScenes.Add("BalonySejfSkrzynieSiatkaTerenu/Hubert/Scenes/World");
+        
+        relaxScene = "RelaxGame/Scenes/RelaxGame";
     }
 
     private void initGameIcons2D()

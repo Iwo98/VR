@@ -925,12 +925,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   numberOfGames: 0
   trainingNumberOfGames: 0
+  cognitiveTrainingNumberOfGames: 0
+  exerciseTrainingNumberOfGames: 0
+  warmUpNumberOfGames: 0
   maxDifficulty: 0
   gameIdNames: []
   gameNames: []
   gameScenes: []
   gameIcons2DPaths: []
   avatarSpritesPaths: []
+  cognitiveGameNames: []
+  exerciseGameNames: []
 --- !u!114 &572132620 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2844501690936292457, guid: d9d2bfa410febf94a8af05b6fc13de7f, type: 3}
@@ -1035,7 +1040,7 @@ MonoBehaviour:
   EndMenuCanvas: {fileID: 7483270199303415544}
   score: 0
   phase: 0
-  maxTime: 10
+  maxTime: 5
   spawnNumber: 0
   allText: {fileID: 268746917}
   gainedText: {fileID: 1974538290}

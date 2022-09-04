@@ -24,21 +24,19 @@ public class TrainingController : MonoBehaviour
         {
             displayResultsCanvas();
         }
-        clearPrefs();
+        //clearPrefs();
     }
 
     // Results canvas
     private void displayResultsCanvas()
     {
-        GameChoiceManager game_manager = GameObject.FindObjectsOfType<GameChoiceManager>()[0];
         UserData user_data = GameObject.FindObjectsOfType<UserData>()[0];
         user_data.LoadFile();
-        int numberOfGamesInTraining = PlayerPrefs.GetInt("number_of_games_in_training");
         float total_score = 0.0f;
         int difficulty = 0;
 
         int index = 0;
-        for (int i = 0; i < numberOfGamesInTraining; i++)
+        for (int i = 0; i < game_values.trainingNumberOfGames; i++)
         {
             int game_id = PlayerPrefs.GetInt("game_id_" + i.ToString());
             string game_name = game_values.gameNames[game_id];
@@ -49,7 +47,7 @@ public class TrainingController : MonoBehaviour
             GameObject game;
             game = Instantiate(gameResultTemplate, trainingResultsCanvas.transform, true);
             game.transform.SetParent(trainingResultsCanvas.transform);
-            game.transform.Translate(0, -0.17f * index, 0);
+            game.transform.Translate(0, -0.16f * index, 0);
 
             TMP_Text gameName = findText(game, "TextName");
             TMP_Text gameId = findText(game, "TextId");
@@ -73,6 +71,7 @@ public class TrainingController : MonoBehaviour
     public void closeResultsCanvas()
     {
         trainingResultsCanvas.SetActive(false);
+        clearPrefs();
     }
 
     // Charts canvas
@@ -93,7 +92,6 @@ public class TrainingController : MonoBehaviour
         PlayerPrefs.SetString("username", username);
         PlayerPrefs.SetInt("curr_game_num", 0);
     }
-
 
     // Misc
     public void ExitToMenu()

@@ -45,6 +45,9 @@ EditorBuildSettings:
     path: Assets/Situp_Game/Scenes/Situp_Game.unity
     guid: 74318ac9a6fe8e243bf66749bffaa6f3
   - enabled: 1
+    path: Assets/RelaxGame/Scenes/RelaxGame.unity
+    guid: 3fdcc7b11ecda8646800dda865f1effb
+  - enabled: 1
     path: Assets/BalonySejfSkrzynieSiatkaTerenu/Michal/Scenes/Chests.unity
     guid: 6632f9968b3207e4e8f3c6889730491d
   - enabled: 1
