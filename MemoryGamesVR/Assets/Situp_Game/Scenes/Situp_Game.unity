@@ -3695,8 +3695,9 @@ MonoBehaviour:
   trainingNumberOfGames: 0
   cognitiveTrainingNumberOfGames: 0
   exerciseTrainingNumberOfGames: 0
-  warmUpNumberOfGames: 0
   maxDifficulty: 0
+  warmUpNumberOfGames: 0
+  relaxScene: 
   gameIdNames: []
   gameNames: []
   gameScenes: []
@@ -4501,7 +4502,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2697626312069662592, guid: 9b7bcaa869112c24da808e629ccb45fe, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1.488
+      value: 4.037
       objectReference: {fileID: 0}
     - target: {fileID: 2697626312069662592, guid: 9b7bcaa869112c24da808e629ccb45fe, type: 3}
       propertyPath: m_LocalRotation.w
@@ -7253,11 +7254,15 @@ PrefabInstance:
       objectReference: {fileID: 976055206}
     - target: {fileID: 5036849739801474660, guid: 73eb41c8ce014dd44a1f01a90853e84a, type: 3}
       propertyPath: m_SortingOrder
-      value: 1000
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5036849739801474680, guid: 73eb41c8ce014dd44a1f01a90853e84a, type: 3}
       propertyPath: m_Name
       value: StartMenuCanvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 5036849739801474680, guid: 73eb41c8ce014dd44a1f01a90853e84a, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5036849739801474681, guid: 73eb41c8ce014dd44a1f01a90853e84a, type: 3}
       propertyPath: m_Pivot.x
@@ -7305,7 +7310,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5036849739801474681, guid: 73eb41c8ce014dd44a1f01a90853e84a, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1.504
+      value: 4.017
       objectReference: {fileID: 0}
     - target: {fileID: 5036849739801474681, guid: 73eb41c8ce014dd44a1f01a90853e84a, type: 3}
       propertyPath: m_LocalRotation.w
@@ -11574,13 +11579,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1484905277}
-  m_LocalRotation: {x: 0.5220026, y: -0.06587209, z: -0.13751975, w: 0.8392035}
+  m_LocalRotation: {x: 0.6100999, y: -0.055120416, z: -0.10346245, w: 0.7836041}
   m_LocalPosition: {x: 0, y: 10.84, z: -2.54}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1518944933}
   m_RootOrder: 7
-  m_LocalEulerAnglesHint: {x: 59.094, y: -29.655, z: -35.681}
+  m_LocalEulerAnglesHint: {x: 70.865, y: -40.441, z: -44.414}
 --- !u!108 &1484905279
 Light:
   m_ObjectHideFlags: 0

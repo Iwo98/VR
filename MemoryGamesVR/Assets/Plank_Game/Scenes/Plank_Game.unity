@@ -393,7 +393,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: 0
-  m_SortingOrder: 1000
+  m_SortingOrder: 0
   m_TargetDisplay: 0
 --- !u!4 &113171984 stripped
 Transform:
@@ -1287,6 +1287,8 @@ MonoBehaviour:
   cognitiveTrainingNumberOfGames: 0
   exerciseTrainingNumberOfGames: 0
   maxDifficulty: 10
+  warmUpNumberOfGames: 0
+  relaxScene: 
   gameIdNames: []
   gameNames: []
   gameScenes: []
@@ -2534,7 +2536,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 462723567899990242, guid: 12cbb50ed129d2f478986331a57ef948, type: 3}
       propertyPath: m_SortingOrder
-      value: 1000
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 462723567899990246, guid: 12cbb50ed129d2f478986331a57ef948, type: 3}
       propertyPath: m_Name
@@ -4635,8 +4637,8 @@ GameObject:
   - component: {fileID: 893044775}
   - component: {fileID: 112883019}
   - component: {fileID: 2077762319}
-  - component: {fileID: 2077762318}
   - component: {fileID: 2077762317}
+  - component: {fileID: 2077762318}
   m_Layer: 0
   m_Name: StartMenuCanvas
   m_TagString: Untagged

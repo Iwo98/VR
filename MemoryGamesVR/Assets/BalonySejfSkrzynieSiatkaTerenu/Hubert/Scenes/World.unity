@@ -323,6 +323,8 @@ MonoBehaviour:
   cognitiveTrainingNumberOfGames: 0
   exerciseTrainingNumberOfGames: 0
   maxDifficulty: 0
+  warmUpNumberOfGames: 0
+  relaxScene: 
   gameIdNames: []
   gameNames: []
   gameScenes: []
@@ -1344,11 +1346,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2366382127784137256, guid: 57a2eaff86405cf4ba9e4fe07a6d5fff, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0.042
+      value: 2.014
       objectReference: {fileID: 0}
     - target: {fileID: 2366382127784137256, guid: 57a2eaff86405cf4ba9e4fe07a6d5fff, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 1.104
+      value: 1.321
       objectReference: {fileID: 0}
     - target: {fileID: 2366382127784137256, guid: 57a2eaff86405cf4ba9e4fe07a6d5fff, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -1366,6 +1368,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: StartMenuCanvas
       objectReference: {fileID: 0}
+    - target: {fileID: 2366382127784137257, guid: 57a2eaff86405cf4ba9e4fe07a6d5fff, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2366382127784137269, guid: 57a2eaff86405cf4ba9e4fe07a6d5fff, type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 1813242918}
     - target: {fileID: 4714569239651819309, guid: 57a2eaff86405cf4ba9e4fe07a6d5fff, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -1635,7 +1645,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3426076266494562031, guid: 964e0c562982ef849ac3e2005852285b, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.022
+      value: 0.011
       objectReference: {fileID: 0}
     - target: {fileID: 3426076266494562031, guid: 964e0c562982ef849ac3e2005852285b, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1655,11 +1665,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3426076266494562031, guid: 964e0c562982ef849ac3e2005852285b, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0.375
+      value: 2.001
       objectReference: {fileID: 0}
     - target: {fileID: 3426076266494562031, guid: 964e0c562982ef849ac3e2005852285b, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 1.101
+      value: 1.241
       objectReference: {fileID: 0}
     - target: {fileID: 3426076266494562031, guid: 964e0c562982ef849ac3e2005852285b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
