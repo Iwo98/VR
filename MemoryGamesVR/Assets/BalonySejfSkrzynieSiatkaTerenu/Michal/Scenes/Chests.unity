@@ -1099,7 +1099,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9196227052550525189, guid: 509d36c98f6e243428f814f1d9ba713f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.0999994
+      value: -2.448
       objectReference: {fileID: 0}
     - target: {fileID: 9196227052550525189, guid: 509d36c98f6e243428f814f1d9ba713f, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2129,6 +2129,8 @@ MonoBehaviour:
   cognitiveTrainingNumberOfGames: 0
   exerciseTrainingNumberOfGames: 0
   maxDifficulty: 0
+  warmUpNumberOfGames: 0
+  relaxScene: 
   gameIdNames: []
   gameNames: []
   gameScenes: []
