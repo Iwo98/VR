@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class HandCollider : MonoBehaviour
 {
+    public AudioSource ScoreSound;
     public static int points = 0;
     public int allPoints = 0;
     public MainAbdominals myMain;
@@ -16,11 +17,11 @@ public class HandCollider : MonoBehaviour
             //Debug.Log(points);
             myMain.gainedText.text = (points).ToString();
             myMain.score = points;
+            ScoreSound.Play();
         }
 
         if (collider.gameObject.tag == "Hand" && this.tag == "HandPoint" )
         {
-            //ScoreSound.Play();
             Destroy(this.gameObject, 1.0f);
         }
             

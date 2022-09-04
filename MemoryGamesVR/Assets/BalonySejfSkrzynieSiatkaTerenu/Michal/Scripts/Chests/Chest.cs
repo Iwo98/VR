@@ -6,6 +6,7 @@ namespace Chests
 {
     public class Chest : MonoBehaviour
     {
+        public AudioSource OpenCloseChest;
         public float rotationSpeed = 40;
         public bool opened;
         private const float minAngle = 0.0f;
@@ -33,6 +34,7 @@ namespace Chests
 
         public void ChangeState()
         {
+            OpenCloseChest.Play();
             opened = !opened;
         }
 
