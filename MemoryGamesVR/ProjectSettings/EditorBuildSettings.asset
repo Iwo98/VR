@@ -44,6 +44,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Situp_Game/Scenes/Situp_Game.unity
     guid: 74318ac9a6fe8e243bf66749bffaa6f3
+  - enabled: 1
+    path: Assets/RelaxGame/Scenes/RelaxGame.unity
+    guid: 3fdcc7b11ecda8646800dda865f1effb
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: 7fc0c2bc4e4fa6b43b21aa548f9cf743, type: 2}
     Unity.XR.WindowsMR.Settings: {fileID: 11400000, guid: 046eee315aaaf7d4dae1664c33425eef, type: 2}

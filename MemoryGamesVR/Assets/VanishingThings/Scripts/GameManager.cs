@@ -74,10 +74,13 @@ public class GameManager : MonoBehaviour
     public void ExitToMenu()
     {
         float score = 0;
+        Debug.Log(ScoreScript.maxScore);
+        Debug.Log(ScoreScript.score);
         if (ScoreScript.maxScore > 0)
         {
             score = ScoreScript.score / ScoreScript.maxScore * 100;
-        } //  Change for difficulty
+        }
+        Debug.Log(score);
         GameChoiceManager gameManager = GameObject.FindObjectsOfType<GameChoiceManager>()[0];
         gameManager.endGameManagement(score);
     }

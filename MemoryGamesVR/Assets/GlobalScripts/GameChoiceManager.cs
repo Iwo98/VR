@@ -32,9 +32,14 @@ public class GameChoiceManager : MonoBehaviour
             PlayerPrefs.SetInt("curr_game_num", 0);
             chooseNextGame();
         }
-        else if (PlayerPrefs.GetInt("is_training") == 1 && currGameNum >= game_values.trainingNumberOfGames)
+        else if (PlayerPrefs.GetInt("is_training") == 1 && PlayerPrefs.GetInt("is_relax") == 0 && currGameNum >= game_values.trainingNumberOfGames)
         {
             PlayerPrefs.SetInt("after_training", 1);
+            PlayerPrefs.SetInt("is_relax", 1);
+            StartCoroutine(GameObject.FindObjectOfType<SceneFader>().FadeAndLoadScene(SceneFader.FadeDirection.In, game_values.relaxScene));
+        }
+        else if (PlayerPrefs.GetInt("is_relax") == 1)
+        {
             StartCoroutine(GameObject.FindObjectOfType<SceneFader>().FadeAndLoadScene(SceneFader.FadeDirection.In, "Candles_Menu/Scenes/ModulTreningowy"));
         }
         else
@@ -82,6 +87,7 @@ public class GameChoiceManager : MonoBehaviour
     {
         clearPrefs();
         PlayerPrefs.SetInt("is_warm_up", 1);
+        PlayerPrefs.SetInt("is_relax", 0);
         int index = 0;
         foreach (PreparedGame game in games)
         {
