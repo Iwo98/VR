@@ -20,6 +20,8 @@ namespace Balloons
             heightModifier = Random.Range(1.0f, 5.0f);
             GameObject ballonBody = transform.Find("Balloon Body").gameObject;
             ballonBody.GetComponent<MeshRenderer>().material = GameObject.FindObjectOfType<ColorManager>().GetMaterial(color);
+            GameObject tie = ballonBody.transform.Find("Ballon Tie").gameObject;
+            tie.GetComponent<MeshRenderer>().material = GameObject.FindObjectOfType<ColorManager>().GetMaterial(color);
             lifeTime = 0;
         }
 

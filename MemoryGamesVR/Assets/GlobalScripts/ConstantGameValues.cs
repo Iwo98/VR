@@ -40,7 +40,7 @@ public class ConstantGameValues : MonoBehaviour
 
     private void initVals()
     {
-        numberOfGames = 10;
+        numberOfGames = 14;
         cognitiveTrainingNumberOfGames = 8;
         exerciseTrainingNumberOfGames = 8;
         warmUpNumberOfGames = 8;
@@ -61,6 +61,11 @@ public class ConstantGameValues : MonoBehaviour
         gameIdNames.Add("JumpingJackGame");
         gameIdNames.Add("AbdominalsGame");
         gameIdNames.Add("SitUpGame");
+        gameIdNames.Add("Chests");
+        gameIdNames.Add("Balloons");
+        gameIdNames.Add("Plank");
+        gameIdNames.Add("Terrain");
+
     }
 
     private void initNames()
@@ -76,6 +81,10 @@ public class ConstantGameValues : MonoBehaviour
         gameNames.Add("Pajacyki");
         gameNames.Add("Brzuszki");
         gameNames.Add("Przysiady");
+        gameNames.Add("Skrzynie");
+        gameNames.Add("Balony");
+        gameNames.Add("Plank");
+        gameNames.Add("Teren");
     }
 
     private void initCognitiveGameNames()
@@ -88,6 +97,9 @@ public class ConstantGameValues : MonoBehaviour
         cognitiveGameNames.Add("Co doszło?");
         cognitiveGameNames.Add("Ucieczka z lochu");
         cognitiveGameNames.Add("Znikające przedmioty");
+        cognitiveGameNames.Add("Skrzynie");
+        cognitiveGameNames.Add("Balony");
+        cognitiveGameNames.Add("Teren");
     }
 
     private void initExerciseGameNames()
@@ -96,6 +108,7 @@ public class ConstantGameValues : MonoBehaviour
         exerciseGameNames.Add("Pajacyki");
         exerciseGameNames.Add("Brzuszki");
         exerciseGameNames.Add("Przysiady");
+        exerciseGameNames.Add("Plank");
     }
 
     private void initScenes()
@@ -111,7 +124,11 @@ public class ConstantGameValues : MonoBehaviour
         gameScenes.Add("Pajacyki_Game/Scenes/Pajacyki_Game");
         gameScenes.Add("Abdominals_Game/Scenes/Abdominals_Game");
         gameScenes.Add("Situp_Game/Scenes/Situp_Game");
-
+        gameScenes.Add("BalonySejfSkrzynieSiatkaTerenu/Michal/Scenes/Chests");
+        gameScenes.Add("BalonySejfSkrzynieSiatkaTerenu/Michal/Scenes/Balloons");
+        gameScenes.Add("Plank_Game/Scenes/Plank_Game");
+        gameScenes.Add("BalonySejfSkrzynieSiatkaTerenu/Hubert/Scenes/World");
+        
         relaxScene = "RelaxGame/Scenes/RelaxGame";
     }
 
@@ -128,6 +145,10 @@ public class ConstantGameValues : MonoBehaviour
         gameIcons2DPaths.Add("Sprites/GameIcons/cymbals");
         gameIcons2DPaths.Add("Sprites/GameIcons/sh");
         gameIcons2DPaths.Add("Sprites/GameIcons/crown");
+        gameIcons2DPaths.Add("Sprites/GameIcons/chest");
+        gameIcons2DPaths.Add("Sprites/GameIcons/balloons");
+        gameIcons2DPaths.Add("Sprites/GameIcons/spikes");
+        gameIcons2DPaths.Add("Sprites/GameIcons/terrain");
     }
 
     public void initAvatars()
@@ -143,5 +164,6 @@ public class ConstantGameValues : MonoBehaviour
         avatarSpritesPaths.Add("Sprites/Avatars/avatar8");
         avatarSpritesPaths.Add("Sprites/Avatars/avatar9");
         avatarSpritesPaths.Add("Sprites/Avatars/avatar10");
+        avatarSpritesPaths.Add("Sprites/Avatars/avatar11");
     }
 }

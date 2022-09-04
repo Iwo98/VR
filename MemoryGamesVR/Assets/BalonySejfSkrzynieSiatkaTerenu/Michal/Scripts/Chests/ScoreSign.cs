@@ -7,8 +7,8 @@ namespace Chests
     public class ScoreSign : MonoBehaviour
     {
         private TMPro.TextMeshPro scoreText;
-        private int correct = 0;
-        private int total = 0;
+        public int correct = 0;
+        public int total = 0;
 
         // Start is called before the first frame update
         void Start()

@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
+using static System.Math;
 
 public class GameLogic : MonoBehaviour
 {
@@ -20,6 +22,13 @@ public class GameLogic : MonoBehaviour
     // Debug
     public bool Regenerate = false;
 
+    public int phase = 0;
+    public Canvas StartMenuCanvas;
+    public Canvas EndMenuCanvas;
+    public TextMeshProUGUI finalText;
+    public GameObject buttonY;
+    public GameObject buttonN;
+
     // ========== GAME LEVEL ==========
     // Is noise similar in x and y - false-true
     public bool lvlNoiseSimilar = false;
@@ -29,6 +38,7 @@ public class GameLogic : MonoBehaviour
     public bool lvlRotation = false;
     // Difficulty - 1.0-10.0
     public float lvlDifficulty = 1.0f;
+    public int score = 0;
 
     // ========== ACTUAL SETTINGS ==========
     private float xShiftSpeed = 0.0f;
@@ -41,31 +51,50 @@ public class GameLogic : MonoBehaviour
     private float maxShiftSpeed = 0.01f;
     private float minHeight = 5.0f;
     private float maxHeight = 10.0f;
+    private float dif2;
 
 
     // Start is called before the first frame update
     void Start()
     {
+        if (PlayerPrefs.HasKey("curr_game_difficulty"))
+        {
+            lvlDifficulty = PlayerPrefs.GetInt("curr_game_difficulty");
+
+        }
         GenerateNewQuestion();
     }
 
     // Update is called once per frame
     void Update()
-    {
-        if (Regenerate)
+    {   if (phase == 1)
         {
-            Regenerate = false;
-            GenerateNewQuestion();
-        }
             
-
-        if (lvlMove)
-        {
-            foreach (MeshGenerator2 generator in meshGenerators)
+            if (Regenerate)
             {
-                generator.xNoiseShift += xShiftSpeed;
-                generator.zNoiseShift += zShiftSpeed;
+                Regenerate = false;
+                GenerateNewQuestion();
             }
+
+
+            if (lvlMove)
+            {
+                foreach (MeshGenerator2 generator in meshGenerators)
+                {
+                    generator.xNoiseShift += xShiftSpeed;
+                    generator.zNoiseShift += zShiftSpeed;
+                }
+            }
+
+        }
+        else if (phase == 2)
+        {
+            buttonY.SetActive(false);
+            buttonN.SetActive(false);
+            EndMenuCanvas.gameObject.SetActive(true);
+            score = (int)Round((Points - Errors)*100.0/(Points + Errors));
+            finalText.text = score.ToString() + "%";
+            phase = 3;
         }
     }
 

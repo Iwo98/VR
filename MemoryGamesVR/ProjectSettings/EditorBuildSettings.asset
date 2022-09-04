@@ -47,6 +47,18 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/RelaxGame/Scenes/RelaxGame.unity
     guid: 3fdcc7b11ecda8646800dda865f1effb
+  - enabled: 1
+    path: Assets/BalonySejfSkrzynieSiatkaTerenu/Michal/Scenes/Chests.unity
+    guid: 6632f9968b3207e4e8f3c6889730491d
+  - enabled: 1
+    path: Assets/BalonySejfSkrzynieSiatkaTerenu/Michal/Scenes/Balloons.unity
+    guid: 89e56a3e01a5e284889268df1e5d77b5
+  - enabled: 1
+    path: Assets/Plank_Game/Scenes/Plank_Game.unity
+    guid: 6309f5fbe46873e43b657125c28e585b
+  - enabled: 1
+    path: Assets/BalonySejfSkrzynieSiatkaTerenu/Hubert/Scenes/World.unity
+    guid: 8fa850f62fb88ab44bf702f3ae55e03f
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: 7fc0c2bc4e4fa6b43b21aa548f9cf743, type: 2}
     Unity.XR.WindowsMR.Settings: {fileID: 11400000, guid: 046eee315aaaf7d4dae1664c33425eef, type: 2}
