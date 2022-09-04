@@ -32,6 +32,7 @@ public class ChooseTrainingRoutineCanvasLogic : MonoBehaviour
         {
             initCanvases();
         }
+        clearPrefs();
     }
 
     private void initCanvases()
@@ -248,6 +249,14 @@ public class ChooseTrainingRoutineCanvasLogic : MonoBehaviour
     {
         initCanvases();
         ChooseCognitiveGamesCanvas.gameObject.SetActive(true);
+    }
+
+    private void clearPrefs()
+    {
+        string username = PlayerPrefs.GetString("username");
+        PlayerPrefs.DeleteAll();
+        PlayerPrefs.SetString("username", username);
+        PlayerPrefs.SetInt("curr_game_num", 0);
     }
 }
 

@@ -9,6 +9,7 @@ namespace Balloons
 {
     public class LevelManager : MonoBehaviour
     {
+        public AudioSource ballonHitSound;
         public GameObject balloonPrefab;
         public Vector3 balloonSpawnLocation;
         public PinController leftPin;
@@ -131,11 +132,13 @@ namespace Balloons
 
         public void NotifyAboutCorrectHit()
         {
+            ballonHitSound.Play();
             correctBalloonsHit++;
         }
 
         public void NotifyAboutIncorrectHit()
         {
+            ballonHitSound.Play();
             incorrectBalloonsHit++;
         }
 

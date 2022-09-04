@@ -24,7 +24,6 @@ public class TrainingController : MonoBehaviour
         {
             displayResultsCanvas();
         }
-        //clearPrefs();
     }
 
     // Results canvas

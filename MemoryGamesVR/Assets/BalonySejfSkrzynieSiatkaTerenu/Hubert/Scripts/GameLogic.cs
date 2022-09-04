@@ -39,6 +39,7 @@ public class GameLogic : MonoBehaviour
     // Difficulty - 1.0-10.0
     public float lvlDifficulty = 1.0f;
     public int score = 0;
+    public AudioSource CorrectSound, WrongSound;
 
     // ========== ACTUAL SETTINGS ==========
     private float xShiftSpeed = 0.0f;
@@ -180,11 +181,13 @@ public class GameLogic : MonoBehaviour
         if (!isActualCorrect)
         {
             Points += 1;
+            CorrectSound.Play();
             NumberDisplay.SendMessage("UpdateCorrect", Points);
         }
         else
         {
             Errors += 1;
+            WrongSound.Play();
             NumberDisplay.SendMessage("UpdateErrors", Errors);
         }
         GenerateNewQuestion();
@@ -195,11 +198,14 @@ public class GameLogic : MonoBehaviour
         if (isActualCorrect)
         {
             Points += 1;
+            CorrectSound.Play();
             NumberDisplay.SendMessage("UpdateCorrect", Points);
+            
         }
         else
         {
             Errors += 1;
+            WrongSound.Play();
             NumberDisplay.SendMessage("UpdateErrors", Errors);
         }
         GenerateNewQuestion();

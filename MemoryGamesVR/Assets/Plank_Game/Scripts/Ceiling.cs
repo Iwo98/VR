@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Ceiling : MonoBehaviour
 {
+    public AudioSource CeilingDown, CeilingUp;
     public bool startMove;
     // Start is called before the first frame update
     void Start()
@@ -19,7 +20,9 @@ public class Ceiling : MonoBehaviour
 
     public void GoDown()
     {
-        if(transform.position.y > 4)
+        CeilingDown.Play();
+
+        if (transform.position.y > 4)
         {
             transform.position -= transform.up * Time.deltaTime;
         }
@@ -28,6 +31,8 @@ public class Ceiling : MonoBehaviour
 
     public void GoUp()
     {
+        CeilingUp.Play();
+
         if (transform.position.y < 4.776)
         {
             transform.position += transform.up * Time.deltaTime;
