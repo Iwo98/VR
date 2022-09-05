@@ -56,7 +56,7 @@ public class Game2 : MonoBehaviour
     private List<GameObject> gameKnobs = new List<GameObject>();
     private List<GameObject> gameKnobsSort = new List<GameObject>();
     private float timer = 0;
-    private Game_states game = Game_states.Re_game;
+    public Game_states game = Game_states.Re_game;
     private static int MAX_knobs = 8;
     private int[] correctKnobs = new int[MAX_knobs];
     private int[] setKnobs = new int[MAX_knobs];

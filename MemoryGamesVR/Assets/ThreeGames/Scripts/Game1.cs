@@ -28,21 +28,44 @@ public class Game1 : MonoBehaviour
     public GameObject win_sound;
     public GameObject mistake_sound;
     public TextMeshProUGUI buttonText;
+    public GameChoiceManager game_manager;
 
     private List<GameObject> gameFigures = new List<GameObject>();
     private List<GameObject> gameFiguresSort = new List<GameObject>();
     private float timer = 0;
     private GameObject snapZonesCopies;
-    private Game_states game = Game_states.No_game;
+    public Game_states game = Game_states.No_game;
     private float rot;
     private int timeEndRememberTower = 10;
     private int timeStartBuildTower = 11;
     private int timeEndGame = 30;
+    private int difficulty = 0;
+    private int score = 0;
 
     void Start()
     {
         snapZonesCopies = Instantiate(snapZones, new Vector3(15.436f, -0.818f, 5.981f), Quaternion.identity);
         snapZonesCopies.SetActive(false);
+        if (PlayerPrefs.HasKey("curr_game_difficulty"))
+        {
+            difficulty = PlayerPrefs.GetInt("curr_game_difficulty");
+            if (difficulty < 3)
+            {
+                difficulty = 3;
+            }
+            else if (difficulty < 5 && difficulty >= 3)
+            {
+                difficulty = 5;
+            }
+            else if (difficulty < 7 && difficulty >= 5)
+            {
+                difficulty = 6;
+            }
+            else difficulty = 7;
+            Debug.Log(difficulty);
+
+
+        }
     }
     public int selectLevel()
     {
@@ -61,7 +84,7 @@ public class Game1 : MonoBehaviour
     }
     public void infoLevel()
     {
-        int level = selectLevel();
+        int level = difficulty;
         if (level == 3)
         {
             infoLevelText.text = "Łatwy";
@@ -91,11 +114,13 @@ public class Game1 : MonoBehaviour
         }
         else if (game == Game_states.End_game)
         {
-            SceneManager.LoadScene("Scenes/Game1/Game1_1.0");
+            game_manager = GameObject.FindObjectsOfType<GameChoiceManager>()[0];
+            game_manager.endGameManagement(score);
         }
     }
     public void exitGame()
     {
+        Debug.Log("Wyjscie");
         Application.Quit();
     }
     public void nextGame()
@@ -111,7 +136,7 @@ public class Game1 : MonoBehaviour
     }
     public void starGame1()
     {
-        levelNumber = selectLevel();
+        //levelNumber = selectLevel();
         infoText.text = "Zapamietaj ułożenie wieży\n masz 10s";
         activationDeactivationHand();
         if (game == 0)
@@ -196,8 +221,9 @@ public class Game1 : MonoBehaviour
         {
             infoText.text = "Koniec gry\nPoprawna wieża";
             win.Play();
+            score = 100;
         }
-        buttonText.text = "Restart";
+        buttonText.text = "Dalej";
     }
 
     // Update is called once per frame
@@ -210,14 +236,17 @@ public class Game1 : MonoBehaviour
         int seconds = (int)(timer % 60);
         if (seconds >= timeEndRememberTower && game == Game_states.Remember_tower)
         {
+            Debug.Log(game);
             destructionTower();
         }
         if (seconds >= timeStartBuildTower && game == Game_states.Destruction_tower)
         {
+            Debug.Log(game);
             buildTower();
         }
         if (seconds >= timeEndGame && game == Game_states.Build_tower)
         {
+            Debug.Log(game);
             checkTower();
         }
     }
