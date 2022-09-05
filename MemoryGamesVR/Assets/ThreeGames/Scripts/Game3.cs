@@ -29,6 +29,7 @@ public class Game3 : MonoBehaviour
     public GameObject win_sound;
     public GameObject mistake_sound;
     public TextMeshProUGUI buttonText;
+    public GameChoiceManager game_manager;
 
     private List<GameObject> gameToys = new List<GameObject>();
     private List<int> randListNumbers = new List<int>();
@@ -46,10 +47,29 @@ public class Game3 : MonoBehaviour
     private int[] setKnobs = new int[MAX_knobs];
     private int timeEndRememberKnobs = 10;
     private int timeEndGame = 30;
+    private int difficulty = 0;
+    private int score = 0;
 
     void Start()
     {
-        
+        if (PlayerPrefs.HasKey("curr_game_difficulty"))
+        {
+            difficulty = PlayerPrefs.GetInt("curr_game_difficulty");
+            if (difficulty < 3)
+            {
+                difficulty = 5;
+            }
+            else if (difficulty < 5 && difficulty >= 3)
+            {
+                difficulty = 6;
+            }
+            else if (difficulty < 7 && difficulty >= 5)
+            {
+                difficulty = 7;
+            }
+            else difficulty = 9;
+
+        }
 
     }
     
@@ -70,7 +90,7 @@ public class Game3 : MonoBehaviour
     }
     public void infoLevel()
     {
-        int level = selectLevel();
+        int level = difficulty;
         if (level == 5)
         {
             infoLevelText.text = "£atwy";
@@ -100,7 +120,8 @@ public class Game3 : MonoBehaviour
         }
         else if (game == Game_states.End_game)
         {
-            SceneManager.LoadScene("Scenes/Game3/Game3_1.0");
+            game_manager = GameObject.FindObjectsOfType<GameChoiceManager>()[0];
+            game_manager.endGameManagement(score);
         }
     }
     public void exitGame()
@@ -121,7 +142,7 @@ public class Game3 : MonoBehaviour
 
     public void starGame3()
     {
-        levelNumber = selectLevel();
+        levelNumber = difficulty;
         infoText.text = "Zapamietaj przedmioty\n na stole masz 10s";
         activationDeactivationHand();
         if (game == 0)
@@ -248,8 +269,9 @@ public class Game3 : MonoBehaviour
          {
              infoText.text = "Koniec gry\nPoprawne ustawienie";
              win.Play();
+             score = 100;
          }
-         buttonText.text = "Restart";
+         buttonText.text = "Dalej";
      }
     
     // Update is called once per frame

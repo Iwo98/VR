@@ -40,7 +40,7 @@ public class ConstantGameValues : MonoBehaviour
 
     private void initVals()
     {
-        numberOfGames = 14;
+        numberOfGames = 17;
         cognitiveTrainingNumberOfGames = 8;
         exerciseTrainingNumberOfGames = 8;
         warmUpNumberOfGames = 8;
@@ -65,6 +65,9 @@ public class ConstantGameValues : MonoBehaviour
         gameIdNames.Add("Balloons");
         gameIdNames.Add("Plank");
         gameIdNames.Add("Terrain");
+        gameIdNames.Add("Tower");
+        gameIdNames.Add("Knobs");
+        gameIdNames.Add("NewThings");
 
     }
 
@@ -85,6 +88,9 @@ public class ConstantGameValues : MonoBehaviour
         gameNames.Add("Balony");
         gameNames.Add("Plank");
         gameNames.Add("Teren");
+        gameNames.Add("Wieża");
+        gameNames.Add("Pokrętła");
+        gameNames.Add("Nowe rzeczy");
     }
 
     private void initCognitiveGameNames()
@@ -100,6 +106,9 @@ public class ConstantGameValues : MonoBehaviour
         cognitiveGameNames.Add("Skrzynie");
         cognitiveGameNames.Add("Balony");
         cognitiveGameNames.Add("Teren");
+        cognitiveGameNames.Add("Wieża");
+        cognitiveGameNames.Add("Pokrętła");
+        cognitiveGameNames.Add("Nowe rzeczy");
     }
 
     private void initExerciseGameNames()
@@ -128,6 +137,9 @@ public class ConstantGameValues : MonoBehaviour
         gameScenes.Add("BalonySejfSkrzynieSiatkaTerenu/Michal/Scenes/Balloons");
         gameScenes.Add("Plank_Game/Scenes/Plank_Game");
         gameScenes.Add("BalonySejfSkrzynieSiatkaTerenu/Hubert/Scenes/World");
+        gameScenes.Add("ThreeGames/Scenes/Game1/Game1_1.0");
+        gameScenes.Add("ThreeGames/Scenes/Game2/Game2_1.2");
+        gameScenes.Add("ThreeGames/Scenes/Game3/Game3_1.0");
         
         relaxScene = "RelaxGame/Scenes/RelaxGame";
     }
@@ -149,6 +161,9 @@ public class ConstantGameValues : MonoBehaviour
         gameIcons2DPaths.Add("Sprites/GameIcons/balloons");
         gameIcons2DPaths.Add("Sprites/GameIcons/spikes");
         gameIcons2DPaths.Add("Sprites/GameIcons/terrain");
+        gameIcons2DPaths.Add("Sprites/GameIcons/tower");
+        gameIcons2DPaths.Add("Sprites/GameIcons/knobs");
+        gameIcons2DPaths.Add("Sprites/GameIcons/nt");
     }
 
     public void initAvatars()

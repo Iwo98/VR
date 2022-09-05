@@ -62,8 +62,6 @@ public class Game1 : MonoBehaviour
                 difficulty = 6;
             }
             else difficulty = 7;
-            Debug.Log(difficulty);
-
 
         }
     }
@@ -120,7 +118,6 @@ public class Game1 : MonoBehaviour
     }
     public void exitGame()
     {
-        Debug.Log("Wyjscie");
         Application.Quit();
     }
     public void nextGame()
@@ -236,17 +233,14 @@ public class Game1 : MonoBehaviour
         int seconds = (int)(timer % 60);
         if (seconds >= timeEndRememberTower && game == Game_states.Remember_tower)
         {
-            Debug.Log(game);
             destructionTower();
         }
         if (seconds >= timeStartBuildTower && game == Game_states.Destruction_tower)
         {
-            Debug.Log(game);
             buildTower();
         }
         if (seconds >= timeEndGame && game == Game_states.Build_tower)
         {
-            Debug.Log(game);
             checkTower();
         }
     }

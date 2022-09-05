@@ -6691,6 +6691,7 @@ MonoBehaviour:
   win_sound: {fileID: 18711484}
   mistake_sound: {fileID: 479592442}
   buttonText: {fileID: 34414303}
+  game_manager: {fileID: 1254125278}
 --- !u!1 &1900194814
 GameObject:
   m_ObjectHideFlags: 0

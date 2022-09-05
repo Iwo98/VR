@@ -307,6 +307,7 @@ MonoBehaviour:
   win_sound: {fileID: 18711484}
   mistake_sound: {fileID: 479592442}
   buttonText: {fileID: 747022598}
+  game_manager: {fileID: 1516215521}
   game: 0
 --- !u!4 &41851727
 Transform:

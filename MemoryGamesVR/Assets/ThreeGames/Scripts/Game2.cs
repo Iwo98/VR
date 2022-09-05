@@ -50,6 +50,7 @@ public class Game2 : MonoBehaviour
     public GameObject win_sound;
     public GameObject mistake_sound;
     public TextMeshProUGUI buttonText;
+    public GameChoiceManager game_manager;
 
     private List<GameObject> createKnobs = new List<GameObject>();
     private List<GameObject> createKnobsWithoutSnapzones = new List<GameObject>();
@@ -62,6 +63,8 @@ public class Game2 : MonoBehaviour
     private int[] setKnobs = new int[MAX_knobs];
     private int timeEndRememberKnobs = 10;
     private int timeEndGame = 30;
+    private int difficulty = 0;
+    private int score = 0;
 
     void Start()
     {
@@ -72,6 +75,25 @@ public class Game2 : MonoBehaviour
             createKnobs.Add(GameObject.Find(knobs[i].name));
         }
         outKnobs();
+
+        if (PlayerPrefs.HasKey("curr_game_difficulty"))
+        {
+            difficulty = PlayerPrefs.GetInt("curr_game_difficulty");
+            if (difficulty < 3)
+            {
+                difficulty = 3;
+            }
+            else if (difficulty < 5 && difficulty >= 3)
+            {
+                difficulty = 4;
+            }
+            else if (difficulty < 7 && difficulty >= 5)
+            {
+                difficulty = 5;
+            }
+            else difficulty = 6;
+
+        }
     }
     public void outKnobs()
     {
@@ -100,7 +122,7 @@ public class Game2 : MonoBehaviour
     }
     public void infoLevel()
     {
-        int level = selectLevel();
+        int level = difficulty;
         if (level == 3)
         {
             infoLevelText.text = "£atwy";
@@ -131,7 +153,8 @@ public class Game2 : MonoBehaviour
         else if (game == Game_states.End_game)
         {
             outKnobs();
-            SceneManager.LoadScene("Scenes/Game2/Game2_1.1");
+            game_manager = GameObject.FindObjectsOfType<GameChoiceManager>()[0];
+            game_manager.endGameManagement(score);
         }
     }
     public void exitGame()
@@ -181,7 +204,7 @@ public class Game2 : MonoBehaviour
     public void starGame2()
     {
         outKnobs();
-        levelNumber = selectLevel();
+        levelNumber = difficulty;
         infoText.text = "Zapamietaj u³o¿enie ga³ek\n masz 10s";
         activationDeactivationHand();
         if (game == Game_states.No_game)
@@ -300,8 +323,9 @@ public class Game2 : MonoBehaviour
         {
             infoText.text = "Koniec gry\nPoprawne ustawienie";
             win.Play();
+            score = 100;
         }
-        buttonText.text = "Restart";
+        buttonText.text = "Dalej";
     }
 
     // Update is called once per frame
