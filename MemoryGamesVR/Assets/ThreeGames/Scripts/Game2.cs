@@ -74,7 +74,7 @@ public class Game2 : MonoBehaviour
             setKnobs[i] = (int)Knob_settings.NON;
             createKnobs.Add(GameObject.Find(knobs[i].name));
         }
-        outKnobs();
+       // outKnobs();
 
         if (PlayerPrefs.HasKey("curr_game_difficulty"))
         {
@@ -152,7 +152,7 @@ public class Game2 : MonoBehaviour
         }
         else if (game == Game_states.End_game)
         {
-            outKnobs();
+            //outKnobs();
             game_manager = GameObject.FindObjectsOfType<GameChoiceManager>()[0];
             game_manager.endGameManagement(score);
         }
@@ -348,7 +348,7 @@ public class Game2 : MonoBehaviour
         if (game == Game_states.Re_game)
         {
             game = Game_states.No_game;
-            outKnobs();
+            //outKnobs();
         }
     }
 

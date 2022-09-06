@@ -9546,6 +9546,86 @@ PrefabInstance:
       propertyPath: m_RequestedTrackingOriginMode
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 2477321169410107363, guid: d9d2bfa410febf94a8af05b6fc13de7f, type: 3}
+      propertyPath: m_SelectActionTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2477321169410107388, guid: d9d2bfa410febf94a8af05b6fc13de7f, type: 3}
+      propertyPath: m_LineLength
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 2477321169410107389, guid: d9d2bfa410febf94a8af05b6fc13de7f, type: 3}
+      propertyPath: m_SelectActionValue.m_Action.m_Id
+      value: eea77193-31f1-4795-abab-6557f87b34e8
+      objectReference: {fileID: 0}
+    - target: {fileID: 2477321169410107389, guid: d9d2bfa410febf94a8af05b6fc13de7f, type: 3}
+      propertyPath: m_UIPressActionValue.m_Action.m_Id
+      value: eea1ca65-dfa9-4d8d-954a-3c0fb684d5f2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2477321169410107389, guid: d9d2bfa410febf94a8af05b6fc13de7f, type: 3}
+      propertyPath: m_ActivateActionValue.m_Action.m_Id
+      value: 223d015a-7e60-47f0-9635-deff91d508a0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2477321169410107389, guid: d9d2bfa410febf94a8af05b6fc13de7f, type: 3}
+      propertyPath: m_SelectActionValue.m_Action.m_Name
+      value: Select Action Value
+      objectReference: {fileID: 0}
+    - target: {fileID: 2477321169410107389, guid: d9d2bfa410febf94a8af05b6fc13de7f, type: 3}
+      propertyPath: m_TrackingStateAction.m_Action.m_Id
+      value: 33637b51-9482-44d6-b6b1-2ffa64f8dc77
+      objectReference: {fileID: 0}
+    - target: {fileID: 2477321169410107389, guid: d9d2bfa410febf94a8af05b6fc13de7f, type: 3}
+      propertyPath: m_UIPressActionValue.m_Action.m_Name
+      value: UI Press Action Value
+      objectReference: {fileID: 0}
+    - target: {fileID: 2477321169410107389, guid: d9d2bfa410febf94a8af05b6fc13de7f, type: 3}
+      propertyPath: m_ActivateActionValue.m_Action.m_Name
+      value: Activate Action Value
+      objectReference: {fileID: 0}
+    - target: {fileID: 2477321169410107389, guid: d9d2bfa410febf94a8af05b6fc13de7f, type: 3}
+      propertyPath: m_TrackingStateAction.m_Action.m_Name
+      value: Tracking State
+      objectReference: {fileID: 0}
+    - target: {fileID: 6199911413916811848, guid: d9d2bfa410febf94a8af05b6fc13de7f, type: 3}
+      propertyPath: m_SelectActionTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6199911413916811849, guid: d9d2bfa410febf94a8af05b6fc13de7f, type: 3}
+      propertyPath: m_LineLength
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 6199911413916811852, guid: d9d2bfa410febf94a8af05b6fc13de7f, type: 3}
+      propertyPath: m_SelectActionValue.m_Action.m_Id
+      value: 40c2ef92-a476-4bc9-841b-c4b1c0f1b786
+      objectReference: {fileID: 0}
+    - target: {fileID: 6199911413916811852, guid: d9d2bfa410febf94a8af05b6fc13de7f, type: 3}
+      propertyPath: m_UIPressActionValue.m_Action.m_Id
+      value: 53e9b77f-d9f8-449c-aafd-61eb92b96460
+      objectReference: {fileID: 0}
+    - target: {fileID: 6199911413916811852, guid: d9d2bfa410febf94a8af05b6fc13de7f, type: 3}
+      propertyPath: m_ActivateActionValue.m_Action.m_Id
+      value: d6c2f616-18bb-439d-b23b-d6472ae9ed0e
+      objectReference: {fileID: 0}
+    - target: {fileID: 6199911413916811852, guid: d9d2bfa410febf94a8af05b6fc13de7f, type: 3}
+      propertyPath: m_SelectActionValue.m_Action.m_Name
+      value: Select Action Value
+      objectReference: {fileID: 0}
+    - target: {fileID: 6199911413916811852, guid: d9d2bfa410febf94a8af05b6fc13de7f, type: 3}
+      propertyPath: m_TrackingStateAction.m_Action.m_Id
+      value: cfe1e672-9d27-4a2b-9e02-ffaa915b0979
+      objectReference: {fileID: 0}
+    - target: {fileID: 6199911413916811852, guid: d9d2bfa410febf94a8af05b6fc13de7f, type: 3}
+      propertyPath: m_UIPressActionValue.m_Action.m_Name
+      value: UI Press Action Value
+      objectReference: {fileID: 0}
+    - target: {fileID: 6199911413916811852, guid: d9d2bfa410febf94a8af05b6fc13de7f, type: 3}
+      propertyPath: m_ActivateActionValue.m_Action.m_Name
+      value: Activate Action Value
+      objectReference: {fileID: 0}
+    - target: {fileID: 6199911413916811852, guid: d9d2bfa410febf94a8af05b6fc13de7f, type: 3}
+      propertyPath: m_TrackingStateAction.m_Action.m_Name
+      value: Tracking State
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d9d2bfa410febf94a8af05b6fc13de7f, type: 3}
 --- !u!114 &1688612197 stripped
@@ -12242,7 +12322,7 @@ PrefabInstance:
       objectReference: {fileID: 1688612205}
     - target: {fileID: 6192608474633190518, guid: 245aaf154e4e8744baa7a937abcacf51, type: 3}
       propertyPath: m_SortingOrder
-      value: 1000
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8734958295287319772, guid: 245aaf154e4e8744baa7a937abcacf51, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
