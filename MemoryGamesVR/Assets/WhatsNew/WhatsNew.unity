@@ -11013,8 +11013,9 @@ MonoBehaviour:
   trainingNumberOfGames: 0
   cognitiveTrainingNumberOfGames: 0
   exerciseTrainingNumberOfGames: 0
-  warmUpNumberOfGames: 0
   maxDifficulty: 0
+  warmUpNumberOfGames: 0
+  relaxScene: 
   gameIdNames: []
   gameNames: []
   gameScenes: []
@@ -11832,11 +11833,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 755698745125788302, guid: 02f725da32a8ec94da1dd599095f3ec1, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 1.44
       objectReference: {fileID: 0}
     - target: {fileID: 755698745125788302, guid: 02f725da32a8ec94da1dd599095f3ec1, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.02
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 755698745125788302, guid: 02f725da32a8ec94da1dd599095f3ec1, type: 3}
       propertyPath: m_LocalRotation.w
@@ -11936,7 +11937,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 755698745459747019, guid: 02f725da32a8ec94da1dd599095f3ec1, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.428
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 755698745484675147, guid: 02f725da32a8ec94da1dd599095f3ec1, type: 3}
       propertyPath: orthographic
@@ -11947,8 +11948,16 @@ PrefabInstance:
       value: 98.4
       objectReference: {fileID: 0}
     - target: {fileID: 755698745484675148, guid: 02f725da32a8ec94da1dd599095f3ec1, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 755698745484675148, guid: 02f725da32a8ec94da1dd599095f3ec1, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.019
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 755698745484675148, guid: 02f725da32a8ec94da1dd599095f3ec1, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 755698745484675149, guid: 02f725da32a8ec94da1dd599095f3ec1, type: 3}
       propertyPath: m_TrackingType
