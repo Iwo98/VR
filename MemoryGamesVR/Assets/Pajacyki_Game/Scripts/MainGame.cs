@@ -19,7 +19,7 @@ public class MainGame : MonoBehaviour
     public Transform SpawnPointRight;
     public float ballSpeed = 2f;
     public float maxTime = 5f;
-    public int phase = 1;
+    public int phase = 0;
     public float score = 0;
     public float numberOfBounces = 0;
     public float currTime = 0;
@@ -40,13 +40,13 @@ public class MainGame : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (phase == 1)
+        if (phase == 0)
         {
             StartingCanvas.gameObject.SetActive(true);
             rHand.SetActive(true);
             lHand.SetActive(true);
         }
-        else if (phase == 2)
+        else if (phase == 1)
         {
             rHand.SetActive(false);
             lHand.SetActive(false);
@@ -70,12 +70,12 @@ public class MainGame : MonoBehaviour
             else
             {
                 Destroy(SpawnedBall);
-                phase = 3;
+                phase = 2;
                 currTime = maxTime;
                 result = (float)Math.Ceiling((score / numberOfBounces) * 100);
             }
         }
-        else if (phase == 3)
+        else if (phase == 2)
         {
             rInstrument.SetActive(false);
             lInstrument.SetActive(false);
@@ -88,7 +88,7 @@ public class MainGame : MonoBehaviour
 
     public void ClickStartButton()
     {
-        phase = 2;
+        phase = 1;
         StartingCanvas.gameObject.SetActive(false);
     }
 
