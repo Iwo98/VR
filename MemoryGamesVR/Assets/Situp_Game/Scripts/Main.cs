@@ -52,8 +52,8 @@ public class Main : MonoBehaviour
             if (currTime > 7)
             {                
                 score = cubeCollider.points;
-                Debug.Log(score);
-                Debug.Log(spawnNumber);
+                //Debug.Log(score);
+                //Debug.Log(spawnNumber);
                 phase = 3;
             }
 

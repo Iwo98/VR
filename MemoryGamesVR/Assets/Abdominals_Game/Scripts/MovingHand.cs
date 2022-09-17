@@ -13,6 +13,6 @@ public class MovingHand : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.position -= transform.up * 2 * Time.deltaTime;
+        transform.position -= transform.up * 3 * Time.deltaTime;
     }
 }

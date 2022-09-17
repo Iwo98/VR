@@ -20,9 +20,6 @@ public class CubeCollider : MonoBehaviour
         if (collider.gameObject.tag == "Colide")
         {
            
-            //ScoreSound.Play();
-            //Destroy(this.gameObject, 1.0f);
-            //AddPoint();
 
             this.points += 1;
             myMain.gainedText.text = (points).ToString();

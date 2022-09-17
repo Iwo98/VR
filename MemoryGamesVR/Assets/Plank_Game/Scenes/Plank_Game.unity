@@ -1939,8 +1939,8 @@ MonoBehaviour:
   EndMenuCanvas: {fileID: 359000676}
   score: 0
   isGameOn: 1
-  timeSpikes: 3
-  maxTime: 6
+  timeSpikes: 8
+  maxTime: 30
   phase: 0
 --- !u!1 &788472309
 GameObject:
@@ -4643,6 +4643,10 @@ PrefabInstance:
     - target: {fileID: 2497444703282724910, guid: 0e411e56825cb3a489f655a8ace211ce, type: 3}
       propertyPath: m_Name
       value: Ceiling
+      objectReference: {fileID: 0}
+    - target: {fileID: 2497444703282724910, guid: 0e411e56825cb3a489f655a8ace211ce, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2497444703282724911, guid: 0e411e56825cb3a489f655a8ace211ce, type: 3}
       propertyPath: m_RootOrder

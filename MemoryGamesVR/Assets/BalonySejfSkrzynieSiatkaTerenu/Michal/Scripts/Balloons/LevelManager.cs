@@ -39,27 +39,27 @@ namespace Balloons
             difficulties = new LevelDifficulty[] {
                 new LevelDifficulty{
                     balloonSpeed = 3,
-                    balloonSpawnInterval = 3.5f,
-                    balloonColorLowerRange = 0
-                },
-                new LevelDifficulty{
-                    balloonSpeed = 6,
-                    balloonSpawnInterval = 3,
-                    balloonColorLowerRange = 0
-                },
-                new LevelDifficulty{
-                    balloonSpeed = 12,
                     balloonSpawnInterval = 2.5f,
                     balloonColorLowerRange = 0
                 },
                 new LevelDifficulty{
+                    balloonSpeed = 6,
+                    balloonSpawnInterval = 1.8f,
+                    balloonColorLowerRange = 0
+                },
+                new LevelDifficulty{
                     balloonSpeed = 12,
-                    balloonSpawnInterval = 2,
+                    balloonSpawnInterval = 1.3f,
+                    balloonColorLowerRange = 0
+                },
+                new LevelDifficulty{
+                    balloonSpeed = 12,
+                    balloonSpawnInterval = 0.8f,
                     balloonColorLowerRange = 0
                 },
                 new LevelDifficulty{
                     balloonSpeed = 15,
-                    balloonSpawnInterval = 1.5f,
+                    balloonSpawnInterval = 0.6f,
                     balloonColorLowerRange = 7
                 }
             };
@@ -105,7 +105,18 @@ namespace Balloons
             else if (phase == 3)
             {
                 EndMenuCanvas.gameObject.SetActive(true);
-                score = (int)Round((correctBalloonsHit - incorrectBalloonsHit) * 100.0 / totalBalloonsToBeHit);
+                if (totalBalloonsToBeHit == 0)
+                {
+                    score = 0;
+                }
+                else
+                {
+                    score = (int)Round((correctBalloonsHit - 0.25 * incorrectBalloonsHit) * 100.0 / totalBalloonsToBeHit);
+                    if (score <= 0)
+                    {
+                        score = 0; 
+                    }
+                }
                 finalText.text = (score).ToString() + "%";
                 phase = 4;
             }

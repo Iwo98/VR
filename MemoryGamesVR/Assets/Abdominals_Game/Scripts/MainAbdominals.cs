@@ -53,7 +53,7 @@ public class MainAbdominals : MonoBehaviour
         else if (phase == 2)
         {
             currTime += Time.deltaTime;
-            if (currTime > 15)
+            if (currTime > 10)
             {                
                 phase = 3;
             }

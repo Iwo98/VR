@@ -12037,7 +12037,7 @@ MonoBehaviour:
   EndMenuCanvas: {fileID: 518222524}
   score: 0
   phase: 0
-  maxTime: 30
+  maxTime: 23
   spawnNumber: 0
   allText: {fileID: 986921723}
   gainedText: {fileID: 1153482538}

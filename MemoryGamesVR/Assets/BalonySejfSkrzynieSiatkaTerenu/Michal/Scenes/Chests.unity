@@ -3455,6 +3455,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 346815031087295335, guid: 677862ddf5119c9459d5ef18e9ed0598, type: 3}
+      propertyPath: m_text
+      value: Skrzynie
+      objectReference: {fileID: 0}
     - target: {fileID: 7307853257979183156, guid: 677862ddf5119c9459d5ef18e9ed0598, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 

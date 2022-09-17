@@ -46,9 +46,11 @@ public class Game1 : MonoBehaviour
     {
         snapZonesCopies = Instantiate(snapZones, new Vector3(15.436f, -0.818f, 5.981f), Quaternion.identity);
         snapZonesCopies.SetActive(false);
+        
         if (PlayerPrefs.HasKey("curr_game_difficulty"))
         {
             difficulty = PlayerPrefs.GetInt("curr_game_difficulty");
+            Debug.Log(difficulty);
             if (difficulty < 3)
             {
                 difficulty = 3;
@@ -64,6 +66,7 @@ public class Game1 : MonoBehaviour
             else difficulty = 7;
 
         }
+        Debug.Log(difficulty);
     }
     public int selectLevel()
     {

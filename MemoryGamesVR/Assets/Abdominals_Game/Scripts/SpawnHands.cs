@@ -9,7 +9,7 @@ public class SpawnHands : MonoBehaviour
     public GameObject leftHand;
     public Transform RPoint;
     public Transform LPoint;
-    public float beat = 60 / 130;
+    public float beat = 10/10;
     private float timer;
    // private bool isUp = false;
 

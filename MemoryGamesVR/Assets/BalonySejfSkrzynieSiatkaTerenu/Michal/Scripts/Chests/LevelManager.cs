@@ -96,7 +96,22 @@ namespace Chests
             } else if (phase == 3)
             {
                 EndMenuCanvas.gameObject.SetActive(true);
-                score = (int)Round(scoreSign.correct * 100.0 / scoreSign.total);
+                if (scoreSign.total == 0)
+                {
+                    score = 0;
+                }
+                else
+                {
+                    score = (int)Round((scoreSign.correct - 0.25 * (scoreSign.total - scoreSign.correct)) * 100.0 / 20);
+                    if (score < 0)
+                    {
+                        score = 0;
+                    }else if (score > 100)
+                    {
+                        score = 100;
+                    }
+                }
+                
                 finalText.text = (score).ToString() + "%";
                 phase = 4;
             }

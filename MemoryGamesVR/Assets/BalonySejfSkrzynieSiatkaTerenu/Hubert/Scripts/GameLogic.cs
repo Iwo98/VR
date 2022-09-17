@@ -93,7 +93,29 @@ public class GameLogic : MonoBehaviour
             buttonY.SetActive(false);
             buttonN.SetActive(false);
             EndMenuCanvas.gameObject.SetActive(true);
-            score = (int)Round((Points - Errors)*100.0/(Points + Errors));
+            if (Points + Errors == 0)
+            {
+                score = 0;
+            }
+            else
+            {
+                if (Points + Errors == 0)
+                {
+                    score = 0;
+                }
+                else
+                {
+                    score = (int)Round((Points - 0.5 * Errors) * 100.0 / 15);
+                    if (score < 0)
+                    {
+                        score = 0;
+
+                    }else if (score > 100) {
+                        score = 100;
+                    }
+                }
+                
+            }
             finalText.text = score.ToString() + "%";
             phase = 3;
         }
