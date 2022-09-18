@@ -324,13 +324,14 @@ public class GamesController
         {
             if (i % 2 == 0)
             {
-                mergedGamesList.Add(preparedCognitiveGamesList[cognitiveGamesIndex]);
-                cognitiveGamesIndex++;
+                mergedGamesList.Add(preparedExerciseGamesList[exerciseGamesIndex]);
+                exerciseGamesIndex++;
+
             }
             else
             {
-                mergedGamesList.Add(preparedExerciseGamesList[exerciseGamesIndex]);
-                exerciseGamesIndex++;
+                mergedGamesList.Add(preparedCognitiveGamesList[cognitiveGamesIndex]);
+                cognitiveGamesIndex++;
             }
         }
     }
