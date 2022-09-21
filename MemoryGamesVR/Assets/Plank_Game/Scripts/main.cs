@@ -16,6 +16,7 @@ public class main : MonoBehaviour
     public Canvas StartMenuCanvas;
     public Canvas EndMenuCanvas;
     public float score = 0;
+    public int finalScore = 0;
     public bool isGameOn = false;
     public float timeSpikes;
     public float maxTime;
@@ -69,6 +70,7 @@ public class main : MonoBehaviour
         else if (phase == 2)
         {
             ceiling.GoUp();
+            finalScore = (int)Math.Round(score * 100 / maxTime);
             textMeshProUGUI.text = (Math.Round(score *100 / maxTime)).ToString() + "%";
             if (currTime > 2) phase = 3;
         }

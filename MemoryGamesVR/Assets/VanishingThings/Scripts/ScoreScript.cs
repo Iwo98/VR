@@ -9,6 +9,7 @@ public class ScoreScript : MonoBehaviour
     public static int score;
     public static int maxScore;
     public static GameObject currentGameObject;
+    public static int badScore = 0;
     // Start is called before the first frame update
     void Start()
     {
@@ -25,7 +26,7 @@ public class ScoreScript : MonoBehaviour
     public static void scoreUp()
     {
         score++;
-        maxScore++;
+        //maxScore++;
         for (int i = 0; i < 4; i++) {
             TextMeshPro text = currentGameObject.transform.GetChild(i).gameObject.GetComponent<TextMeshPro>();
             text.text = score.ToString() + "/" + maxScore.ToString();
@@ -34,7 +35,7 @@ public class ScoreScript : MonoBehaviour
 
     public static void scoreDown()
     {
-        maxScore++;
+        badScore++;
         for (int i = 0; i < 4; i++) {
             TextMeshPro text = currentGameObject.transform.GetChild(i).gameObject.GetComponent<TextMeshPro>();
             text.text = score.ToString() + "/" + maxScore.ToString();

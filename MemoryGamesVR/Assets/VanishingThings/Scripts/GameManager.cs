@@ -32,12 +32,12 @@ public class GameManager : MonoBehaviour
             }
             else
             {
-                Debug.Log("Time has run out!");
+                //Debug.Log("Time has run out!");
                 time_remaining = 0;
                 timer_running = false;
                 game_state = 2;
                 canvasScore.SetActive(true);
-                scoreText.text = ScoreScript.score.ToString() + "/" + ScoreScript.maxScore.ToString() + " PKT";
+                scoreText.text = ((ScoreScript.score - 0.5 * ScoreScript.badScore) / Orb.maxPoints * 100).ToString() + "%";
             }
             for (int i = 0; i < 4; i++)
             {
@@ -74,13 +74,13 @@ public class GameManager : MonoBehaviour
     public void ExitToMenu()
     {
         float score = 0;
-        Debug.Log(ScoreScript.maxScore);
-        Debug.Log(ScoreScript.score);
+        //Debug.Log(ScoreScript.maxScore);
+        //Debug.Log(ScoreScript.score);
         if (ScoreScript.maxScore > 0)
         {
-            score = ScoreScript.score / ScoreScript.maxScore * 100;
+            score = (float)((ScoreScript.score - 0.5 * ScoreScript.badScore) / Orb.maxPoints * 100.0);
         }
-        Debug.Log(score);
+        //Debug.Log(score);
         GameChoiceManager gameManager = GameObject.FindObjectsOfType<GameChoiceManager>()[0];
         gameManager.endGameManagement(score);
     }

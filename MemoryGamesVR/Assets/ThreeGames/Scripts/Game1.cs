@@ -41,6 +41,7 @@ public class Game1 : MonoBehaviour
     private int timeEndGame = 30;
     private int difficulty = 0;
     private int score = 0;
+    private int fails = 0;
 
     void Start()
     {
@@ -211,19 +212,22 @@ public class Game1 : MonoBehaviour
             
             if(gameFigures[i-1].transform.position.y >= gameFigures[i].transform.position.y)
             {
-                infoText.text = "Koniec gry\nZla wieża";
+                //infoText.text = "Koniec gry\nZla wieża";
                 mistake.Play();
                 check = false;
-                break;
+                //break;
+                fails++;
             }
         }
         if (check == true)
         {
-            infoText.text = "Koniec gry\nPoprawna wieża";
+            //infoText.text = "Koniec gry\nPoprawna wieża" ;
             win.Play();
-            score = 100;
+            //score = 100;
         }
         buttonText.text = "Dalej";
+        score = (difficulty - fails) * 100 / difficulty;
+        infoText.text = score.ToString() + "%";
     }
 
     // Update is called once per frame

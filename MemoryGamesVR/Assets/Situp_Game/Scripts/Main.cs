@@ -13,6 +13,7 @@ public class Main : MonoBehaviour
     public Canvas StartMenuCanvas;
     public Canvas EndMenuCanvas;
     public int score = 0;
+    public int finalScore = 0;
     public int phase = 0;
     public float maxTime;
     public int spawnNumber = 0;
@@ -61,6 +62,7 @@ public class Main : MonoBehaviour
         else if (phase == 3)
         {
             EndMenuCanvas.gameObject.SetActive(true);
+            finalScore = (int)Math.Round((score * 100.0 / spawnNumber));
             finalText.text = (Math.Round((score * 100.0 / spawnNumber))).ToString() + "%";
             phase = 4;
         }

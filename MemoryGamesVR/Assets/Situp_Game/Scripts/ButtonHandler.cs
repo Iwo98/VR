@@ -18,6 +18,6 @@ public class ButtonHandler : MonoBehaviour
     public void ClickEndButton()
     {
         game_manager = GameObject.FindObjectsOfType<GameChoiceManager>()[0];
-        game_manager.endGameManagement(myMain.score);
+        game_manager.endGameManagement(myMain.finalScore);
     }
 }

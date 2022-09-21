@@ -13,6 +13,8 @@ public class Orb : MonoBehaviour
     public int direction;
     public GameObject[] cubeGlob;
     private float posChangeProb = 0.3f;
+    public static int maxPoints = 0;
+    private int randCube;
 
     // Start is called before the first frame update
     void Start()
@@ -80,9 +82,10 @@ public class Orb : MonoBehaviour
                     range = 3;
                 if (GameManager.game_mode == 2 || GameManager.game_mode == 5)
                     range = 4;
-                GameObject cube = Instantiate(cubeGlob[Random.Range(0, range)], new Vector3(transform.position.x, transform.position.y + 1.399f, transform.position.z), transform.rotation);
+                randCube = Random.Range(0, range);
+                GameObject cube = Instantiate(cubeGlob[randCube], new Vector3(transform.position.x, transform.position.y + 1.399f, transform.position.z), transform.rotation);
                 cube.GetComponent<Cube>().setDirection(oldDir);
-
+                if (randCube < 3) maxPoints++;
                 //cube.transform.localPosition = Vector3.zero;
 
             }
