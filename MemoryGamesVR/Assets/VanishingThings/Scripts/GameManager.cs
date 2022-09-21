@@ -37,7 +37,7 @@ public class GameManager : MonoBehaviour
                 timer_running = false;
                 game_state = 2;
                 canvasScore.SetActive(true);
-                scoreText.text = ((ScoreScript.score - 0.5 * ScoreScript.badScore) / Orb.maxPoints * 100).ToString() + "%";
+                scoreText.text = Mathf.RoundToInt((float)((ScoreScript.score - 0.5 * ScoreScript.badScore) / Orb.maxPoints * 100)).ToString() + "%";
             }
             for (int i = 0; i < 4; i++)
             {
@@ -73,12 +73,12 @@ public class GameManager : MonoBehaviour
 
     public void ExitToMenu()
     {
-        float score = 0;
+        int score = 0;
         //Debug.Log(ScoreScript.maxScore);
         //Debug.Log(ScoreScript.score);
-        if (ScoreScript.maxScore > 0)
+        if (Orb.maxPoints > 0)
         {
-            score = (float)((ScoreScript.score - 0.5 * ScoreScript.badScore) / Orb.maxPoints * 100.0);
+            score = Mathf.RoundToInt((float)((ScoreScript.score - 0.5 * ScoreScript.badScore) / Orb.maxPoints * 100.0));
         }
         //Debug.Log(score);
         GameChoiceManager gameManager = GameObject.FindObjectsOfType<GameChoiceManager>()[0];

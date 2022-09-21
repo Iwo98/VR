@@ -105,7 +105,7 @@ public class GameLogic : MonoBehaviour
                 }
                 else
                 {
-                    score = (int)Round((Points - 0.5 * Errors) * 100.0 / 15);
+                    score = (int)Round((Points - 0.5 * Errors) * 100.0 / 12);
                     if (score < 0)
                     {
                         score = 0;

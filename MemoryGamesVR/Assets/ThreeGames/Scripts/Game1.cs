@@ -137,7 +137,7 @@ public class Game1 : MonoBehaviour
     }
     public void starGame1()
     {
-        //levelNumber = selectLevel();
+        levelNumber = difficulty;
         infoText.text = "Zapamietaj ułożenie wieży\n masz 10s";
         activationDeactivationHand();
         if (game == 0)

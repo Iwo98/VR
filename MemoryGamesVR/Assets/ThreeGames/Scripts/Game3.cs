@@ -274,7 +274,7 @@ public class Game3 : MonoBehaviour
              //score = 100;
          }
          buttonText.text = "Dalej";
-         score = (difficulty - fails) * 100 / difficulty;
+         score = (difficulty - fails) * 100 / (difficulty + Mathf.FloorToInt(difficulty/3));
          infoText.text = score.ToString() + "%";
     }
     

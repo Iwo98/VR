@@ -29,7 +29,7 @@ public class ScoreScript : MonoBehaviour
         //maxScore++;
         for (int i = 0; i < 4; i++) {
             TextMeshPro text = currentGameObject.transform.GetChild(i).gameObject.GetComponent<TextMeshPro>();
-            text.text = score.ToString() + "/" + maxScore.ToString();
+            text.text = score.ToString() + "/" + Orb.maxPoints.ToString();
         }
     }
 
@@ -38,7 +38,7 @@ public class ScoreScript : MonoBehaviour
         badScore++;
         for (int i = 0; i < 4; i++) {
             TextMeshPro text = currentGameObject.transform.GetChild(i).gameObject.GetComponent<TextMeshPro>();
-            text.text = score.ToString() + "/" + maxScore.ToString();
+            text.text = score.ToString() + "/" + Orb.maxPoints.ToString();
         }
     }
 

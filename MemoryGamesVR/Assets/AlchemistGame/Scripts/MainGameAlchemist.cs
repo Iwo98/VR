@@ -358,7 +358,7 @@ public class MainGameAlchemist : MonoBehaviour
                 score = (int)(score * correctPotions / (correctPotions + wrongPotions));
             }
             score = (int)(score * (1.0f + difficulty_score_mul * (difficulty - 1)));
-            score = Mathf.RoundToInt(score / (700 * (1 + difficulty_score_mul * (difficulty - 1))));
+            score = Mathf.RoundToInt(score * 100 / (700));
             if (score > 100)
             {
                 score = 100;

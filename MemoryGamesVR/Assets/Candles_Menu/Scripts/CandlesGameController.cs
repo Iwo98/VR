@@ -141,7 +141,8 @@ public class CandlesGameController : MonoBehaviour
     {
         //float multiplier = (float)(0.7 + (difficulty * 0.3));
         //finalScore = (int)(1.0f * level.CheckCandles() / level.GetNumberOfCandles() * multiplier * 1300);
-        finalScore = Mathf.RoundToInt((level.CheckCandles() / level.GetNumberOfCandles()) * 100);
+        finalScore = Mathf.RoundToInt((level.CheckCandles() * 100 / level.GetNumberOfCandles() ));
+        Debug.Log(finalScore);
     }
 
     private void AnimateRememberBar()
