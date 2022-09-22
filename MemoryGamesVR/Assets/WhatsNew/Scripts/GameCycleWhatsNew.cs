@@ -12,10 +12,10 @@ public class GameCycleWhatsNew : MonoBehaviour
     [HideInInspector] public int score = 0;
     [HideInInspector] private int addedItemsCount = 0;
 
-    public float timeToFinishGame = 5.0f;
+    public float timeToFinishGame = 22.0f;
 
     [SerializeField]
-    public float timeToSpawnItems = 5.0f;
+    public float timeToSpawnItems = 8.0f;
     public int gameLevel = 1;
     public GameObject canvasScore;
     public GameObject rememberTimeBars;

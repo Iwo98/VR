@@ -10577,7 +10577,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69913166b2772b84f859346bbd3f594d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  time_remaining: 5
+  time_remaining: 30
   canvasScore: {fileID: 532992198}
   timers: {fileID: 1379048170}
   scoreText: {fileID: 639367713}
@@ -10623,8 +10623,9 @@ MonoBehaviour:
   trainingNumberOfGames: 0
   cognitiveTrainingNumberOfGames: 0
   exerciseTrainingNumberOfGames: 0
-  warmUpNumberOfGames: 0
   maxDifficulty: 0
+  warmUpNumberOfGames: 0
+  relaxScene: 
   gameIdNames: []
   gameNames: []
   gameScenes: []

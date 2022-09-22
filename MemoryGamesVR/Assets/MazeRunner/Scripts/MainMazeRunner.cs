@@ -740,7 +740,7 @@ public class MainMazeRunner : MonoBehaviour
         pointsString = points.ToString();
         pointsString += " pkt";
 
-        Debug.Log(pointsString);
+        Debug.Log("punkty" + points);
 
         pointsText.GetComponent<TMPro.TextMeshProUGUI>().text = pointsString;
 

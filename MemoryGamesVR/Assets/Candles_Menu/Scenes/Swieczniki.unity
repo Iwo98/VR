@@ -1893,7 +1893,7 @@ MonoBehaviour:
   difficulty: 6
   timeToStart: 3
   timeToRemember: 8
-  timePlayLength: 5
+  timePlayLength: 22
   timeBetweenScoreIcons: 0.6
   rememberTimeBar: {fileID: 608549182}
   playTimeBar: {fileID: 1220289285}
@@ -14900,8 +14900,9 @@ MonoBehaviour:
   trainingNumberOfGames: 3
   cognitiveTrainingNumberOfGames: 0
   exerciseTrainingNumberOfGames: 0
-  warmUpNumberOfGames: 0
   maxDifficulty: 10
+  warmUpNumberOfGames: 0
+  relaxScene: 
   gameIdNames: []
   gameNames: []
   gameScenes: []

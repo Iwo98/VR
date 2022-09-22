@@ -2712,8 +2712,9 @@ MonoBehaviour:
   trainingNumberOfGames: 3
   cognitiveTrainingNumberOfGames: 0
   exerciseTrainingNumberOfGames: 0
-  warmUpNumberOfGames: 0
   maxDifficulty: 10
+  warmUpNumberOfGames: 0
+  relaxScene: 
   gameIdNames: []
   gameNames: []
   gameScenes: []
@@ -5215,7 +5216,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   difficulty: 1
-  actionPhaseTime: 5
+  actionPhaseTime: 30
   isRightHand: 1
   magicSphereTemplate: {fileID: 373031428071018519, guid: 7d242759c50289c46ab008d6218713cb, type: 3}
   sphereConnectorTemplate: {fileID: 1663292253683395556, guid: beb404e13bdb5134db68beb0cbb6fc6f, type: 3}

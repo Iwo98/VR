@@ -5868,7 +5868,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   difficulty: 1
   rememberPhaseTime: 8
-  actionPhaseTime: 5
+  actionPhaseTime: 22
   potionTemplate1: {fileID: 6964181503601042257, guid: 24d0edd729b861b43be4901ad55e028f, type: 3}
   potionTemplate2: {fileID: 3321002466395110979, guid: dee7ed1c476b5ad4798d11623c807b26, type: 3}
   PotionColors:
@@ -6408,8 +6408,9 @@ MonoBehaviour:
   trainingNumberOfGames: 3
   cognitiveTrainingNumberOfGames: 0
   exerciseTrainingNumberOfGames: 0
-  warmUpNumberOfGames: 0
   maxDifficulty: 10
+  warmUpNumberOfGames: 0
+  relaxScene: 
   gameIdNames: []
   gameNames: []
   gameScenes: []
