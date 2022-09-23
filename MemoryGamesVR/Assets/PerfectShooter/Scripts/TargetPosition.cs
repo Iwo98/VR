@@ -10,12 +10,12 @@ public class TargetPosition : MonoBehaviour
     public List<Transform> activeShields = new List<Transform>();
     private int numberOfTargets = 6;
     private int numberOfColors = 2;
-    public int diffLevel = 0;
+    public static int diffLevel;
     public int maxPoints = 0;
 
     private void selectdiffLevel(int level)
     {
-        switch (level)
+        switch (level - 1)
         {
             case 0:
                 numberOfTargets = 4;
@@ -62,17 +62,23 @@ public class TargetPosition : MonoBehaviour
                 numberOfColors = 2;
                 break;
         }
-        maxPoints = numberOfTargets*numberOfColors*10;
+        maxPoints = numberOfTargets;
+
     }
 
 
     // Local variables
     private GameObject TargetsObject, TargetChildObject;
     
+    
 
     // Start is called before the first frame update
     void Start()
     {
+        if (PlayerPrefs.HasKey("curr_game_difficulty"))
+        {
+            diffLevel = PlayerPrefs.GetInt("curr_game_difficulty");
+        }
         selectdiffLevel(diffLevel);
         createListOfPositions();
     }

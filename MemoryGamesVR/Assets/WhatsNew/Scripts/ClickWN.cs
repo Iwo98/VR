@@ -30,6 +30,7 @@ public class ClickWN : MonoBehaviour {
 
     public int GetAmountOfItems()
     {
+        Debug.Log(clickOns.Count);
         return clickOns.Count;
     }
 

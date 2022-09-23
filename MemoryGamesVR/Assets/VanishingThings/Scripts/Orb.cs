@@ -83,9 +83,12 @@ public class Orb : MonoBehaviour
                 if (GameManager.game_mode == 2 || GameManager.game_mode == 5)
                     range = 4;
                 randCube = Random.Range(0, range);
-                GameObject cube = Instantiate(cubeGlob[randCube], new Vector3(transform.position.x, transform.position.y + 1.399f, transform.position.z), transform.rotation);
-                cube.GetComponent<Cube>().setDirection(oldDir);
-                if (randCube < 3) maxPoints++;
+                if (!GameManager.stop)
+                {
+                    GameObject cube = Instantiate(cubeGlob[randCube], new Vector3(transform.position.x, transform.position.y + 1.399f, transform.position.z), transform.rotation);
+                    cube.GetComponent<Cube>().setDirection(oldDir);
+                    if (randCube < 3) maxPoints++;
+                }
                 //cube.transform.localPosition = Vector3.zero;
 
             }
