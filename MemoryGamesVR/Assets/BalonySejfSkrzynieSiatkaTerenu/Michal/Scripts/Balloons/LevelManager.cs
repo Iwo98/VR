@@ -36,6 +36,7 @@ namespace Balloons
         // Start is called before the first frame update
         void Start()
         {
+            Debug.Log("I am here");
             difficulties = new LevelDifficulty[] {
                 new LevelDifficulty{
                     balloonSpeed = 3,

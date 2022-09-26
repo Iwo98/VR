@@ -41,10 +41,10 @@ public class ConstantGameValues : MonoBehaviour
     private void initVals()
     {
         numberOfGames = 17;
-        cognitiveTrainingNumberOfGames = 1;
-        exerciseTrainingNumberOfGames = 1;
+        cognitiveTrainingNumberOfGames = 8;
+        exerciseTrainingNumberOfGames = 8;
         warmUpNumberOfGames = 1;
-        trainingNumberOfGames = 2;
+        trainingNumberOfGames = 16;
         maxDifficulty = 10;
     }
 

@@ -12818,6 +12818,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2042790280}
     m_Modifications:
+    - target: {fileID: 7481331121673277792, guid: ed4424cf68402c249ac5b8b3925072be, type: 3}
+      propertyPath: m_SortingOrder
+      value: -1
+      objectReference: {fileID: 0}
     - target: {fileID: 7481331121673277820, guid: ed4424cf68402c249ac5b8b3925072be, type: 3}
       propertyPath: m_Name
       value: mapCanvas

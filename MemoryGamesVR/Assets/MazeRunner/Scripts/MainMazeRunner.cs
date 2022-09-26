@@ -721,24 +721,25 @@ public class MainMazeRunner : MonoBehaviour
 
         for (int i = 0; i < keysCollected + keysCollectedOverall; i++)
             points += 93;
-
+        Debug.Log(points);
         for (int i = 0; i < obstaclesEncountered + obstaclesEncounteredOverall; i++)
             points -= 257;
-
+        Debug.Log(points);
         //float distance = Mathf.Sqrt(Mathf.Pow(xPos - xSize + 1, 2) + Mathf.Pow(yPos - ySize + 1, 2));
 
         //Debug.Log(distance);
 
         points += 269 * levelsPassed;
-        points = points / 2000;
-
+        Debug.Log(points);
+        points = points * 100 / 1500;
+        Debug.Log(points);
         //points += (int)(72 / distance);
 
         if (points < 0)
             points = 0;
         else if (points > 100)
             points = 100;
-
+        Debug.Log(points);
         string pointsString = "";
         pointsString = points.ToString();
         pointsString += "%";
