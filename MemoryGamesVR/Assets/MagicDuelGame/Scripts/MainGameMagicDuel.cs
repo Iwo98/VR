@@ -307,7 +307,12 @@ public class MainGameMagicDuel : MonoBehaviour
             destroyMagicGrid();
             isSpellActive = false;
             spellQueue = new List<int>();
-            score = (int)(score * (1.0f + difficulty_score_mul * (difficulty - 1)));
+            //score = (int)(score * (1.0f + difficulty_score_mul * (difficulty - 1)));
+            score = Mathf.RoundToInt(score * 100 / 1200);
+            if (score > 100)
+            {
+                score = 100;
+            }
             endMenuCanvas.GetComponent<Canvas>().enabled = true;
             textScore.GetComponent<TextMeshProUGUI>().text = score.ToString();
         }

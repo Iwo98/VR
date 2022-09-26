@@ -1163,7 +1163,7 @@ MonoBehaviour:
   StartingCanvas: {fileID: 3173332665141230443}
   phase: 1
   currTime: 0
-  maxTime: 5
+  maxTime: 30
 --- !u!1001 &95970111
 PrefabInstance:
   m_ObjectHideFlags: 0

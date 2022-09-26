@@ -16,7 +16,7 @@ public class GameCycleWhatsNew : MonoBehaviour
 
     [SerializeField]
     public float timeToSpawnItems = 8.0f;
-    public int gameLevel = 1;
+    public int gameLevel = 7;
     public GameObject canvasScore;
     public GameObject rememberTimeBars;
     public GameObject playTimeBars;
@@ -162,8 +162,9 @@ public class GameCycleWhatsNew : MonoBehaviour
         canvasScore.SetActive(true);
         if (score < 0)
             score = 0;
-        scoreText.text = score.ToString() + "/" + addedItemsCount;
-        score = (int)((1300 * score / addedItemsCount) * (1 + 1.3 * (gameLevel - 1)));
+        scoreText.text = Mathf.RoundToInt(100 * score / addedItemsCount).ToString() + "%";
+        //score = (int)((1300 * score / addedItemsCount) * (1 + 1.3 * (gameLevel - 1)));
+        score = (int)Mathf.RoundToInt(100 * score / addedItemsCount);
 
     }
 

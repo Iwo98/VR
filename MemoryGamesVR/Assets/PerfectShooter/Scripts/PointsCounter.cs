@@ -6,12 +6,13 @@ public class PointsCounter : MonoBehaviour
 {
     public int points = 0;
     public GameObject temp = null;
+    public int score = 0;
     // Start is called before the first frame update
     
 
     public string GetPoints()
     {
-        return (points*1300/temp.GetComponent<TargetPosition>().maxPoints).ToString();
+        return (points * 10/ temp.GetComponent<TargetPosition>().maxPoints).ToString() + "%";
     }
 
     public  void UpPoints(int value = 1)
@@ -26,9 +27,12 @@ public class PointsCounter : MonoBehaviour
 
     public void btnClickGameEnd()
     {
-        int difficulty = GameObject.FindObjectsOfType<TargetPosition>()[0].diffLevel;
-        float score = points * 1300 / temp.GetComponent<TargetPosition>().maxPoints;
-        score *= (1.0f + (difficulty - 1) * 0.3f);  //  Change for difficulty
+        //int difficulty = GameObject.FindObjectsOfType<TargetPosition>()[0].diffLevel;
+        int difficulty = TargetPosition.diffLevel;
+        score = points * 10 / temp.GetComponent<TargetPosition>().maxPoints;
+        Debug.Log(score);
+        //score *= (int)Mathf.RoundToInt(1 + (difficulty - 1) * 0.3f);  //  Change for difficulty
+        
         GameChoiceManager game_manager = GameObject.FindObjectsOfType<GameChoiceManager>()[0];
         game_manager.endGameManagement(score);
     }

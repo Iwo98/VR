@@ -2053,11 +2053,11 @@ MonoBehaviour:
   areNewItemsShown: 0
   gameState: 1
   score: 0
-  timeToFinishGame: 5
-  timeToSpawnItems: 5
-  gameLevel: 1
+  timeToFinishGame: 20
+  timeToSpawnItems: 10
+  gameLevel: 7
   canvasScore: {fileID: 175427272}
-  rememberTimeBars: {fileID: 1116807543}
+  rememberTimeBars: {fileID: 1689708060}
   playTimeBars: {fileID: 1116807543}
   endCanvas: {fileID: 1492099449}
   rememberTimeBar1: {fileID: 1777809190}

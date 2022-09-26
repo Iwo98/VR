@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
     public static bool timer_running;
     public float time_remaining = 30;
     public static int game_state;
+    public static bool stop = false;
     public GameObject canvasScore;
     public GameObject timers;
     public TMP_Text scoreText;
@@ -26,18 +27,27 @@ public class GameManager : MonoBehaviour
     {
         if (timer_running && game_state == 1)
         {
-            if (time_remaining > 0)
+            if (time_remaining > 6)
             {
                 time_remaining -= Time.deltaTime;
             }
             else
             {
-                Debug.Log("Time has run out!");
-                time_remaining = 0;
-                timer_running = false;
-                game_state = 2;
-                canvasScore.SetActive(true);
-                scoreText.text = ScoreScript.score.ToString() + "/" + ScoreScript.maxScore.ToString() + " PKT";
+                //Debug.Log("Time has run out!");
+                //time_remaining = 5;
+                //timer_running = false;
+                
+                stop = true;
+                if (time_remaining > 0)
+                {
+                    time_remaining -= Time.deltaTime;
+                }
+                else
+                {
+                    game_state = 2;
+                }
+                //canvasScore.SetActive(true);
+                //scoreText.text = Mathf.RoundToInt((float)((ScoreScript.score - 0.5 * ScoreScript.badScore) / Orb.maxPoints * 100)).ToString() + "%";
             }
             for (int i = 0; i < 4; i++)
             {
@@ -47,10 +57,20 @@ public class GameManager : MonoBehaviour
         }
         if(game_state == 2)
         {
-            for (int i = 0; i < 4; i++)
+            if (time_remaining > 0)
             {
-                TextMeshPro text = timers.transform.GetChild(i).gameObject.GetComponent<TextMeshPro>();
-                text.text = "00:00";
+                time_remaining -= Time.deltaTime;
+            }
+            else
+            {
+                for (int i = 0; i < 4; i++)
+                {
+                    timer_running = false;
+                    canvasScore.SetActive(true);
+                    scoreText.text = Mathf.RoundToInt((float)((ScoreScript.score - 0.5 * ScoreScript.badScore) / Orb.maxPoints * 100)).ToString() + "%";
+                    TextMeshPro text = timers.transform.GetChild(i).gameObject.GetComponent<TextMeshPro>();
+                    text.text = "00:00";
+                }
             }
         }
     }
@@ -73,14 +93,14 @@ public class GameManager : MonoBehaviour
 
     public void ExitToMenu()
     {
-        float score = 0;
-        Debug.Log(ScoreScript.maxScore);
-        Debug.Log(ScoreScript.score);
-        if (ScoreScript.maxScore > 0)
+        int score = 0;
+        //Debug.Log(ScoreScript.maxScore);
+        //Debug.Log(ScoreScript.score);
+        if (Orb.maxPoints > 0)
         {
-            score = ScoreScript.score / ScoreScript.maxScore * 100;
+            score = Mathf.RoundToInt((float)((ScoreScript.score - 0.5 * ScoreScript.badScore) / Orb.maxPoints * 100.0));
         }
-        Debug.Log(score);
+        //Debug.Log(score);
         GameChoiceManager gameManager = GameObject.FindObjectsOfType<GameChoiceManager>()[0];
         gameManager.endGameManagement(score);
     }

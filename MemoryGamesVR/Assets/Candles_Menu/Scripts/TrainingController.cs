@@ -60,6 +60,8 @@ public class TrainingController : MonoBehaviour
         }
         Destroy(gameResultTemplate);
 
+        total_score = Mathf.RoundToInt(total_score / game_values.trainingNumberOfGames);
+
         difficultyText.text = "Poziom Trudności: " + difficulty.ToString();
         trainingResultsSumText.GetComponent<TextMeshProUGUI>().text = "Wynik treningu:\n" + total_score.ToString();
         trainingResultsCanvas.SetActive(true);

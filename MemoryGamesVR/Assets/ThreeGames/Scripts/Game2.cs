@@ -65,6 +65,7 @@ public class Game2 : MonoBehaviour
     private int timeEndGame = 30;
     private int difficulty = 0;
     private int score = 0;
+    private int fails = 0;
 
     void Start()
     {
@@ -313,19 +314,22 @@ public class Game2 : MonoBehaviour
 
             if (correctKnobs[i] != (int)Knob_settings.NON && setKnobs[i] != correctKnobs[i])
             {
-                infoText.text = "Koniec gry\nZle ustawienie";
+                //infoText.text = "Koniec gry\nZle ustawienie";
                 mistake.Play();
                 check = false;
-                break;
+                fails++;
+                //break;
             }
         }
         if (check == true)
         {
-            infoText.text = "Koniec gry\nPoprawne ustawienie";
+            //infoText.text = "Koniec gry\nPoprawne ustawienie";
             win.Play();
-            score = 100;
+            //score = 100;
         }
         buttonText.text = "Dalej";
+        score = (difficulty - fails) * 100 / difficulty;
+        infoText.text = score.ToString() + "%";
     }
 
     // Update is called once per frame

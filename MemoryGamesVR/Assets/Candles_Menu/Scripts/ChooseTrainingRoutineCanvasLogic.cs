@@ -233,6 +233,8 @@ public class ChooseTrainingRoutineCanvasLogic : MonoBehaviour
     public void handleNextButton()
     {
         chooseGames(cognitiveGamesOrder, "cognitive");
+        gamesController.printCognitiveGames("notPrepared");
+        gamesController.printCognitiveGames("prepared");
         ChooseCognitiveGamesCanvas.gameObject.SetActive(false);
         ChooseExerciseGamesCanvas.gameObject.SetActive(true);
         saveUserDifficultyData();

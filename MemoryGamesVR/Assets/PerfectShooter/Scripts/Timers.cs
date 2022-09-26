@@ -19,6 +19,8 @@ public class Timers : MonoBehaviour
 
     public List<GameObject> arrows;
 
+    public int diffLevel = 0;
+
     private bool changeTargets = true;
 
     // Start is called before the first frame update
@@ -86,6 +88,11 @@ public class Timers : MonoBehaviour
     public void startTimeCounter()
     {
         counting_in_progress = true;
+        if (PlayerPrefs.HasKey("curr_game_difficulty"))
+        {
+            diffLevel = PlayerPrefs.GetInt("curr_game_difficulty");
+        }
+        TargetPosition.diffLevel = diffLevel;
     }
 
 }
