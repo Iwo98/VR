@@ -11777,7 +11777,7 @@ PrefabInstance:
       value: "Wszystkie kroki r\xF3b powoli i spokojnie\n\n1. Sta\u0144 ze z\u0142\u0105czonymi
         nogami\r\n\n2. Prowadz\u0105c d\u0142onie blisko cia\u0142a, zejd\u017A w
         d\xF3\u0142 do sk\u0142onu\r\n\n3. Powoli podno\u015B si\u0119 a\u017C do
-        wyprostujesz kr\u0119gos\u0142up"
+        wyprostowania kr\u0119gos\u0142upa"
       objectReference: {fileID: 0}
     - target: {fileID: 4445682994975294736, guid: 4de99908fe5d039419e49750fe6ad83c, type: 3}
       propertyPath: m_PresetInfoIsWorld
@@ -11941,8 +11941,8 @@ PrefabInstance:
     - target: {fileID: 2066323619322046546, guid: 245aaf154e4e8744baa7a937abcacf51, type: 3}
       propertyPath: m_text
       value: "Masz  3 minuty na relaks oraz rozci\u0105ganie - po tym czasie zostaniesz
-        przeniesiony/ a modu\u0142u treningowego, gdzie znajdziesz podsumowanie swojego
-        treningu.\n\nP.S. Z niekt\xF3rymi przedmiotami mo\u017Cesz wchodzi\u0107
+        przeniesiony/a do modu\u0142u treningowego, gdzie znajdziesz podsumowanie
+        swojego treningu.\n\nP.S. Z niekt\xF3rymi przedmiotami mo\u017Cesz wchodzi\u0107
         w interakcj\u0119 - spr\xF3buj si\u0119 z nimi pobawi\u0107."
       objectReference: {fileID: 0}
     - target: {fileID: 2066323619322046546, guid: 245aaf154e4e8744baa7a937abcacf51, type: 3}
