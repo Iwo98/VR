@@ -475,7 +475,7 @@ MonoBehaviour:
   leftHand: {fileID: 5895279962934353203, guid: 90883e9ddbc1f344e938d32474e9e118, type: 3}
   RPoint: {fileID: 1201752492}
   LPoint: {fileID: 1005258057}
-  beat: 1
+  beat: 3
   myMain: {fileID: 635244141}
 --- !u!1001 &198279499
 PrefabInstance:
