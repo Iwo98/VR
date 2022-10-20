@@ -1,15 +1,8 @@
 # __Dokumentacja techniczna aplikacji MemoryGamesVR__
 
 
-# Opis aplikacji
-__Nazwa aplikacji(_ang. Product name_):__ MemoryGamesVR <br>
-__Nazwa zespołu(_ang. Company name_):__ ClickAndGo
-
-Aplikacja MemoryGamesVR powstała w wyniku projektu, który miał na celu stworzenie zestawu gier ćwiczących pamięć przestrzenną. MemoryGamesVR łączy stworzone gry w jedną aplikację oraz wnosi dodatkową funkcjonalność(np. śledzenie wyników gier). Projekt został zrealizowany w środowisku Unity przy użyciu języka C#.
-<br>
-
 __Na aplikację składają się:__
-- 7 gier trenujących pamięć przestrzenną
+- 17 gier trenujących pamięć przestrzenną oraz w funkcje wysiłkowe
 - Menu główne
     - Pozwala przejść do innych menu
     - Pozwala stworzyć lub odczytać zapis gry użytkownika
@@ -17,13 +10,12 @@ __Na aplikację składają się:__
 - Menu wyboru gry
     - Pozwala zagrać w jedną z gier na wybranym poziomie trudności
 - Menu treningu
-    - Pozwala na zagranie w trening - 8 gier wybranych w losowej kolejności, o poziomie trudności dostosowanym na podstawie wyników z poprzednich treningów użytkownika
-    - Pozwala na wyświetlanie statystyk użytkownika i wyników poprzednich treningów
+    - Pozwala stworzyć i zagrać w sesje treningową składającą się z rozgrzewki, głównej części trenigu w skład, którego wchodzi 8 gier wysiłkowych oraz 8 gier poznawczych oraz rozgrzewki.
 <br>
 
 
 # Zaimplementowane rozwiązania
-## Porządkowanie plików w projekcie
+## Porządkowanie plików w projekcie - TO BE UPDATED
 Większość uzywanych przez nas zasobów znajduje się w folderze _MemoryGamesVR/Assets_ - są tam wszystkie skrypty, prefaby, sceny itd. Pliki w folderze _MemoryGamesVR/Assets_ uporządkowane są w następujący sposób:
 - Materiały związane z grami są w osobnych folderach - np. skrypty, prefaby itd. wykorzystywane w grze Uczeń Alchemika znajdują się w folderze _AlchemistGame_
 - Materiały związane z menu znajdują się w folderze _Candles_Menu_, razem z materiałami gry Świeczniki
@@ -59,7 +51,7 @@ Obsługa plików zapisu wykonywana jest w skrypcie _UserData.cs_, znajduje się 
 Domyślny użytkownik posiada nazwę _"default"_ - jeśli żaden inny użytkownik nie jest zalogowany, postęp będzie zapisywany dla użytkownika _"default"_. Z tego powodu również, gracz nie może stworzyć swojego konta o nazwie _"default"_, nie może on stworzyć również konta o pustej nazwie. Nazwa użytkownika składa się wyłącznie z liter i cyfr. Maksymalna długość nazwy użytkownika to 20 znaków, jednak ograniczenie to jest obecne wyłącznie z powodów wizualizacji nazwy w różnych komponentach aplikacji.
 
 
-## Wybór gry
+## Wybór gry - TO BE UPDATED
 Wybór gry wymaga przesyłania danych między scenami - do gry trzeba przesłać wybrany poziom trudności, i otrzymać z powrotem informację na temat zdobytych przez gracza punktów. Wykonywane jest to w skrypcie _GameChoiceManager.cs_. Dane są przesyłane między scenami za pomocą _PlayerPrefs_:
 - _curr_game_num_ - która z kolei gra jest rozgrywana obecnie(używane w module treningowym, numeracja zaczyna się od 0 i jest inkrementowana po skończeniu każdej gry w treningu)
 - _is_training_ - jeśli _is_training = 1_ to rozpoczęto moduł treningowy, jeśli _is_training = 0_ to wybrano pojedynczą rozgrywkę w menu wyboru gry
